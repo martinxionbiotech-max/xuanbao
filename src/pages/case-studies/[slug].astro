@@ -6,6 +6,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { caseStudies } from '~/data/cases';
+import { caseDetails } from '~/data/details';
 import { getPermalink } from '~/utils/permalinks';
 
 export function getStaticPaths() {
@@ -40,6 +41,13 @@ const cs = caseStudy as (typeof caseStudies)[number];
         {sec.list && <ul class="mt-4 grid gap-2 text-muted" set:html={sec.list} />}
       </section>
     ))}
+
+    {caseDetails[cs.slug] && (
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Engineering takeaways</h2>
+        <div class="space-y-4 text-muted leading-relaxed" set:html={caseDetails[cs.slug]} />
+      </section>
+    )}
 
     <Features2
       title="Related products"

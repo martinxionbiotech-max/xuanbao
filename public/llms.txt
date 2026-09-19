@@ -1,0 +1,28 @@
+# Xuanbao Environmental Technology
+
+> Yancheng Xuanbao Environmental Technology Co., Ltd. — manufacturer of industrial
+> emission control materials: SCR DeNOx catalysts, CO oxidation catalysts, VOC
+> oxidation catalysts, zeolite molecular sieves and activated carbon. This file
+> lists the primary pages of xuanbaoenvironment.com; deep technical documentation
+> lives in the companion knowledge center at data.xuanbaoenvironment.com.
+
+## Core pages
+
+- [Home](https://xuanbaoenvironment.com/): company overview, product categories, industries and R&D/quality workflow.
+- [Products](https://xuanbaoenvironment.com/products/): 14 products across 5 categories — SCR DeNOx, CO removal, VOC catalysts, molecular sieves, activated carbon.
+- [SCR DeNOx Catalysts](https://xuanbaoenvironment.com/products/scr-denox-catalysts/): plate-type and honeycomb V-Mo-Ti catalysts.
+- [VOC Catalysts](https://xuanbaoenvironment.com/products/voc-catalysts/): Pt, Pt-Pd and non-precious-metal honeycomb catalysts.
+- [Zeolite Molecular Sieves](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/): modified 5A, 13X, ZSM-5 and NaY.
+- [Activated Carbon](https://xuanbaoenvironment.com/products/activated-carbon/): honeycomb, coal-based columnar, coconut shell and fiber.
+- [CO Removal Catalyst](https://xuanbaoenvironment.com/products/co-removal-catalyst/): CO oxidation for sintering, incineration and furnace exhaust.
+- [Solutions](https://xuanbaoenvironment.com/solutions/): SCR DeNOx, VOC catalytic oxidation, adsorption + catalytic combustion, molecular sieve concentration, CO removal.
+- [Industries](https://xuanbaoenvironment.com/industries/): thermal power, steel, sintering, cement, alumina, petrochemical, chemical, coating, printing, pharmaceutical, automotive, waste incineration.
+- [Case Studies](https://xuanbaoenvironment.com/case-studies/): field test records — sintering machine CO removal, medical waste incinerator CO removal.
+- [About](https://xuanbaoenvironment.com/about/), [R&D](https://xuanbaoenvironment.com/r-and-d/), [Manufacturing](https://xuanbaoenvironment.com/manufacturing/), [Quality](https://xuanbaoenvironment.com/quality/), [Service](https://xuanbaoenvironment.com/service/)
+- [Contact](https://xuanbaoenvironment.com/contact/): inquiry form for gas conditions and quotations.
+- [Resources](https://xuanbaoenvironment.com/resources/): link to the knowledge center.
+
+## Technical documentation
+
+- [Knowledge Center](https://data.xuanbaoenvironment.com/): six pillar guides (SCR DeNOx, CO oxidation, VOC catalysts, molecular sieves, activated carbon, VOC engineering) with 25+ cluster articles.
+- [Knowledge Center llms.txt](https://data.xuanbaoenvironment.com/llms.txt): full index of technical articles.
