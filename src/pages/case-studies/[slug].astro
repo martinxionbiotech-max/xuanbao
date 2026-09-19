@@ -1,0 +1,75 @@
+---
+import { caseStudies } from '../../data/cases';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return caseStudies.map((c) => ({ params: { slug: c.slug }, props: { caseStudy: c } }));
+}
+
+const { caseStudy } = Astro.props;
+const cs = caseStudy as (typeof caseStudies)[number];
+const SITE = 'https://xuanbaoenvironment.com';
+
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Case Studies', item: SITE + '/case-studies/' },
+    { '@type': 'ListItem', position: 3, name: cs.name },
+  ],
+});
+---
+
+<BaseLayout title={cs.seoTitle} description={cs.metaDescription} canonical={`/case-studies/${cs.slug}/`} ogType="article" schema={[breadcrumb]}>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li class="sep">/</li>
+        <li>{cs.name}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>{cs.h1}</h1>
+      <p>{cs.intro}</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <div class="callout">
+        <strong>Reported field test result — test date {cs.testDate}</strong>
+        <span set:html={cs.result} />
+      </div>
+
+      {cs.sections.map((sec) => (
+        <>
+          <h2>{sec.h2}</h2>
+          <p set:html={sec.body} />
+          {sec.list && <ul set:html={sec.list} />}
+        </>
+      ))}
+
+      <h2>Related products</h2>
+      <div class="grid-3">
+        {cs.products.map((p) => (
+          <div class="card">
+            <a class="title-link" href={p.href}>{p.name}</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-band">
+        <h2>Discuss a similar application</h2>
+        <p>If you are planning CO or VOC control on a comparable stream, share your operating conditions with us.</p>
+        <a class="btn btn-primary" href="/contact/">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

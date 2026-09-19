@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Products', item: SITE + '/products/' },
+    { '@type': 'ListItem', position: 3, name: 'Heating Components' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Heating Components for Catalytic Systems | Xuanbao Environmental"
+  description="Heating elements and components supporting catalytic oxidation and adsorption-desorption systems for industrial emission control."
+  canonical="/products/heating-tubes/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/products/">Products</a></li>
+        <li class="sep">/</li>
+        <li>Heating Components</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Heating Components</h1>
+      <p>Heating elements that support catalytic oxidation and adsorption-desorption systems.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <h2>Overview</h2>
+      <p>
+        Catalytic oxidation and adsorption-concentration systems require controlled preheating and desorption
+        heating. We supply heating components matched to the system design, including the temperature and power
+        requirements of the catalyst bed or desorption stage.
+      </p>
+
+      <h2>Applications</h2>
+      <ul>
+        <li>Preheating of VOC streams before catalytic oxidation</li>
+        <li>Desorption heating in zeolite adsorption concentration systems</li>
+        <li>Heat recovery loop components</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Specifications</strong>
+        <span>Heating component specifications are confirmed per project against flow rate, temperature requirement and power supply. Please share your system parameters for a quotation.</span>
+      </div>
+
+      <p><a class="btn btn-dark" href="/contact/">Request a Quotation</a></p>
+    </div>
+  </section>
+</BaseLayout>

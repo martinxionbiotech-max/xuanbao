@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { industries } from '../../data/industries';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Industries', item: SITE + '/industries/' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Industries We Serve — Emission Control Materials | Xuanbao Environmental"
+  description="Emission control materials for thermal power, steel, sintering, cement, alumina, petrochemical, chemical, printing, coating, pharmaceutical, automotive and waste incineration."
+  canonical="/industries/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Industries</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Industries</h1>
+      <p>Each industry page follows the same logic: emission problems → pollutants → operating conditions → technology selection → products.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="grid-4">
+        {industries.map((ind) => (
+          <div class="card">
+            <a class="title-link" href={`/industries/${ind.slug}/`}><h3>{ind.name}</h3></a>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-band">
+        <h2>Don't see your industry?</h2>
+        <p>We serve other industrial gas treatment applications too — send us your operating conditions.</p>
+        <a class="btn btn-primary" href="/contact/">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

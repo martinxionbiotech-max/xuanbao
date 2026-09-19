@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { solutions } from '../../data/solutions';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Solutions', item: SITE + '/solutions/' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Industrial Emission Control Solutions | Xuanbao Environmental"
+  description="VOC catalytic oxidation, zeolite adsorption concentration, SCR DeNOx, CO removal and adsorption + catalytic combustion solutions for industrial emission control."
+  canonical="/solutions/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Solutions</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Solutions</h1>
+      <p>Material-level solutions built around actual operating conditions — from pollutant identification to system recommendation.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="grid-3">
+        {solutions.map((s) => (
+          <div class="card">
+            <a class="title-link" href={`/solutions/${s.slug}/`}><h3>{s.name}</h3></a>
+            <p>{s.intro}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-band">
+        <h2>Tell us your gas conditions</h2>
+        <p>Gas composition + flow + concentration + temperature + humidity + dust + existing equipment — we will recommend the right route.</p>
+        <a class="btn btn-primary" href="/contact/">Request a Technical Consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

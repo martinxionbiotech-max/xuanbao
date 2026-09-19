@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: SITE + '/about/' },
+    { '@type': 'ListItem', position: 3, name: 'Manufacturing' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Manufacturing & Process Control | Xuanbao Environmental"
+  description="Manufacturing processes for plate-type SCR catalysts, honeycomb SCR catalysts and VOC honeycomb catalysts — from raw materials to module assembly."
+  canonical="/manufacturing/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/about/">About Us</a></li>
+        <li class="sep">/</li>
+        <li>Manufacturing</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Manufacturing &amp; Process Control</h1>
+      <p>Controlled processes from raw materials to assembled catalyst modules.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <div class="flow">
+        <h4>SCR Plate-Type Catalyst Process</h4>
+        <div class="flow-steps">
+          <span>Raw materials</span><i>→</i><span>Mixing</span><i>→</i><span>Granulation</span><i>→</i><span>Rolling</span><i>→</i><span>Shearing</span><i>→</i><span>Forming</span><i>→</i><span>Calcination</span><i>→</i><span>Unit assembly</span><i>→</i><span>Module assembly</span>
+        </div>
+      </div>
+
+      <div class="flow">
+        <h4>Honeycomb SCR Catalyst Process</h4>
+        <div class="flow-steps">
+          <span>Raw materials</span><i>→</i><span>Mixing</span><i>→</i><span>Kneading</span><i>→</i><span>Extrusion</span><i>→</i><span>Drying</span><i>→</i><span>Calcination</span><i>→</i><span>Cutting</span><i>→</i><span>Module assembly</span>
+        </div>
+      </div>
+
+      <div class="flow">
+        <h4>VOC Honeycomb Catalyst Process</h4>
+        <div class="flow-steps">
+          <span>Ceramic substrate preparation</span><i>→</i><span>Surface treatment</span><i>→</i><span>Washcoat preparation</span><i>→</i><span>Active component loading</span><i>→</i><span>Controlled coating</span><i>→</i><span>Drying</span><i>→</i><span>Calcination</span><i>→</i><span>Quality inspection</span>
+        </div>
+      </div>
+
+      <h2>Process Control</h2>
+      <p>
+        Production processes are supported by QA/QC procedures — incoming material inspection, process inspection,
+        coating and forming inspection, final product inspection and batch traceability. See the quality page for
+        details.
+      </p>
+
+      <p><a class="btn btn-dark" href="/quality/">Quality &amp; Testing</a></p>
+    </div>
+  </section>
+</BaseLayout>

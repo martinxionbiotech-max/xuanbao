@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: SITE + '/about/' },
+    { '@type': 'ListItem', position: 3, name: 'R&D Center' },
+  ],
+});
+---
+
+<BaseLayout
+  title="R&D Center — Catalyst & Adsorbent Development | Xuanbao Environmental"
+  description="Xuanbao R&D center: catalyst formulation, coating, honeycomb preparation, zeolite modification, adsorption evaluation and process optimization with BET, XRF, XRD, ICP and dynamic simulation testing."
+  canonical="/r-and-d/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/about/">About Us</a></li>
+        <li class="sep">/</li>
+        <li>R&amp;D Center</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>R&amp;D Center</h1>
+      <p>Technology First. Quality Oriented.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <p>
+        From the early days of the company, R&amp;D has been central to how we work. The R&amp;D center continuously
+        develops, modifies, tests and optimizes catalysts and adsorption materials.
+      </p>
+
+      <h2>R&amp;D Directions</h2>
+      <ul>
+        <li>Catalyst formulation</li>
+        <li>Catalyst coating</li>
+        <li>Honeycomb catalyst preparation</li>
+        <li>SCR catalyst development</li>
+        <li>CO oxidation catalyst development</li>
+        <li>Zeolite modification</li>
+        <li>Adsorption performance evaluation</li>
+        <li>VOC adsorption materials</li>
+        <li>Thermal regeneration</li>
+        <li>Material characterization</li>
+        <li>Process optimization</li>
+      </ul>
+
+      <h2>Analytical &amp; Testing Capabilities</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>BET</h3>
+          <p>Specific surface area and pore structure analysis of materials.</p>
+        </div>
+        <div class="card">
+          <h3>XRF</h3>
+          <p>Elemental and composition analysis of materials.</p>
+        </div>
+        <div class="card">
+          <h3>XRD</h3>
+          <p>Crystal phase and crystal structure analysis.</p>
+        </div>
+        <div class="card">
+          <h3>ICP</h3>
+          <p>Elemental composition and metal content analysis.</p>
+        </div>
+        <div class="card">
+          <h3>Dynamic Simulation</h3>
+          <p>Dynamic simulation testing against the target gas or adsorption medium before batch production.</p>
+        </div>
+        <div class="card">
+          <h3>Performance Evaluation</h3>
+          <p>Catalyst activity, adsorption capacity and mechanical strength testing.</p>
+        </div>
+      </div>
+
+      <h2>Cooperation</h2>
+      <p>
+        The company carries out technical cooperation with universities and research institutions. Specific
+        cooperation details are disclosed with formal agreements and publicly available proof.
+      </p>
+
+      <p><a class="btn btn-dark" href="/quality/">See Quality &amp; Testing</a></p>
+    </div>
+  </section>
+</BaseLayout>

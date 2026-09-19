@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { caseStudies } from '../../data/cases';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Case Studies', item: SITE + '/case-studies/' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Case Studies — Field Test Results | Xuanbao Environmental"
+  description="Documented field tests: sintering machine CO reduction 1,499→18 ppm (2022) and medical waste incinerator CO reduction 11,224.2→16.2 mg/Nm³ (2023)."
+  canonical="/case-studies/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Case Studies</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Case Studies</h1>
+      <p>Field test results from industrial applications, with the data context needed for engineering evaluation.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="grid-2">
+        {caseStudies.map((cs) => (
+          <div class="card">
+            <a class="title-link" href={`/case-studies/${cs.slug}/`}><h3>{cs.name}</h3></a>
+            <p><strong>{cs.result}</strong></p>
+            <p class="muted">Test date: {cs.testDate}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="muted" style="margin-top:16px">
+        Original test records, operating conditions, test instruments and testing organizations are retained for
+        reference. Case pages note which data fields remain to be attached for complete engineering evaluation.
+      </p>
+
+      <div class="cta-band">
+        <h2>Planning a similar application?</h2>
+        <p>Share your stream conditions with us — we will discuss a comparable material solution.</p>
+        <a class="btn btn-primary" href="/contact/">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

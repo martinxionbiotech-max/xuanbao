@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: SITE + '/contact/' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Contact Xuanbao Environmental | Request a Quotation"
+  description="Contact Yancheng Xuanbao Environmental Technology Co., Ltd. for SCR catalyst, CO catalyst, VOC catalyst, zeolite molecular sieve and activated carbon inquiries."
+  canonical="/contact/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Contact</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Contact Xuanbao Environmental Technology</h1>
+      <p>Tell us your gas conditions — we will respond with a material recommendation and quotation.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2>Inquiry Form</h2>
+          <form class="form-grid" action="mailto:625534887@qq.com" method="get" enctype="text/plain">
+            <div><label for="name">Name *</label><input type="text" id="name" name="Name" required /></div>
+            <div><label for="company">Company</label><input type="text" id="company" name="Company" /></div>
+            <div><label for="email">Email *</label><input type="email" id="email" name="Email" required /></div>
+            <div><label for="industry">Industrial application</label>
+              <select id="industry" name="Industry">
+                <option value="">— Select —</option>
+                <option>Thermal Power</option>
+                <option>Steel</option>
+                <option>Sintering</option>
+                <option>Cement</option>
+                <option>Petrochemical</option>
+                <option>Chemical</option>
+                <option>Coating</option>
+                <option>Printing</option>
+                <option>Pharmaceutical</option>
+                <option>Automotive</option>
+                <option>Waste Incineration</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div><label for="target">Treatment target</label>
+              <select id="target" name="Target">
+                <option value="">— Select —</option>
+                <option>NOx</option>
+                <option>CO</option>
+                <option>VOC</option>
+                <option>Odor</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div><label for="flow">Gas flow (Nm³/h)</label><input type="text" id="flow" name="GasFlow" /></div>
+            <div><label for="conc">Inlet concentration (mg/Nm³ or ppm)</label><input type="text" id="conc" name="InletConcentration" /></div>
+            <div><label for="temp">Gas temperature (°C)</label><input type="text" id="temp" name="GasTemperature" /></div>
+            <div><label for="humidity">Humidity (%)</label><input type="text" id="humidity" name="Humidity" /></div>
+            <div><label for="so2">SO₂ (mg/Nm³)</label><input type="text" id="so2" name="SO2" /></div>
+            <div><label for="dust">Dust (mg/Nm³)</label><input type="text" id="dust" name="Dust" /></div>
+            <div class="full"><label for="voc">Main VOC components</label><input type="text" id="voc" name="VOCComponents" /></div>
+            <div class="full"><label for="existing">Existing system</label>
+              <select id="existing" name="ExistingSystem">
+                <option value="">— Select —</option>
+                <option>SCR</option>
+                <option>Adsorption</option>
+                <option>Catalytic oxidation</option>
+                <option>RTO</option>
+                <option>RCO</option>
+                <option>Activated carbon</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="full"><label for="service">Required service</label>
+              <select id="service" name="RequiredService">
+                <option>Product quotation</option>
+                <option>Material selection</option>
+                <option>Sample testing</option>
+                <option>Technical consultation</option>
+                <option>Replacement</option>
+                <option>OEM / customization</option>
+              </select>
+            </div>
+            <div class="full"><label for="message">Message</label><textarea id="message" name="Message" rows="4"></textarea></div>
+            <div class="full"><button class="btn btn-primary" type="submit">Submit Inquiry</button></div>
+          </form>
+        </div>
+
+        <div class="contact-side">
+          <div class="contact-box">
+            <h3>Company</h3>
+            <p><strong>Yancheng Xuanbao Environmental Technology Co., Ltd.</strong></p>
+            <p>Yancheng, Jiangsu, China</p>
+          </div>
+          <div class="contact-box">
+            <h3>Contact Person</h3>
+            <p>Ms. Chen</p>
+          </div>
+          <div class="contact-box">
+            <h3>Phone</h3>
+            <p>+86 151 6936 1313</p>
+            <p class="muted">Alternate: +86 186 5338 3925 / +86 185 6029 9835</p>
+          </div>
+          <div class="contact-box">
+            <h3>Email</h3>
+            <p>625534887@qq.com</p>
+          </div>
+          <div class="callout">
+            <strong>24-hour response</strong>
+            <span>After-sales inquiries receive a response within 24 hours.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

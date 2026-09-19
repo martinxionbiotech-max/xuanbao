@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Resources', item: SITE + '/resources/' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Resources & Knowledge Center | Xuanbao Environmental"
+  description="Technical resources for industrial emission control — visit our Knowledge Center for SCR, CO oxidation, VOC catalyst, molecular sieve and activated carbon technical guides."
+  canonical="/resources/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Resources</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Resources</h1>
+      <p>Technical documentation, guides and the Industrial Emission Control Knowledge Center.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <div class="callout">
+        <strong>📚 Industrial Emission Control Knowledge Center</strong>
+        <span>
+          Deep technical content — SCR fundamentals, CO oxidation, VOC catalysis, molecular sieve and activated
+          carbon data, adsorption engineering and catalyst selection guides — is published in our knowledge center at
+          <a href="https://data.xuanbaoenvironment.com">data.xuanbaoenvironment.com</a>.
+        </span>
+      </div>
+
+      <h2>What you will find there</h2>
+      <ul>
+        <li>SCR DeNOx — what is SCR, plate vs honeycomb, poisoning, regeneration, replacement</li>
+        <li>CO oxidation — fundamentals, light-off temperature, SO₂ and water effects, service life</li>
+        <li>VOC catalysts — catalytic oxidation, T50/T90, space velocity, Pt/Pd/non-precious-metal systems</li>
+        <li>Molecular sieves — 3A/4A/5A/13X/NaY/ZSM-5, pore structure, selectivity, regeneration</li>
+        <li>Activated carbon — iodine value, CCl₄ adsorption, fire safety, regeneration, replacement</li>
+        <li>VOC engineering — concentration, LEL, humidity, pressure drop, heat recovery</li>
+      </ul>
+
+      <h2>Data you can request</h2>
+      <ul>
+        <li>Product data sheets and specifications</li>
+        <li>Testing documentation</li>
+        <li>Case study operating data</li>
+      </ul>
+
+      <p><a class="btn btn-dark" href="/contact/">Request Documentation</a></p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: SITE + '/about/' },
+    { '@type': 'ListItem', position: 3, name: 'Quality & Testing' },
+  ],
+});
+---
+
+<BaseLayout
+  title="Quality Assurance & Testing | Xuanbao Environmental"
+  description="QA/QC procedures for catalysts and adsorbents — incoming material, process, coating, forming and final inspection, batch traceability and performance testing."
+  canonical="/quality/"
+  schema={[breadcrumb]}
+>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/about/">About Us</a></li>
+        <li class="sep">/</li>
+        <li>Quality &amp; Testing</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>Quality Assurance &amp; Testing</h1>
+      <p>Quality as verifiable information — procedures, inspections and testing capabilities.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <h2>QA / QC Procedures</h2>
+      <ul class="checklist">
+        <li>Incoming material inspection</li>
+        <li>Process inspection</li>
+        <li>Coating inspection</li>
+        <li>Forming inspection</li>
+        <li>Final product inspection</li>
+        <li>Batch traceability</li>
+        <li>Performance testing</li>
+      </ul>
+
+      <h2>Testing Capabilities</h2>
+      <div class="grid-3">
+        <div class="card"><h3>Material Analysis</h3><p>BET, XRF, XRD and ICP characterization of raw materials and finished products.</p></div>
+        <div class="card"><h3>Adsorption Testing</h3><p>Dynamic adsorption testing against the target medium.</p></div>
+        <div class="card"><h3>Catalyst Testing</h3><p>Catalyst activity testing under simulated operating conditions.</p></div>
+        <div class="card"><h3>Mechanical Testing</h3><p>Compressive strength, wear and physical property testing.</p></div>
+        <div class="card"><h3>Third-Party Testing</h3><p>Combined with third-party testing or customer-specified requirements.</p></div>
+        <div class="card"><h3>Documentation</h3><p>Testing data and documentation provided with the product.</p></div>
+      </div>
+
+      <h2>Data Classification</h2>
+      <p>
+        On product pages we distinguish data types so engineering decisions are made on the right basis:
+      </p>
+      <ul>
+        <li><strong>Manufacturer specification</strong> — the product's defined property range.</li>
+        <li><strong>Typical value</strong> — laboratory or application performance under stated conditions.</li>
+        <li><strong>Test result</strong> — measured data from a specific test, with its conditions.</li>
+        <li><strong>Design value</strong> — engineering reference; actual performance depends on operating conditions.</li>
+      </ul>
+
+      <p><a class="btn btn-dark" href="/service/">See Our Service Scope</a></p>
+    </div>
+  </section>
+</BaseLayout>

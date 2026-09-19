@@ -1,0 +1,9 @@
+---
+import { productBySlug } from '../../data/products';
+import ProductLayout from '../../layouts/ProductLayout.astro';
+
+const product = productBySlug['co-removal-catalyst'];
+product.path = '/products/co-removal-catalyst/';
+---
+
+<ProductLayout product={product} />

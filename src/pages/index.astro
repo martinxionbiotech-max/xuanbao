@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const SITE = 'https://xuanbaoenvironment.com';
+
+const websiteSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': SITE + '/#website',
+  name: 'Xuanbao Environmental Technology',
+  url: SITE + '/',
+  publisher: { '@id': SITE + '/#organization' },
+});
+---
+
+<BaseLayout
+  title="Industrial Catalysts & VOC Emission Control Materials Manufacturer | Xuanbao Environmental"
+  description="Xuanbao Environmental Technology manufactures SCR denitrification catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves and activated carbon for industrial emission control applications. Customized material solutions and technical support available."
+  canonical="/"
+  schema={[websiteSchema]}
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Industrial Catalysts &amp; Adsorbent Materials for Industrial Emission Control</h1>
+      <p class="subtitle">SCR DeNOx Catalysts · CO Oxidation Catalysts · VOC Catalysts · Zeolite Molecular Sieves · Activated Carbon</p>
+      <p>
+        Yancheng Xuanbao Environmental Technology Co., Ltd. develops, manufactures and tests industrial emission
+        control materials for power, steel, petrochemical, chemical, building materials, coating, printing,
+        pharmaceutical, automotive and other industrial customers. We select and customize catalyst and adsorbent
+        systems based on your pollutant composition, gas temperature, concentration, flow rate, humidity, dust and
+        other operating conditions.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Request a Technical Assessment</a>
+        <a class="btn btn-outline" href="/products/">Explore Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Industrial Emission Control Materials</h2>
+      <p class="lead">Five material families covering the main catalytic and adsorption routes in industrial gas treatment.</p>
+      <div class="grid-3">
+        <div class="card">
+          <a class="title-link" href="/products/scr-denox-catalysts/"><h3>SCR DeNOx Catalysts</h3></a>
+          <p>NOx removal for industrial flue gas — plate-type and honeycomb V-Mo-Ti systems for thermal power, steel, cement, alumina and high-dust exhaust.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/products/co-removal-catalyst/"><h3>CO Oxidation Catalysts</h3></a>
+          <p>Precious-metal active systems designed for different gas conditions, covering a wide temperature range with SO₂, water and dust tolerance.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/products/voc-catalysts/"><h3>VOC Catalysts</h3></a>
+          <p>Pt, Pt-Pd and non-precious-metal composite oxide honeycomb catalysts for catalytic combustion of VOCs.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/products/zeolite-molecular-sieve/"><h3>Zeolite Molecular Sieves</h3></a>
+          <p>Modified 5A, 13X, ZSM-5 and NaY for VOC adsorption concentration, gas drying, separation and purification.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/products/activated-carbon/"><h3>Activated Carbon</h3></a>
+          <p>Honeycomb, columnar, coconut-shell and fiber forms for gas-phase adsorption, solvent recovery and odor control.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/products/heating-tubes/"><h3>Heating Components</h3></a>
+          <p>Heating elements supporting catalytic oxidation and adsorption-desorption systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>From Material Development to Industrial Application</h2>
+      <p class="lead">Industrial exhaust is never identical from plant to plant — material selection must follow the actual gas conditions.</p>
+      <div class="grid-4">
+        <div class="card">
+          <h3>Technical R&amp;D</h3>
+          <p>Continuous investment in catalyst and adsorbent development with laboratory capability and cooperation with universities and research institutes.</p>
+        </div>
+        <div class="card">
+          <h3>Customized Materials</h3>
+          <p>We select and optimize materials by gas composition, concentration, flow rate, temperature, humidity, dust, SO₂ and target removal efficiency.</p>
+        </div>
+        <div class="card">
+          <h3>Experimental Verification</h3>
+          <p>Before batch production, molecular sieve products can be dynamically simulated against the target medium; formulation and forming are adjusted from test results.</p>
+        </div>
+        <div class="card">
+          <h3>Quality Control</h3>
+          <p>QA/QC procedures cover production process and product quality, with third-party or customer-specified testing available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Technology-Driven Environmental Materials</h2>
+      <p class="lead">R&amp;D and testing capabilities supporting material development.</p>
+      <div class="tag-row">
+        <span class="tag">BET</span>
+        <span class="tag">XRF</span>
+        <span class="tag">XRD</span>
+        <span class="tag">ICP</span>
+        <span class="tag">Zeolite synthesis</span>
+        <span class="tag">Analytical characterization</span>
+        <span class="tag">Modification treatment</span>
+        <span class="tag">Performance evaluation</span>
+        <span class="tag">Dynamic simulation testing</span>
+        <span class="tag">Catalyst formulation optimization</span>
+        <span class="tag">Coating process control</span>
+        <span class="tag">Forming process optimization</span>
+      </div>
+      <p style="margin-top:18px"><strong>Technology First. Quality Oriented.</strong></p>
+      <p><a class="btn btn-dark" href="/r-and-d/">Visit the R&amp;D Center</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Applications Across Industrial Emission Control</h2>
+      <p class="lead">Materials matched to each industry's emission problems.</p>
+      <div class="grid-4">
+        <div class="card"><a class="title-link" href="/industries/thermal-power/"><h3>Thermal Power</h3></a><p>High-temperature, high-dust SCR DeNOx.</p></div>
+        <div class="card"><a class="title-link" href="/industries/steel/"><h3>Steel &amp; Sintering</h3></a><p>Sintering gas, CO removal and catalytic oxidation.</p></div>
+        <div class="card"><a class="title-link" href="/industries/cement/"><h3>Cement &amp; Building Materials</h3></a><p>High-dust industrial gas treatment.</p></div>
+        <div class="card"><a class="title-link" href="/industries/petrochemical/"><h3>Petrochemical &amp; Chemical</h3></a><p>VOC catalytic oxidation and adsorption concentration.</p></div>
+        <div class="card"><a class="title-link" href="/industries/coating/"><h3>Coating &amp; Printing</h3></a><p>Benzene, toluene, xylene, esters and alcohol VOC control.</p></div>
+        <div class="card"><a class="title-link" href="/industries/pharmaceutical/"><h3>Pharmaceutical</h3></a><p>Complex organic exhaust adsorption and oxidation.</p></div>
+        <div class="card"><a class="title-link" href="/industries/automotive/"><h3>Automotive Manufacturing</h3></a><p>Paint shop VOC emission control.</p></div>
+        <div class="card"><a class="title-link" href="/industries/waste-incineration/"><h3>Waste Incineration</h3></a><p>CO and organic pollutant control.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Need Help Selecting the Right Catalyst or Adsorbent?</h2>
+      <p class="lead">Provide these basic operating conditions and we will make a preliminary material selection:</p>
+      <div class="grid-2">
+        <ul>
+          <li>Gas flow rate and inlet / target outlet concentration</li>
+          <li>Gas composition and main pollutants</li>
+          <li>Operating temperature and humidity</li>
+          <li>SO₂ concentration</li>
+          <li>Dust concentration</li>
+        </ul>
+        <ul>
+          <li>Existing reactor dimensions</li>
+          <li>Existing catalyst / adsorbent type</li>
+          <li>Required service life</li>
+        </ul>
+      </div>
+      <p><a class="btn btn-primary" href="/contact/">Submit Operating Conditions</a></p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Selected Industrial Applications</h2>
+      <div class="grid-2">
+        <div class="card">
+          <a class="title-link" href="/case-studies/sintering-machine-co-removal/"><h3>Sintering Machine CO Removal</h3></a>
+          <p>Field test: CO <strong>1,499 ppm → 18 ppm</strong> — tested 2022-08-23.</p>
+        </div>
+        <div class="card">
+          <a class="title-link" href="/case-studies/medical-waste-incinerator-co-removal/"><h3>Medical Waste Incinerator</h3></a>
+          <p>Field test: CO <strong>11,224.2 mg/Nm³ → 16.2 mg/Nm³</strong> — tested 2023-03-20.</p>
+        </div>
+      </div>
+      <p class="muted">Original test records, operating conditions and test organizations are retained for reference; contact us for discussion of similar applications.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Technical Support Beyond Product Supply</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Selection &amp; Design</h3>
+          <p>Catalyst and adsorbent selection, installation guidance, SCR system commissioning guidance.</p>
+        </div>
+        <div class="card">
+          <h3>Testing &amp; Evaluation</h3>
+          <p>Sampling and testing, performance evaluation, regular follow-up.</p>
+        </div>
+        <div class="card">
+          <h3>Lifecycle Support</h3>
+          <p>Used catalyst recycling guidance and replacement recommendations.</p>
+        </div>
+      </div>
+      <p><strong>24-hour response for after-sales inquiries.</strong></p>
+      <p><a class="btn btn-dark" href="/service/">See Our Service Scope</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <h2>Tell Us Your Gas Conditions</h2>
+        <p>
+          Material selection for industrial emission control depends on the actual operating conditions. Send us your
+          gas composition + flow + concentration + temperature + humidity + dust + existing equipment, and we will
+          discuss the right catalyst or adsorbent solution with you.
+        </p>
+        <a class="btn btn-primary" href="/contact/">Request a Technical Consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

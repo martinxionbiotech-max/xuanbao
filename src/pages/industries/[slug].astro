@@ -1,0 +1,74 @@
+---
+import { industries } from '../../data/industries';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return industries.map((ind) => ({ params: { slug: ind.slug }, props: { industry: ind } }));
+}
+
+const { industry } = Astro.props;
+const ind = industry as (typeof industries)[number];
+const SITE = 'https://xuanbaoenvironment.com';
+
+const breadcrumb = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
+    { '@type': 'ListItem', position: 2, name: 'Industries', item: SITE + '/industries/' },
+    { '@type': 'ListItem', position: 3, name: ind.name },
+  ],
+});
+---
+
+<BaseLayout title={ind.seoTitle} description={ind.metaDescription} canonical={`/industries/${ind.slug}/`} schema={[breadcrumb]}>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="/industries/">Industries</a></li>
+        <li class="sep">/</li>
+        <li>{ind.name}</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-head">
+    <div class="container">
+      <h1>{ind.h1}</h1>
+      <p>Emission problems, pollutants, operating conditions and recommended materials for the {ind.name.toLowerCase()} sector.</p>
+    </div>
+  </section>
+
+  <section class="page-body">
+    <div class="container prose-narrow">
+      <h2>Typical emission problems</h2>
+      <ul set:html={ind.problems} />
+
+      <h2>Main pollutants</h2>
+      <ul set:html={ind.pollutants} />
+
+      <h2>Operating conditions</h2>
+      <p set:html={ind.conditions} />
+
+      <h2>Recommended material selection</h2>
+      <ul set:html={ind.selection} />
+
+      <h2>Related products</h2>
+      <div class="grid-3">
+        {ind.products.map((p) => (
+          <div class="card">
+            <a class="title-link" href={p.href}>{p.name}</a>
+          </div>
+        ))}
+      </div>
+
+      <div class="cta-band">
+        <h2>Send us your operating conditions</h2>
+        <p>Gas flow, concentration, temperature, humidity, SO₂ and dust — we will recommend the right catalyst or adsorbent system.</p>
+        <a class="btn btn-primary" href="/contact/">Submit Operating Conditions</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
