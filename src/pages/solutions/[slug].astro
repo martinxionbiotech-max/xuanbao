@@ -1,6 +1,12 @@
 ---
-import { solutions } from '../../data/solutions';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { solutions } from '~/data/solutions';
+import { getPermalink } from '~/utils/permalinks';
 
 export function getStaticPaths() {
   return solutions.map((s) => ({ params: { slug: s.slug }, props: { solution: s } }));
@@ -8,83 +14,61 @@ export function getStaticPaths() {
 
 const { solution } = Astro.props;
 const s = solution as (typeof solutions)[number];
-const SITE = 'https://xuanbaoenvironment.com';
-const url = SITE + '/solutions/' + s.slug + '/';
-
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Solutions', item: SITE + '/solutions/' },
-    { '@type': 'ListItem', position: 3, name: s.name },
-  ],
-});
 ---
 
-<BaseLayout title={s.seoTitle} description={s.metaDescription} canonical={`/solutions/${s.slug}/`} schema={[breadcrumb]}>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li><a href="/solutions/">Solutions</a></li>
-        <li class="sep">/</li>
-        <li>{s.name}</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={{ title: s.seoTitle, description: s.metaDescription, ignoreTitleTemplate: true }}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Solutions', href: '/solutions/' }, { text: s.name }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>{s.h1}</h1>
-      <p>{s.intro}</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Solution</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      {s.h1}
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">{s.intro}</p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      {s.flow && (
-        <div class="flow">
-          <h4>{s.flow.title}</h4>
-          <div class="flow-steps">
-            {s.flow.steps.map((step, i) => (
-              <>
-                <span>{step}</span>
-                {i < s.flow!.steps.length - 1 && <i>→</i>}
-              </>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {s.sections.map((sec) => (
-        <>
-          <h2>{sec.h2}</h2>
-          <p set:html={sec.body} />
-          {sec.list && <ul set:html={sec.list} />}
-          {sec.table && (
-            <div class="table-wrap">
-              <table class="data" set:html={sec.table} />
-            </div>
-          )}
-        </>
-      ))}
-
-      <h2>Related products</h2>
-      <div class="grid-3">
-        {s.products.map((p) => (
-          <div class="card">
-            <a class="title-link" href={p.href}>{p.name}</a>
-          </div>
-        ))}
-      </div>
-
-      <div class="cta-band">
-        <h2>Discuss your gas conditions</h2>
-        <p>Share your flow rate, concentration, temperature and composition — we will recommend the right material system.</p>
-        <a class="btn btn-primary" href="/contact/">Request a Technical Consultation</a>
-      </div>
+  {s.flow && (
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 pt-6 md:pt-8">
+      <Steps
+        title={s.flow.title}
+        items={s.flow.steps.map((step) => ({ title: step }))}
+      />
     </div>
-  </section>
-</BaseLayout>
+  )}
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10 pt-6 md:pt-10">
+    {s.sections.map((sec) => (
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">{sec.h2}</h2>
+        <p class="text-muted leading-relaxed" set:html={sec.body} />
+        {sec.list && <ul class="mt-4 grid gap-2 text-muted" set:html={sec.list} />}
+        {sec.table && (
+          <div class="mt-4 overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40">
+            <table class="w-full text-sm md:text-base" set:html={sec.table} />
+          </div>
+        )}
+      </section>
+    ))}
+
+    <Features2
+      title="Related products"
+      columns={s.products.length > 2 ? 3 : 2}
+      items={s.products.map((p) => ({
+        title: p.name,
+        icon: 'tabler:box',
+        href: getPermalink(p.href.replace(/\/+$/, '')),
+      }))}
+    />
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Request a Technical Consultation', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Discuss your <span class="text-accent">gas conditions</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Share your flow rate, concentration, temperature and composition — we will recommend the right material system.
+    </Fragment>
+  </CallToAction>
+</Layout>

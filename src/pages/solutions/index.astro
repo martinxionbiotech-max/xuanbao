@@ -1,57 +1,49 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { solutions } from '../../data/solutions';
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Solutions', item: SITE + '/solutions/' },
-  ],
-});
+import { solutions } from '~/data/solutions';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Emission Control Solutions',
+  description:
+    'Engineered emission control routes: VOC catalytic oxidation, zeolite adsorption concentration, SCR DeNOx, CO removal and adsorption + catalytic combustion.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Industrial Emission Control Solutions | Xuanbao Environmental"
-  description="VOC catalytic oxidation, zeolite adsorption concentration, SCR DeNOx, CO removal and adsorption + catalytic combustion solutions for industrial emission control."
-  canonical="/solutions/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>Solutions</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <HeroText
+    badge="Solutions"
+    title="Emission Control Solutions"
+    subtitle="Engineered treatment routes that combine our catalysts and adsorbents — each sized to the actual gas conditions."
+  />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Solutions</h1>
-      <p>Material-level solutions built around actual operating conditions — from pollutant identification to system recommendation.</p>
-    </div>
-  </section>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10">
+    <Features2
+      columns={3}
+      tagline="Routes"
+      title="Solution routes"
+      items={solutions.map((s) => ({
+        title: s.name,
+        description: s.intro,
+        icon: 'tabler:route',
+        href: getPermalink('/solutions/' + s.slug),
+      }))}
+    />
+  </div>
 
-  <section class="page-body">
-    <div class="container">
-      <div class="grid-3">
-        {solutions.map((s) => (
-          <div class="card">
-            <a class="title-link" href={`/solutions/${s.slug}/`}><h3>{s.name}</h3></a>
-            <p>{s.intro}</p>
-          </div>
-        ))}
-      </div>
-
-      <div class="cta-band">
-        <h2>Tell us your gas conditions</h2>
-        <p>Gas composition + flow + concentration + temperature + humidity + dust + existing equipment — we will recommend the right route.</p>
-        <a class="btn btn-primary" href="/contact/">Request a Technical Consultation</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Discuss Your Gas Conditions', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Not sure which <span class="text-accent">route fits?</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Share flow rate, concentration, temperature and composition — we will recommend the right material system.
+    </Fragment>
+  </CallToAction>
+</Layout>

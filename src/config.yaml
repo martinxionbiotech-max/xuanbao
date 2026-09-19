@@ -1,0 +1,70 @@
+site:
+  name: Xuanbao Environmental Technology
+  site: 'https://xuanbaoenvironment.com'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Xuanbao Environmental Technology — Industrial Emission Control Catalysts
+    template: '%s — Xuanbao Environmental Technology'
+  description: 'Manufacturer of SCR DeNOx catalysts, CO oxidation catalysts, VOC oxidation catalysts, zeolite molecular sieves and activated carbon for industrial emission control.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Xuanbao Environmental Technology
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: ''
+    site: ''
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 8
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog'
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category'
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'dark:only'

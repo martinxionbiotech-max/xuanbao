@@ -1,69 +1,71 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Resources', item: SITE + '/resources/' },
-  ],
-});
+const metadata = {
+  title: 'Resources & Knowledge Center',
+  description:
+    'Technical resources for industrial emission control — visit our Knowledge Center for SCR, CO oxidation, VOC catalyst, molecular sieve and activated carbon technical guides.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Resources & Knowledge Center | Xuanbao Environmental"
-  description="Technical resources for industrial emission control — visit our Knowledge Center for SCR, CO oxidation, VOC catalyst, molecular sieve and activated carbon technical guides."
-  canonical="/resources/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>Resources</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Resources' }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Resources</h1>
-      <p>Technical documentation, guides and the Industrial Emission Control Knowledge Center.</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Resources</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Resources
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Technical documentation, guides and the Industrial Emission Control Knowledge Center.
+    </p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <div class="callout">
-        <strong>📚 Industrial Emission Control Knowledge Center</strong>
-        <span>
-          Deep technical content — SCR fundamentals, CO oxidation, VOC catalysis, molecular sieve and activated
-          carbon data, adsorption engineering and catalyst selection guides — is published in our knowledge center at
-          <a href="https://data.xuanbaoenvironment.com">data.xuanbaoenvironment.com</a>.
-        </span>
-      </div>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
+    <section class="rounded-xl border border-primary/30 bg-primary/10 p-5 md:p-6">
+      <strong class="text-heading">📚 Industrial Emission Control Knowledge Center</strong>
+      <p class="mt-2 text-muted leading-relaxed">
+        Deep technical content — SCR fundamentals, CO oxidation, VOC catalysis, molecular sieve and activated carbon
+        data, adsorption engineering and catalyst selection guides — is published in our knowledge center at{' '}
+        <a class="font-semibold text-primary hover:underline" href="https://data.xuanbaoenvironment.com">
+          data.xuanbaoenvironment.com
+        </a>.
+      </p>
+    </section>
 
-      <h2>What you will find there</h2>
-      <ul>
-        <li>SCR DeNOx — what is SCR, plate vs honeycomb, poisoning, regeneration, replacement</li>
-        <li>CO oxidation — fundamentals, light-off temperature, SO₂ and water effects, service life</li>
-        <li>VOC catalysts — catalytic oxidation, T50/T90, space velocity, Pt/Pd/non-precious-metal systems</li>
-        <li>Molecular sieves — 3A/4A/5A/13X/NaY/ZSM-5, pore structure, selectivity, regeneration</li>
-        <li>Activated carbon — iodine value, CCl₄ adsorption, fire safety, regeneration, replacement</li>
-        <li>VOC engineering — concentration, LEL, humidity, pressure drop, heat recovery</li>
-      </ul>
+    <Features
+      columns={3}
+      title="What you will find there"
+      items={[
+        { title: 'SCR DeNOx', description: 'What is SCR, plate vs honeycomb, poisoning, regeneration, replacement.', icon: 'tabler:wind' },
+        { title: 'CO Oxidation', description: 'Fundamentals, light-off temperature, SO₂ and water effects, service life.', icon: 'tabler:flame' },
+        { title: 'VOC Catalysts', description: 'Catalytic oxidation, T50/T90, space velocity, Pt / Pd / non-precious-metal systems.', icon: 'tabler:atom' },
+        { title: 'Molecular Sieves', description: '5A / 13X / NaY / ZSM-5, pore structure, selectivity, regeneration.', icon: 'tabler:hexagons' },
+        { title: 'Activated Carbon', description: 'Iodine value, CCl₄ adsorption, fire safety, regeneration, replacement.', icon: 'tabler:layers-linked' },
+        { title: 'VOC Engineering', description: 'Concentration, LEL, humidity, pressure drop, heat recovery.', icon: 'tabler:settings' },
+      ]}
+    />
 
-      <h2>Data you can request</h2>
-      <ul>
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Data you can request</h2>
+      <ul class="grid gap-2 sm:grid-cols-3 text-muted">
         <li>Product data sheets and specifications</li>
         <li>Testing documentation</li>
         <li>Case study operating data</li>
       </ul>
+    </section>
+  </div>
 
-      <p><a class="btn btn-dark" href="/contact/">Request Documentation</a></p>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction actions={[{ variant: 'primary', text: 'Request Documentation', href: '/contact/', icon: 'tabler:arrow-right' }]}>
+    <Fragment slot="title">
+      Need the <span class="text-accent">data sheets?</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Product specifications, testing documentation and case study operating data are available on request.
+    </Fragment>
+  </CallToAction>
+</Layout>

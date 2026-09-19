@@ -1,135 +1,154 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Contact', item: SITE + '/contact/' },
-  ],
-});
+const metadata = {
+  title: 'Contact Xuanbao Environmental | Request a Quotation',
+  description:
+    'Contact Yancheng Xuanbao Environmental Technology Co., Ltd. for SCR catalyst, CO catalyst, VOC catalyst, zeolite molecular sieve and activated carbon inquiries.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Contact Xuanbao Environmental | Request a Quotation"
-  description="Contact Yancheng Xuanbao Environmental Technology Co., Ltd. for SCR catalyst, CO catalyst, VOC catalyst, zeolite molecular sieve and activated carbon inquiries."
-  canonical="/contact/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>Contact</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Contact' }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Contact Xuanbao Environmental Technology</h1>
-      <p>Tell us your gas conditions — we will respond with a material recommendation and quotation.</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Contact</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Contact Xuanbao Environmental Technology
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Tell us your gas conditions — we will respond with a material recommendation and quotation.
+    </p>
   </section>
 
-  <section class="page-body">
-    <div class="container">
-      <div class="grid-2">
-        <div>
-          <h2>Inquiry Form</h2>
-          <form class="form-grid" action="mailto:625534887@qq.com" method="get" enctype="text/plain">
-            <div><label for="name">Name *</label><input type="text" id="name" name="Name" required /></div>
-            <div><label for="company">Company</label><input type="text" id="company" name="Company" /></div>
-            <div><label for="email">Email *</label><input type="email" id="email" name="Email" required /></div>
-            <div><label for="industry">Industrial application</label>
-              <select id="industry" name="Industry">
-                <option value="">— Select —</option>
-                <option>Thermal Power</option>
-                <option>Steel</option>
-                <option>Sintering</option>
-                <option>Cement</option>
-                <option>Petrochemical</option>
-                <option>Chemical</option>
-                <option>Coating</option>
-                <option>Printing</option>
-                <option>Pharmaceutical</option>
-                <option>Automotive</option>
-                <option>Waste Incineration</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div><label for="target">Treatment target</label>
-              <select id="target" name="Target">
-                <option value="">— Select —</option>
-                <option>NOx</option>
-                <option>CO</option>
-                <option>VOC</option>
-                <option>Odor</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div><label for="flow">Gas flow (Nm³/h)</label><input type="text" id="flow" name="GasFlow" /></div>
-            <div><label for="conc">Inlet concentration (mg/Nm³ or ppm)</label><input type="text" id="conc" name="InletConcentration" /></div>
-            <div><label for="temp">Gas temperature (°C)</label><input type="text" id="temp" name="GasTemperature" /></div>
-            <div><label for="humidity">Humidity (%)</label><input type="text" id="humidity" name="Humidity" /></div>
-            <div><label for="so2">SO₂ (mg/Nm³)</label><input type="text" id="so2" name="SO2" /></div>
-            <div><label for="dust">Dust (mg/Nm³)</label><input type="text" id="dust" name="Dust" /></div>
-            <div class="full"><label for="voc">Main VOC components</label><input type="text" id="voc" name="VOCComponents" /></div>
-            <div class="full"><label for="existing">Existing system</label>
-              <select id="existing" name="ExistingSystem">
-                <option value="">— Select —</option>
-                <option>SCR</option>
-                <option>Adsorption</option>
-                <option>Catalytic oxidation</option>
-                <option>RTO</option>
-                <option>RCO</option>
-                <option>Activated carbon</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="full"><label for="service">Required service</label>
-              <select id="service" name="RequiredService">
-                <option>Product quotation</option>
-                <option>Material selection</option>
-                <option>Sample testing</option>
-                <option>Technical consultation</option>
-                <option>Replacement</option>
-                <option>OEM / customization</option>
-              </select>
-            </div>
-            <div class="full"><label for="message">Message</label><textarea id="message" name="Message" rows="4"></textarea></div>
-            <div class="full"><button class="btn btn-primary" type="submit">Submit Inquiry</button></div>
-          </form>
-        </div>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10">
+    <Features
+      columns={3}
+      items={[
+        {
+          title: 'Contact Person',
+          description: 'Ms. Chen (placeholder contact — verified details to follow)',
+          icon: 'tabler:user',
+        },
+        {
+          title: 'Phone / WhatsApp',
+          description: '+86 151 6936 1313',
+          icon: 'tabler:phone',
+        },
+        {
+          title: 'Email',
+          description: '625534887@qq.com',
+          icon: 'tabler:mail',
+        },
+      ]}
+    />
 
-        <div class="contact-side">
-          <div class="contact-box">
-            <h3>Company</h3>
-            <p><strong>Yancheng Xuanbao Environmental Technology Co., Ltd.</strong></p>
-            <p>Yancheng, Jiangsu, China</p>
+    <div class="mt-10 grid gap-10 md:grid-cols-5">
+      <div class="md:col-span-3">
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Inquiry Form</h2>
+        <p class="text-muted mb-6 text-sm">
+          This form opens your email client with the details pre-filled (placeholder mode — a server-side form can be
+          added later).
+        </p>
+        <form action="mailto:625534887@qq.com" method="get" enctype="text/plain" class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="name">Name *</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="name" name="Name" required />
           </div>
-          <div class="contact-box">
-            <h3>Contact Person</h3>
-            <p>Ms. Chen</p>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="company">Company</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="company" name="Company" />
           </div>
-          <div class="contact-box">
-            <h3>Phone</h3>
-            <p>+86 151 6936 1313</p>
-            <p class="muted">Alternate: +86 186 5338 3925 / +86 185 6029 9835</p>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="email">Email *</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="email" id="email" name="Email" required />
           </div>
-          <div class="contact-box">
-            <h3>Email</h3>
-            <p>625534887@qq.com</p>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="industry">Industrial application</label>
+            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="industry" name="Industry">
+              <option value="">— Select —</option>
+              <option>Thermal Power</option><option>Steel</option><option>Sintering</option><option>Cement</option>
+              <option>Petrochemical</option><option>Chemical</option><option>Coating</option><option>Printing</option>
+              <option>Pharmaceutical</option><option>Automotive</option><option>Waste Incineration</option><option>Other</option>
+            </select>
           </div>
-          <div class="callout">
-            <strong>24-hour response</strong>
-            <span>After-sales inquiries receive a response within 24 hours.</span>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="target">Treatment target</label>
+            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="target" name="Target">
+              <option value="">— Select —</option>
+              <option>NOx</option><option>CO</option><option>VOC</option><option>Odor</option><option>Other</option>
+            </select>
           </div>
-        </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="flow">Gas flow (Nm³/h)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="flow" name="GasFlow" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="conc">Inlet concentration (mg/Nm³ or ppm)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="conc" name="InletConcentration" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="temp">Gas temperature (°C)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="temp" name="GasTemperature" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="humidity">Humidity (%)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="humidity" name="Humidity" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="so2">SO₂ (mg/Nm³)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="so2" name="SO2" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="dust">Dust (mg/Nm³)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="dust" name="Dust" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="mb-1 block text-sm font-medium text-heading" for="voc">Main VOC components</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="voc" name="VOCComponents" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="mb-1 block text-sm font-medium text-heading" for="existing">Existing system</label>
+            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="existing" name="ExistingSystem">
+              <option value="">— Select —</option>
+              <option>SCR</option><option>Adsorption</option><option>Catalytic oxidation</option>
+              <option>RTO</option><option>RCO</option><option>Activated carbon</option><option>Other</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="mb-1 block text-sm font-medium text-heading" for="service">Required service</label>
+            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="service" name="RequiredService">
+              <option>Product quotation</option><option>Material selection</option><option>Sample testing</option>
+              <option>Technical consultation</option><option>Replacement</option><option>OEM / customization</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="mb-1 block text-sm font-medium text-heading" for="message">Message *</label>
+            <textarea class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" id="message" name="Message" rows="5" placeholder="Describe your gas conditions: flow, composition, concentration, temperature, humidity, SO₂, dust, target removal efficiency…" required></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <button class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-semibold text-black transition hover:bg-secondary" type="submit">
+              Send Inquiry
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Before You Write</h2>
+        <p class="text-muted mb-4">To speed up the technical assessment, include:</p>
+        <ul class="space-y-2 text-muted">
+          <li class="flex gap-2">Gas flow rate and inlet / target outlet concentration</li>
+          <li class="flex gap-2">Gas composition and main pollutants</li>
+          <li class="flex gap-2">Operating temperature and humidity</li>
+          <li class="flex gap-2">SO₂ and dust concentration</li>
+          <li class="flex gap-2">Existing reactor dimensions and current material type</li>
+          <li class="flex gap-2">Required service life</li>
+        </ul>
       </div>
     </div>
-  </section>
-</BaseLayout>
+  </div>
+</Layout>

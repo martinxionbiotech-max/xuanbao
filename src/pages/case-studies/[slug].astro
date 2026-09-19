@@ -1,6 +1,12 @@
 ---
-import { caseStudies } from '../../data/cases';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { caseStudies } from '~/data/cases';
+import { getPermalink } from '~/utils/permalinks';
 
 export function getStaticPaths() {
   return caseStudies.map((c) => ({ params: { slug: c.slug }, props: { caseStudy: c } }));
@@ -8,68 +14,52 @@ export function getStaticPaths() {
 
 const { caseStudy } = Astro.props;
 const cs = caseStudy as (typeof caseStudies)[number];
-const SITE = 'https://xuanbaoenvironment.com';
-
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Case Studies', item: SITE + '/case-studies/' },
-    { '@type': 'ListItem', position: 3, name: cs.name },
-  ],
-});
 ---
 
-<BaseLayout title={cs.seoTitle} description={cs.metaDescription} canonical={`/case-studies/${cs.slug}/`} ogType="article" schema={[breadcrumb]}>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li><a href="/case-studies/">Case Studies</a></li>
-        <li class="sep">/</li>
-        <li>{cs.name}</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={{ title: cs.seoTitle, description: cs.metaDescription, ignoreTitleTemplate: true }}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Case Studies', href: '/case-studies/' }, { text: cs.name }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>{cs.h1}</h1>
-      <p>{cs.intro}</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Case Study</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      {cs.h1}
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">{cs.intro}</p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <div class="callout">
-        <strong>Reported field test result — test date {cs.testDate}</strong>
-        <span set:html={cs.result} />
-      </div>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
+    <section class="rounded-xl border border-primary/30 bg-primary/10 p-5 md:p-6">
+      <strong class="text-heading">Reported field test result — test date {cs.testDate}</strong>
+      <p class="mt-2 text-muted leading-relaxed" set:html={cs.result} />
+    </section>
 
-      {cs.sections.map((sec) => (
-        <>
-          <h2>{sec.h2}</h2>
-          <p set:html={sec.body} />
-          {sec.list && <ul set:html={sec.list} />}
-        </>
-      ))}
+    {cs.sections.map((sec) => (
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">{sec.h2}</h2>
+        <p class="text-muted leading-relaxed" set:html={sec.body} />
+        {sec.list && <ul class="mt-4 grid gap-2 text-muted" set:html={sec.list} />}
+      </section>
+    ))}
 
-      <h2>Related products</h2>
-      <div class="grid-3">
-        {cs.products.map((p) => (
-          <div class="card">
-            <a class="title-link" href={p.href}>{p.name}</a>
-          </div>
-        ))}
-      </div>
+    <Features2
+      title="Related products"
+      columns={cs.products.length > 2 ? 3 : 2}
+      items={cs.products.map((p) => ({
+        title: p.name,
+        icon: 'tabler:box',
+        href: getPermalink(p.href.replace(/\/+$/, '')),
+      }))}
+    />
+  </div>
 
-      <div class="cta-band">
-        <h2>Discuss a similar application</h2>
-        <p>If you are planning CO or VOC control on a comparable stream, share your operating conditions with us.</p>
-        <a class="btn btn-primary" href="/contact/">Contact Us</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Contact Us', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Discuss a <span class="text-accent">similar application</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Planning CO or VOC control on a comparable stream? Share your operating conditions with us.
+    </Fragment>
+  </CallToAction>
+</Layout>

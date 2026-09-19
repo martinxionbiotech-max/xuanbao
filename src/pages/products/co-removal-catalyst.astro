@@ -1,9 +1,10 @@
 ---
-import { productBySlug } from '../../data/products';
-import ProductLayout from '../../layouts/ProductLayout.astro';
+import ProductDetail from '~/components/ProductDetail.astro';
+
+import { productBySlug } from '~/data/products';
 
 const product = productBySlug['co-removal-catalyst'];
 product.path = '/products/co-removal-catalyst/';
 ---
 
-<ProductLayout product={product} />
+<ProductDetail product={product} />

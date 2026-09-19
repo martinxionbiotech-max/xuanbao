@@ -1,75 +1,99 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'About Us', item: SITE + '/about/' },
-  ],
-});
+const metadata = {
+  title: 'About Xuanbao Environmental | Industrial Catalyst & Adsorbent Manufacturer',
+  description:
+    'Yancheng Xuanbao Environmental Technology Co., Ltd. — manufacturer of SCR DeNOx catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves and activated carbon.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="About Xuanbao Environmental | Industrial Catalyst & Adsorbent Manufacturer"
-  description="Yancheng Xuanbao Environmental Technology Co., Ltd. — manufacturer of SCR DeNOx catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves and activated carbon."
-  canonical="/about/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>About Us</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <Hero
+    tagline="About us"
+    image={{
+      src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Industrial manufacturing facility',
+    }}
+  >
+    <Fragment slot="title">
+      About <span class="text-accent">Xuanbao</span> Environmental Technology
+    </Fragment>
 
-  <section class="page-head">
-    <div class="container">
-      <h1>About Xuanbao Environmental Technology</h1>
-      <p>An industrial emission control materials company focused on R&amp;D, manufacturing, sales, testing and technical service.</p>
-    </div>
-  </section>
+    <Fragment slot="subtitle">
+      An industrial emission control materials company focused on R&amp;D, manufacturing, sales, testing and
+      technical service.
+    </Fragment>
+  </Hero>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <p>
-        Yancheng Xuanbao Environmental Technology Co., Ltd. is a company focused on the research, development,
-        production, sales, testing and technical service of industrial emission control materials.
-      </p>
+  <Content
+    tagline="Who we are"
+    title="Materials for Industrial Emission Control"
+    items={[
+      {
+        title: 'SCR DeNOx catalysts',
+        description: 'Plate-type and honeycomb V-Mo-Ti systems for industrial NOx removal.',
+      },
+      {
+        title: 'CO oxidation catalysts',
+        description: 'Precious-metal active systems for sintering, incineration and furnace exhaust.',
+      },
+      {
+        title: 'VOC oxidation catalysts',
+        description: 'Pt, Pt-Pd and non-precious-metal honeycomb catalysts for VOC destruction.',
+      },
+      {
+        title: 'Zeolite molecular sieves',
+        description: 'Modified 5A, 13X, ZSM-5 and NaY for adsorption, drying, separation and concentration.',
+      },
+      {
+        title: 'Activated carbon',
+        description: 'Honeycomb, columnar, coconut-shell and fiber adsorbents for gas-phase treatment.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Industrial equipment',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Applied across industry</h3>
+      Power, petrochemical, steel, metallurgy, cement, alumina, building materials, glass, ceramics, chemical,
+      pharmaceutical, automotive, coating, printing, industrial furnaces and waste incineration.
+    </Fragment>
+  </Content>
 
-      <h2>What We Do</h2>
-      <ul>
-        <li>SCR DeNOx catalysts</li>
-        <li>CO oxidation catalysts</li>
-        <li>VOC oxidation catalysts</li>
-        <li>Zeolite molecular sieves</li>
-        <li>Activated carbon</li>
-        <li>VOC adsorption-concentration materials</li>
-        <li>Related emission-control material solutions</li>
-      </ul>
+  <Features
+    columns={3}
+    tagline="Why us"
+    title="Vision · Mission · Values"
+    items={[
+      {
+        title: 'Vision',
+        description: 'To become a recognized high-tech environmental materials company in China and international markets.',
+        icon: 'tabler:eye',
+      },
+      {
+        title: 'Mission',
+        description: 'Supplying cleaner air through reliable environmental materials and technologies.',
+        icon: 'tabler:wind',
+      },
+      {
+        title: 'Values',
+        description: 'Integrity · Innovation · Teamwork · Perseverance.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
 
-      <h2>Industries Served</h2>
-      <p>
-        Our materials and technologies are applied in power, petrochemical, steel, metallurgy, cement, alumina,
-        building materials, glass, ceramics, chemical, pharmaceutical, automotive manufacturing, coating, printing,
-        industrial furnaces and waste incineration, among others.
-      </p>
-
-      <h2>Vision</h2>
-      <p>To become a recognized high-tech environmental materials company in China and international markets.</p>
-
-      <h2>Mission</h2>
-      <p>Supplying cleaner air through reliable environmental materials and technologies.</p>
-
-      <h2>Values</h2>
-      <p><strong>Integrity · Innovation · Teamwork · Perseverance</strong></p>
-
-      <p><a class="btn btn-dark" href="/r-and-d/">Explore Our R&amp;D Center</a></p>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction actions={[{ variant: 'primary', text: 'Explore Our R&D Center', href: '/r-and-d/', icon: 'tabler:arrow-right' }]}>
+    <Fragment slot="title">
+      Technology first. <span class="text-accent">Quality oriented.</span>
+    </Fragment>
+  </CallToAction>
+</Layout>

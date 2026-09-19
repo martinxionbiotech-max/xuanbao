@@ -1,47 +1,34 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'About Us', item: SITE + '/about/' },
-    { '@type': 'ListItem', position: 3, name: 'Quality & Testing' },
-  ],
-});
+const metadata = {
+  title: 'Quality Assurance & Testing',
+  description:
+    'QA/QC procedures for catalysts and adsorbents — incoming material, process, coating, forming and final inspection, batch traceability and performance testing.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Quality Assurance & Testing | Xuanbao Environmental"
-  description="QA/QC procedures for catalysts and adsorbents — incoming material, process, coating, forming and final inspection, batch traceability and performance testing."
-  canonical="/quality/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li><a href="/about/">About Us</a></li>
-        <li class="sep">/</li>
-        <li>Quality &amp; Testing</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'About Us', href: '/about/' }, { text: 'Quality & Testing' }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Quality Assurance &amp; Testing</h1>
-      <p>Quality as verifiable information — procedures, inspections and testing capabilities.</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">About Us</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Quality Assurance &amp; Testing
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Quality as verifiable information — procedures, inspections and testing capabilities.
+    </p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <h2>QA / QC Procedures</h2>
-      <ul class="checklist">
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">QA / QC Procedures</h2>
+      <ul class="grid gap-2 sm:grid-cols-2 text-muted">
         <li>Incoming material inspection</li>
         <li>Process inspection</li>
         <li>Coating inspection</li>
@@ -50,29 +37,36 @@ const breadcrumb = JSON.stringify({
         <li>Batch traceability</li>
         <li>Performance testing</li>
       </ul>
+    </section>
 
-      <h2>Testing Capabilities</h2>
-      <div class="grid-3">
-        <div class="card"><h3>Material Analysis</h3><p>BET, XRF, XRD and ICP characterization of raw materials and finished products.</p></div>
-        <div class="card"><h3>Adsorption Testing</h3><p>Dynamic adsorption testing against the target medium.</p></div>
-        <div class="card"><h3>Catalyst Testing</h3><p>Catalyst activity testing under simulated operating conditions.</p></div>
-        <div class="card"><h3>Mechanical Testing</h3><p>Compressive strength, wear and physical property testing.</p></div>
-        <div class="card"><h3>Third-Party Testing</h3><p>Combined with third-party testing or customer-specified requirements.</p></div>
-        <div class="card"><h3>Documentation</h3><p>Testing data and documentation provided with the product.</p></div>
-      </div>
+    <Features
+      columns={3}
+      title="Testing Capabilities"
+      items={[
+        { title: 'Material Analysis', description: 'BET, XRF, XRD and ICP characterization of raw materials and finished products.', icon: 'tabler:microscope' },
+        { title: 'Adsorption Testing', description: 'Dynamic adsorption testing against the target medium.', icon: 'tabler:wind' },
+        { title: 'Catalyst Testing', description: 'Catalyst activity testing under simulated operating conditions.', icon: 'tabler:flask' },
+        { title: 'Mechanical Testing', description: 'Compressive strength, wear and physical property testing.', icon: 'tabler:gauge' },
+        { title: 'Third-Party Testing', description: 'Combined with third-party testing or customer-specified requirements.', icon: 'tabler:certificate' },
+        { title: 'Documentation', description: 'Testing data and documentation provided with the product.', icon: 'tabler:file-check' },
+      ]}
+    />
 
-      <h2>Data Classification</h2>
-      <p>
-        On product pages we distinguish data types so engineering decisions are made on the right basis:
-      </p>
-      <ul>
-        <li><strong>Manufacturer specification</strong> — the product's defined property range.</li>
-        <li><strong>Typical value</strong> — laboratory or application performance under stated conditions.</li>
-        <li><strong>Test result</strong> — measured data from a specific test, with its conditions.</li>
-        <li><strong>Design value</strong> — engineering reference; actual performance depends on operating conditions.</li>
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Data Classification</h2>
+      <p class="text-muted mb-4">On product pages we distinguish data types so engineering decisions are made on the right basis:</p>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">Manufacturer specification</strong> — the product's defined property range.</li>
+        <li><strong class="text-heading">Typical value</strong> — laboratory or application performance under stated conditions.</li>
+        <li><strong class="text-heading">Test result</strong> — measured data from a specific test, with its conditions.</li>
+        <li><strong class="text-heading">Design value</strong> — engineering reference; actual performance depends on operating conditions.</li>
       </ul>
+    </section>
+  </div>
 
-      <p><a class="btn btn-dark" href="/service/">See Our Service Scope</a></p>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction actions={[{ variant: 'primary', text: 'See Our Service Scope', href: '/service/', icon: 'tabler:arrow-right' }]}>
+    <Fragment slot="title">
+      Verifiable quality, <span class="text-accent">end to end</span>
+    </Fragment>
+  </CallToAction>
+</Layout>

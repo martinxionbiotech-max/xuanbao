@@ -1,98 +1,76 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Products', item: SITE + '/products/' },
-  ],
-});
+const metadata = {
+  title: 'Industrial Emission Control Materials — Product Catalog',
+  description:
+    'Product catalog: SCR DeNOx catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves (5A, 13X, ZSM-5, NaY) and activated carbon (honeycomb, columnar, coconut shell, fiber).',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Industrial Emission Control Materials — Product Catalog | Xuanbao Environmental"
-  description="Product catalog: SCR DeNOx catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves (5A, 13X, ZSM-5, NaY) and activated carbon (honeycomb, columnar, coconut shell, fiber)."
-  canonical="/products/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>Products</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <HeroText
+    badge="Products"
+    title="Product Catalog"
+    subtitle="Catalysts and adsorbent materials for industrial emission control — specifications, application windows and customization."
+  />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Product Catalog</h1>
-      <p>Catalysts and adsorbent materials for industrial emission control — specifications, application windows and customization.</p>
-    </div>
-  </section>
+  <Features
+    columns={3}
+    tagline="By category"
+    title="Material families"
+    items={[
+      {
+        title: 'SCR DeNOx Catalysts',
+        description: 'NOx removal for industrial flue gas. Plate-type and honeycomb V-Mo-Ti systems.',
+        icon: 'tabler:wind',
+        callToAction: { text: 'View category', href: '/products/scr-denox-catalysts/' },
+      },
+      {
+        title: 'CO Oxidation Catalysts',
+        description: 'Carbon monoxide oxidation for sintering, incineration, furnaces and boilers.',
+        icon: 'tabler:flame',
+        callToAction: { text: 'View product', href: '/products/co-removal-catalyst/' },
+      },
+      {
+        title: 'VOC Catalysts',
+        description: 'Catalytic combustion catalysts for VOC oxidation — Pt, Pt-Pd and non-precious metal.',
+        icon: 'tabler:atom',
+        callToAction: { text: 'View category', href: '/products/voc-catalysts/' },
+      },
+      {
+        title: 'Zeolite Molecular Sieves',
+        description: 'Selective adsorption, drying, separation and VOC concentration — 5A, 13X, ZSM-5, NaY.',
+        icon: 'tabler:hexagons',
+        callToAction: { text: 'View category', href: '/products/zeolite-molecular-sieve/' },
+      },
+      {
+        title: 'Activated Carbon',
+        description: 'Gas-phase adsorption, solvent recovery and odor control — honeycomb, columnar, coconut shell, fiber.',
+        icon: 'tabler:layers-linked',
+        callToAction: { text: 'View category', href: '/products/activated-carbon/' },
+      },
+      {
+        title: 'Heating Components',
+        description: 'Heating elements for catalytic oxidation and desorption systems.',
+        icon: 'tabler:temperature',
+        callToAction: { text: 'View page', href: '/products/heating-tubes/' },
+      },
+    ]}
+  />
 
-  <section class="page-body">
-    <div class="container">
-      <div class="grid-2">
-        <div class="card">
-          <a class="title-link" href="/products/scr-denox-catalysts/"><h2 style="margin:0 0 6px;font-size:1.15rem">SCR DeNOx Catalysts</h2></a>
-          <p>NOx removal for industrial flue gas.</p>
-          <ul>
-            <li><a href="/products/scr-denox-catalysts/plate-type-scr-catalyst/">Plate-Type SCR Catalyst</a></li>
-            <li><a href="/products/scr-denox-catalysts/honeycomb-scr-catalyst/">Honeycomb SCR Catalyst</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <a class="title-link" href="/products/co-removal-catalyst/"><h2 style="margin:0 0 6px;font-size:1.15rem">CO Oxidation Catalysts</h2></a>
-          <p>Carbon monoxide oxidation for sintering, incineration, furnaces and boilers.</p>
-          <ul>
-            <li><a href="/products/co-removal-catalyst/">CO Oxidation Catalyst</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <a class="title-link" href="/products/voc-catalysts/"><h2 style="margin:0 0 6px;font-size:1.15rem">VOC Catalysts</h2></a>
-          <p>Catalytic combustion catalysts for VOC oxidation.</p>
-          <ul>
-            <li><a href="/products/voc-catalysts/platinum-catalyst/">Platinum Honeycomb Catalyst (YC-XB-A)</a></li>
-            <li><a href="/products/voc-catalysts/platinum-palladium-catalyst/">Platinum-Palladium Catalyst (YC-XB-B)</a></li>
-            <li><a href="/products/voc-catalysts/non-precious-metal-catalyst/">Non-Precious-Metal Catalyst (YC-XB-C)</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <a class="title-link" href="/products/zeolite-molecular-sieve/"><h2 style="margin:0 0 6px;font-size:1.15rem">Zeolite Molecular Sieves</h2></a>
-          <p>Selective adsorption, drying, separation and VOC concentration.</p>
-          <ul>
-            <li><a href="/products/zeolite-molecular-sieve/modified-5a/">Modified 5A</a></li>
-            <li><a href="/products/zeolite-molecular-sieve/modified-13x/">Modified 13X</a></li>
-            <li><a href="/products/zeolite-molecular-sieve/zsm-5/">ZSM-5</a></li>
-            <li><a href="/products/zeolite-molecular-sieve/nay/">NaY</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <a class="title-link" href="/products/activated-carbon/"><h2 style="margin:0 0 6px;font-size:1.15rem">Activated Carbon</h2></a>
-          <p>Gas-phase adsorption, solvent recovery and odor control.</p>
-          <ul>
-            <li><a href="/products/activated-carbon/honeycomb-activated-carbon/">Honeycomb Activated Carbon</a></li>
-            <li><a href="/products/activated-carbon/coal-based-columnar-carbon/">Coal-Based Columnar Carbon</a></li>
-            <li><a href="/products/activated-carbon/coconut-shell-carbon/">Coconut-Shell Carbon</a></li>
-            <li><a href="/products/activated-carbon/activated-carbon-fiber/">Activated Carbon Fiber</a></li>
-          </ul>
-        </div>
-        <div class="card">
-          <a class="title-link" href="/products/heating-tubes/"><h2 style="margin:0 0 6px;font-size:1.15rem">Heating Components</h2></a>
-          <p>Heating elements for catalytic oxidation and desorption systems.</p>
-        </div>
-      </div>
-
-      <div class="cta-band">
-        <h2>Not sure which material fits your gas conditions?</h2>
-        <p>Send us your flow rate, concentration, temperature and composition — we will recommend the right product family.</p>
-        <a class="btn btn-primary" href="/contact/">Ask for Material Selection</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Ask for Material Selection', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Not sure which material <span class="text-accent">fits your gas conditions?</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send us your flow rate, concentration, temperature and composition — we will recommend the right product family.
+    </Fragment>
+  </CallToAction>
+</Layout>

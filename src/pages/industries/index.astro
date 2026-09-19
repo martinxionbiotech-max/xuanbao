@@ -1,56 +1,47 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { industries } from '../../data/industries';
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Industries', item: SITE + '/industries/' },
-  ],
-});
+import { industries } from '~/data/industries';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Industries Served',
+  description:
+    'Emission control materials for thermal power, steel, sintering, cement, alumina, petrochemical, chemical, printing, coating, pharmaceutical, automotive and waste incineration.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Industries We Serve — Emission Control Materials | Xuanbao Environmental"
-  description="Emission control materials for thermal power, steel, sintering, cement, alumina, petrochemical, chemical, printing, coating, pharmaceutical, automotive and waste incineration."
-  canonical="/industries/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li>Industries</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <HeroText
+    badge="Industries"
+    title="Industries Served"
+    subtitle="Materials matched to each industry's emission problems — 12 sectors, each with its own operating conditions."
+  />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Industries</h1>
-      <p>Each industry page follows the same logic: emission problems → pollutants → operating conditions → technology selection → products.</p>
-    </div>
-  </section>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10">
+    <Features2
+      columns={4}
+      items={industries.map((ind) => ({
+        title: ind.name,
+        description: ind.metaDescription.split('.')[0] + '.',
+        icon: 'tabler:building-factory-2',
+        href: getPermalink('/industries/' + ind.slug),
+      }))}
+    />
+  </div>
 
-  <section class="page-body">
-    <div class="container">
-      <div class="grid-4">
-        {industries.map((ind) => (
-          <div class="card">
-            <a class="title-link" href={`/industries/${ind.slug}/`}><h3>{ind.name}</h3></a>
-          </div>
-        ))}
-      </div>
-
-      <div class="cta-band">
-        <h2>Don't see your industry?</h2>
-        <p>We serve other industrial gas treatment applications too — send us your operating conditions.</p>
-        <a class="btn btn-primary" href="/contact/">Contact Us</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Submit Operating Conditions', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Send us your <span class="text-accent">operating conditions</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Gas flow, concentration, temperature, humidity, SO₂ and dust — we will recommend the right catalyst or adsorbent system.
+    </Fragment>
+  </CallToAction>
+</Layout>

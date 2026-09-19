@@ -1,65 +1,65 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const SITE = 'https://xuanbaoenvironment.com';
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Products', item: SITE + '/products/' },
-    { '@type': 'ListItem', position: 3, name: 'Heating Components' },
-  ],
-});
+const metadata = {
+  title: 'Heating Components for Catalytic Systems',
+  description:
+    'Heating elements and components supporting catalytic oxidation and adsorption-desorption systems for industrial emission control.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Heating Components for Catalytic Systems | Xuanbao Environmental"
-  description="Heating elements and components supporting catalytic oxidation and adsorption-desorption systems for industrial emission control."
-  canonical="/products/heating-tubes/"
-  schema={[breadcrumb]}
->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li><a href="/products/">Products</a></li>
-        <li class="sep">/</li>
-        <li>Heating Components</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Products', href: '/products/' }, { text: 'Heating Components' }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>Heating Components</h1>
-      <p>Heating elements that support catalytic oxidation and adsorption-desorption systems.</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Products</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Heating Components
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Heating elements that support catalytic oxidation and adsorption-desorption systems.
+    </p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <h2>Overview</h2>
-      <p>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Overview</h2>
+      <p class="text-muted leading-relaxed">
         Catalytic oxidation and adsorption-concentration systems require controlled preheating and desorption
         heating. We supply heating components matched to the system design, including the temperature and power
         requirements of the catalyst bed or desorption stage.
       </p>
+    </section>
 
-      <h2>Applications</h2>
-      <ul>
-        <li>Preheating of VOC streams before catalytic oxidation</li>
-        <li>Desorption heating in zeolite adsorption concentration systems</li>
-        <li>Heat recovery loop components</li>
-      </ul>
+    <Features
+      title="Applications"
+      columns={3}
+      items={[
+        { title: 'Preheating', description: 'Preheating of VOC streams before catalytic oxidation.', icon: 'tabler:flame' },
+        { title: 'Desorption', description: 'Desorption heating in zeolite adsorption concentration systems.', icon: 'tabler:temperature' },
+        { title: 'Heat recovery', description: 'Heat recovery loop components.', icon: 'tabler:recycle' },
+      ]}
+    />
 
-      <div class="callout">
-        <strong>Specifications</strong>
-        <span>Heating component specifications are confirmed per project against flow rate, temperature requirement and power supply. Please share your system parameters for a quotation.</span>
-      </div>
+    <section class="rounded-xl border border-primary/30 bg-primary/10 p-5 text-muted leading-relaxed">
+      <strong class="text-heading">Specifications</strong>
+      <span class="block mt-2">
+        Heating component specifications are confirmed per project against flow rate, temperature requirement and
+        power supply. Please share your system parameters for a quotation.
+      </span>
+    </section>
+  </div>
 
-      <p><a class="btn btn-dark" href="/contact/">Request a Quotation</a></p>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction actions={[{ variant: 'primary', text: 'Request a Quotation', href: '/contact/', icon: 'tabler:arrow-right' }]}>
+    <Fragment slot="title">
+      Share your <span class="text-accent">system parameters</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Flow rate, target temperature and power supply — we will propose matched heating components.
+    </Fragment>
+  </CallToAction>
+</Layout>

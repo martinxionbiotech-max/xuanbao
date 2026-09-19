@@ -1,6 +1,7 @@
 ---
-import { products } from '../../data/products';
-import ProductLayout from '../../layouts/ProductLayout.astro';
+import ProductDetail from '~/components/ProductDetail.astro';
+
+import { products, type Product } from '~/data/products';
 
 export function getStaticPaths() {
   // Multi-segment product slugs only; single-segment pages (co-removal-catalyst, heating-tubes) are static files.
@@ -13,9 +14,8 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const p = product as (typeof products)[number];
+const p = product as Product;
 p.path = '/' + p.slug.join('/') + '/';
-p.crumbs = p.crumbs || [];
 ---
 
-<ProductLayout product={p} />
+<ProductDetail product={p} />

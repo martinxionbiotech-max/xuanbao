@@ -1,0 +1,17 @@
+---
+import { SITE } from 'astrowind:config';
+---
+
+<span class="flex items-center gap-2 self-center whitespace-nowrap">
+  <span
+    class="inline-flex h-8 w-8 items-center justify-center rounded-sm bg-primary text-base font-bold text-black dark:text-black"
+  >
+    X
+  </span>
+  <span class="text-xl md:text-lg font-bold tracking-tight text-gray-900 dark:text-white leading-none">
+    {SITE?.name?.replace('Environmental Technology', '')}
+    <span class="block text-[10px] font-medium uppercase tracking-[0.18em] text-primary dark:text-secondary">
+      Emission Control
+    </span>
+  </span>
+</span>

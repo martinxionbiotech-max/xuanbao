@@ -1,89 +1,54 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { categoryMeta } from '../../data/products';
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { categoryMeta, products } from '~/data/products';
+import { getPermalink } from '~/utils/permalinks';
 
 export function getStaticPaths() {
-  const cats = ['scr-denox-catalysts', 'voc-catalysts', 'zeolite-molecular-sieve', 'activated-carbon'];
-  return cats.map((cat) => ({ params: { category: cat }, props: { cat } }));
+  return Object.keys(categoryMeta).map((slug) => ({ params: { category: slug }, props: { slug } }));
 }
 
-const { cat } = Astro.props;
-const meta = categoryMeta[cat as keyof typeof categoryMeta];
-const SITE = 'https://xuanbaoenvironment.com';
-
-const children: Record<string, { name: string; href: string }[]> = {
-  'scr-denox-catalysts': [
-    { name: 'Plate-Type SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/plate-type-scr-catalyst/' },
-    { name: 'Honeycomb SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/honeycomb-scr-catalyst/' },
-  ],
-  'voc-catalysts': [
-    { name: 'Platinum Honeycomb Catalyst — YC-XB-A', href: '/products/voc-catalysts/platinum-catalyst/' },
-    { name: 'Platinum-Palladium Catalyst — YC-XB-B', href: '/products/voc-catalysts/platinum-palladium-catalyst/' },
-    { name: 'Non-Precious-Metal Catalyst — YC-XB-C', href: '/products/voc-catalysts/non-precious-metal-catalyst/' },
-  ],
-  'zeolite-molecular-sieve': [
-    { name: 'Modified 5A', href: '/products/zeolite-molecular-sieve/modified-5a/' },
-    { name: 'Modified 13X', href: '/products/zeolite-molecular-sieve/modified-13x/' },
-    { name: 'ZSM-5', href: '/products/zeolite-molecular-sieve/zsm-5/' },
-    { name: 'NaY', href: '/products/zeolite-molecular-sieve/nay/' },
-  ],
-  'activated-carbon': [
-    { name: 'Honeycomb Activated Carbon', href: '/products/activated-carbon/honeycomb-activated-carbon/' },
-    { name: 'Coal-Based Columnar Carbon', href: '/products/activated-carbon/coal-based-columnar-carbon/' },
-    { name: 'Coconut-Shell Carbon', href: '/products/activated-carbon/coconut-shell-carbon/' },
-    { name: 'Activated Carbon Fiber', href: '/products/activated-carbon/activated-carbon-fiber/' },
-  ],
-};
-
-const breadcrumb = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Products', item: SITE + '/products/' },
-    { '@type': 'ListItem', position: 3, name: meta.name },
-  ],
-});
+const { slug } = Astro.props;
+const meta = categoryMeta[slug];
+const inCategory = products.filter((p) => p.slug[0] === slug);
 ---
 
-<BaseLayout title={meta.seoTitle} description={meta.metaDescription} canonical={`/products/${cat}/`} schema={[breadcrumb]}>
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li class="sep">/</li>
-        <li><a href="/products/">Products</a></li>
-        <li class="sep">/</li>
-        <li>{meta.name}</li>
-      </ol>
-    </div>
-  </nav>
+<Layout metadata={{ title: meta.seoTitle, description: meta.metaDescription, ignoreTitleTemplate: true }}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Products', href: '/products/' }, { text: meta.name }]} />
 
-  <section class="page-head">
-    <div class="container">
-      <h1>{meta.h1}</h1>
-      <p>{meta.intro}</p>
-    </div>
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Products</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      {meta.h1}
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">{meta.intro}</p>
+    <p class="mt-3 max-w-3xl text-muted">{meta.overview}</p>
   </section>
 
-  <section class="page-body">
-    <div class="container prose-narrow">
-      <p>{meta.overview}</p>
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10">
+    <Features2
+      title="Products in this category"
+      columns={inCategory.length > 2 ? 3 : 2}
+      items={inCategory.map((p) => ({
+        title: p.name,
+        description: p.intro,
+        icon: 'tabler:box',
+        href: getPermalink('/products/' + p.slug.join('/')),
+      }))}
+    />
+  </div>
 
-      <h2>Products in this family</h2>
-      <div class="grid-3">
-        {children[cat as string].map((c) => (
-          <div class="card">
-            <a class="title-link" href={c.href}>{c.name}</a>
-          </div>
-        ))}
-      </div>
-
-      <div class="cta-band">
-        <h2>Discuss your operating conditions</h2>
-        <p>We will recommend the right {meta.name.toLowerCase()} and specification for your gas conditions.</p>
-        <a class="btn btn-primary" href="/contact/">Request a Technical Consultation</a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Request a Quotation', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Choose the right <span class="text-accent">material for your conditions</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Share your gas composition and operating parameters — we will confirm the right model and customization.
+    </Fragment>
+  </CallToAction>
+</Layout>
