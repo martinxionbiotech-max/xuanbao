@@ -6,9 +6,9 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'About Xuanbao Environmental | Industrial Catalyst & Adsorbent Manufacturer',
+  title: 'About Xuanbao Environmental | Activated Carbon & Industrial Materials',
   description:
-    'Yancheng Xuanbao Environmental Technology Co., Ltd. — manufacturer of SCR DeNOx catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves and activated carbon.',
+    'Yancheng Xuanbao Environmental Technology Co., Ltd. develops and manufactures environmental materials and adsorption products for industrial purification and emission-control applications.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -26,52 +26,89 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      An industrial emission control materials company focused on R&amp;D, manufacturing, sales, testing and
-      technical service.
+      Yancheng Xuanbao Environmental Technology Co., Ltd. develops and manufactures environmental materials and
+      adsorption products for industrial purification and emission-control applications.
     </Fragment>
   </Hero>
 
   <Content
-    tagline="Who we are"
-    title="Materials for Industrial Emission Control"
+    tagline="Company overview"
+    title="One Platform, Multiple Material Systems"
     items={[
       {
-        title: 'SCR DeNOx catalysts',
-        description: 'Plate-type and honeycomb V-Mo-Ti systems for industrial NOx removal.',
+        title: 'Activated carbon',
+        description: 'Coconut-shell and coal-based carbon in honeycomb, columnar and fiber forms for gas treatment, purification and process applications.',
       },
       {
-        title: 'CO oxidation catalysts',
-        description: 'Precious-metal active systems for sintering, incineration and furnace exhaust.',
-      },
-      {
-        title: 'VOC oxidation catalysts',
-        description: 'Pt, Pt-Pd and non-precious-metal honeycomb catalysts for VOC destruction.',
+        title: 'Industrial catalysts',
+        description: 'SCR DeNOx catalysts (plate and honeycomb), CO oxidation catalysts and VOC oxidation catalysts.',
       },
       {
         title: 'Zeolite molecular sieves',
-        description: 'Modified 5A, 13X, ZSM-5 and NaY for adsorption, drying, separation and concentration.',
+        description: 'Modified 5A, 13X, ZSM-5 and NaY for adsorption, drying, separation and VOC concentration.',
       },
       {
-        title: 'Activated carbon',
-        description: 'Honeycomb, columnar, coconut-shell and fiber adsorbents for gas-phase treatment.',
+        title: 'Engineering support',
+        description: 'Material selection, testing and lifecycle support built around the customer’s operating conditions.',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial equipment',
+      alt: 'Industrial material production equipment',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Applied across industry</h3>
-      Power, petrochemical, steel, metallurgy, cement, alumina, building materials, glass, ceramics, chemical,
-      pharmaceutical, automotive, coating, printing, industrial furnaces and waste incineration.
+      Power, steel, sintering, cement, alumina, petrochemical, chemical, printing, coating, pharmaceutical,
+      automotive manufacturing and waste incineration.
     </Fragment>
   </Content>
 
   <Features
+    id="facts"
+    tagline="Company facts"
+    title="Verified Company Information"
+    subtitle="Facts published below are company-provided information. Additional details such as founding year, production capacity, certifications and references are available on request and are only published once verified."
     columns={3}
-    tagline="Why us"
+    items={[
+      {
+        title: 'Legal name',
+        description: 'Yancheng Xuanbao Environmental Technology Co., Ltd. — abbreviated Xuanbao Environmental.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Location',
+        description: 'Yancheng, Jiangsu, China.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Products',
+        description: 'Activated carbon, SCR / CO / VOC catalysts and zeolite molecular sieves.',
+        icon: 'tabler:packages',
+      },
+      {
+        title: 'Industries served',
+        description: 'Power, steel, cement, alumina, petrochemical, chemical, coating, printing, pharmaceutical, automotive and waste incineration.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Knowledge center',
+        description: 'Technical documentation published at data.xuanbaoenvironment.com.',
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Contact',
+        description: 'International Sales & Technical Support — WhatsApp +86 151 6936 1313, 625534887@qq.com.',
+        icon: 'tabler:phone',
+      },
+    ]}
+  />
+
+  <Features
+    tagline="Company direction"
     title="Vision · Mission · Values"
+    subtitle="Statements as published by the company."
+    columns={3}
     items={[
       {
         title: 'Vision',

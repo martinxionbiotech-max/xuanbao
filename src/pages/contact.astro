@@ -4,9 +4,9 @@ import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
-  title: 'Contact Xuanbao Environmental | Request a Quotation',
+  title: 'Contact Xuanbao Environmental | Request Material Support',
   description:
-    'Contact Yancheng Xuanbao Environmental Technology Co., Ltd. for SCR catalyst, CO catalyst, VOC catalyst, zeolite molecular sieve and activated carbon inquiries.',
+    'Request activated carbon or industrial treatment material support: send your application, operating conditions and treatment target to Yancheng Xuanbao Environmental Technology Co., Ltd.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -17,10 +17,11 @@ const metadata = {
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
     <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Contact</p>
     <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
-      Contact Xuanbao Environmental Technology
+      Request Activated Carbon or Industrial Treatment Material Support
     </h1>
     <p class="mt-4 max-w-3xl text-lg text-muted">
-      Tell us your gas conditions — we will respond with a material recommendation and quotation.
+      Tell us about your application and operating conditions. Our team can review the available information and
+      discuss a preliminary material-selection approach.
     </p>
   </section>
 
@@ -29,8 +30,8 @@ const metadata = {
       columns={3}
       items={[
         {
-          title: 'Contact Person',
-          description: 'Ms. Chen (placeholder contact — verified details to follow)',
+          title: 'Contact',
+          description: 'International Sales & Technical Support',
           icon: 'tabler:user',
         },
         {
@@ -50,8 +51,7 @@ const metadata = {
       <div class="md:col-span-3">
         <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Inquiry Form</h2>
         <p class="text-muted mb-6 text-sm">
-          This form opens your email client with the details pre-filled (placeholder mode — a server-side form can be
-          added later).
+          This form opens your email client with the details pre-filled and sends them to 625534887@qq.com.
         </p>
         <form action="mailto:625534887@qq.com" method="get" enctype="text/plain" class="grid gap-4 sm:grid-cols-2">
           <div>
@@ -67,28 +67,45 @@ const metadata = {
             <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="email" id="email" name="Email" required />
           </div>
           <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="country">Country</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="country" name="Country" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="medium">Medium</label>
+            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="medium" name="Medium">
+              <option value="">— Select —</option>
+              <option>Gas</option><option>Liquid</option><option>Both</option>
+            </select>
+          </div>
+          <div>
             <label class="mb-1 block text-sm font-medium text-heading" for="industry">Industrial application</label>
             <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="industry" name="Industry">
               <option value="">— Select —</option>
               <option>Thermal Power</option><option>Steel</option><option>Sintering</option><option>Cement</option>
               <option>Petrochemical</option><option>Chemical</option><option>Coating</option><option>Printing</option>
-              <option>Pharmaceutical</option><option>Automotive</option><option>Waste Incineration</option><option>Other</option>
+              <option>Pharmaceutical</option><option>Automotive</option><option>Waste Incineration</option>
+              <option>Water Treatment</option><option>Food & Beverage</option><option>Other</option>
             </select>
           </div>
           <div>
             <label class="mb-1 block text-sm font-medium text-heading" for="target">Treatment target</label>
             <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="target" name="Target">
               <option value="">— Select —</option>
-              <option>NOx</option><option>CO</option><option>VOC</option><option>Odor</option><option>Other</option>
+              <option>NOx</option><option>CO</option><option>VOC</option><option>Odor</option>
+              <option>Organic contaminant</option><option>Decolorization</option><option>Other</option>
             </select>
           </div>
           <div>
-            <label class="mb-1 block text-sm font-medium text-heading" for="flow">Gas flow (Nm³/h)</label>
-            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="flow" name="GasFlow" />
+            <label class="mb-1 block text-sm font-medium text-heading" for="flow">Flow rate (Nm³/h or m³/h)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="flow" name="FlowRate" />
           </div>
           <div>
             <label class="mb-1 block text-sm font-medium text-heading" for="conc">Inlet concentration (mg/Nm³ or ppm)</label>
             <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="conc" name="InletConcentration" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="outconc">Target outlet concentration</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="outconc" name="TargetOutletConcentration" />
           </div>
           <div>
             <label class="mb-1 block text-sm font-medium text-heading" for="temp">Gas temperature (°C)</label>
@@ -106,17 +123,21 @@ const metadata = {
             <label class="mb-1 block text-sm font-medium text-heading" for="dust">Dust (mg/Nm³)</label>
             <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="dust" name="Dust" />
           </div>
-          <div class="sm:col-span-2">
-            <label class="mb-1 block text-sm font-medium text-heading" for="voc">Main VOC components</label>
-            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="voc" name="VOCComponents" />
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="ph">pH (for liquid applications)</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="ph" name="pH" />
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-medium text-heading" for="life">Required service life</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="life" name="RequiredServiceLife" />
           </div>
           <div class="sm:col-span-2">
-            <label class="mb-1 block text-sm font-medium text-heading" for="existing">Existing system</label>
-            <select class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default focus:border-primary focus:outline-none" id="existing" name="ExistingSystem">
-              <option value="">— Select —</option>
-              <option>SCR</option><option>Adsorption</option><option>Catalytic oxidation</option>
-              <option>RTO</option><option>RCO</option><option>Activated carbon</option><option>Other</option>
-            </select>
+            <label class="mb-1 block text-sm font-medium text-heading" for="voc">Main pollutant / VOC components</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="voc" name="MainPollutants" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="mb-1 block text-sm font-medium text-heading" for="existing">Existing equipment / current material</label>
+            <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="existing" name="ExistingEquipment" placeholder="e.g. SCR reactor, carbon bed, RTO, none" />
           </div>
           <div class="sm:col-span-2">
             <label class="mb-1 block text-sm font-medium text-heading" for="service">Required service</label>
@@ -127,7 +148,7 @@ const metadata = {
           </div>
           <div class="sm:col-span-2">
             <label class="mb-1 block text-sm font-medium text-heading" for="message">Message *</label>
-            <textarea class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" id="message" name="Message" rows="5" placeholder="Describe your gas conditions: flow, composition, concentration, temperature, humidity, SO₂, dust, target removal efficiency…" required></textarea>
+            <textarea class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" id="message" name="Message" rows="5" placeholder="Describe your application and operating conditions: target contaminant, flow, concentration, temperature, humidity, existing equipment…" required></textarea>
           </div>
           <div class="sm:col-span-2">
             <button class="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-semibold text-black transition hover:bg-secondary" type="submit">
@@ -141,11 +162,11 @@ const metadata = {
         <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Before You Write</h2>
         <p class="text-muted mb-4">To speed up the technical assessment, include:</p>
         <ul class="space-y-2 text-muted">
-          <li class="flex gap-2">Gas flow rate and inlet / target outlet concentration</li>
-          <li class="flex gap-2">Gas composition and main pollutants</li>
-          <li class="flex gap-2">Operating temperature and humidity</li>
-          <li class="flex gap-2">SO₂ and dust concentration</li>
-          <li class="flex gap-2">Existing reactor dimensions and current material type</li>
+          <li class="flex gap-2">Gas or liquid, flow rate and inlet / target outlet concentration</li>
+          <li class="flex gap-2">Composition and main pollutants or contaminants</li>
+          <li class="flex gap-2">Operating temperature, humidity and pH where relevant</li>
+          <li class="flex gap-2">SO₂ and dust concentration for gas streams</li>
+          <li class="flex gap-2">Existing reactor / vessel dimensions and current material type</li>
           <li class="flex gap-2">Required service life</li>
         </ul>
       </div>

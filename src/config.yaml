@@ -1,5 +1,5 @@
 site:
-  name: Xuanbao Environmental Technology
+  name: Xuanbao Environmental
   site: 'https://xuanbaoenvironment.com'
   base: '/'
   trailingSlash: false
@@ -7,9 +7,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Xuanbao Environmental Technology — Industrial Emission Control Catalysts
-    template: '%s — Xuanbao Environmental Technology'
-  description: 'Manufacturer of SCR DeNOx catalysts, CO oxidation catalysts, VOC oxidation catalysts, zeolite molecular sieves and activated carbon for industrial emission control.'
+    default: 'Activated Carbon & Industrial Adsorption Materials | Xuanbao Environmental'
+    template: '%s | Xuanbao Environmental'
+  description: 'Manufacturer of activated carbon, adsorption materials and industrial emission-control materials for gas treatment, water purification and industrial process applications.'
   robots:
     index: true
     follow: true

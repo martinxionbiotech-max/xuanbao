@@ -24,6 +24,11 @@ prepare technical assessments and quotations.
 This website does not use advertising cookies or third-party trackers. Where analytics
 are enabled, they are used to understand aggregate site usage.
 
+## Hosting & Infrastructure
+
+This website is a static site hosted on Cloudflare Pages. The hosting provider may
+process technical access logs for security and performance purposes.
+
 ## Sharing
 
 We do not sell or rent personal information. We share information only as necessary to

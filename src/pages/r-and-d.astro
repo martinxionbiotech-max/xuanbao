@@ -2,69 +2,98 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'R&D Center — Catalyst & Adsorbent Development',
+  title: 'Activated Carbon & Catalyst R&D | Xuanbao Environmental',
   description:
-    'Xuanbao R&D center: catalyst formulation, coating, honeycomb preparation, zeolite modification, adsorption evaluation and process optimization with BET, XRF, XRD, ICP and dynamic simulation testing.',
+    'R&D at Xuanbao: activated carbon development and modification, SCR / CO / VOC catalyst development, BET, XRF, XRD, ICP characterization and dynamic adsorption testing.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'About Us', href: '/about/' }, { text: 'R&D Center' }]} />
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'About Us', href: '/about/' }, { text: 'R&D' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
     <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">About Us</p>
     <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
-      R&amp;D Center
+      Research &amp; Development
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">Technology First. Quality Oriented.</p>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Xuanbao’s R&amp;D activities focus on the development, modification, characterization and performance
+      evaluation of activated carbon, adsorption materials and industrial catalysts.
+    </p>
   </section>
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
     <section>
-      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">R&amp;D Directions</h2>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Material Development</h2>
       <p class="text-muted mb-4 leading-relaxed">
-        From the early days of the company, R&amp;D has been central to how we work. The R&amp;D center continuously
-        develops, modifies, tests and optimizes catalysts and adsorption materials.
+        Activated carbon and adsorption materials are developed and modified per application — the raw material,
+        activation conditions, pore structure and surface chemistry are adjusted to the target contaminant and
+        operating conditions rather than sold as a single catalogue product.
       </p>
       <ul class="grid gap-2 sm:grid-cols-2 text-muted">
-        <li>Catalyst formulation</li>
-        <li>Catalyst coating</li>
-        <li>Honeycomb catalyst preparation</li>
-        <li>SCR catalyst development</li>
-        <li>CO oxidation catalyst development</li>
+        <li>Activated carbon formulation</li>
+        <li>Activation process development</li>
+        <li>Pore-structure regulation</li>
+        <li>Modification and surface treatment</li>
         <li>Zeolite modification</li>
-        <li>Adsorption performance evaluation</li>
         <li>VOC adsorption materials</li>
         <li>Thermal regeneration</li>
-        <li>Material characterization</li>
-        <li>Process optimization</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Catalyst Development</h2>
+      <ul class="grid gap-2 sm:grid-cols-2 text-muted">
+        <li>SCR catalyst formulation</li>
+        <li>CO oxidation catalyst development</li>
+        <li>VOC oxidation catalyst formulation</li>
+        <li>Catalyst coating and washcoat preparation</li>
+        <li>Honeycomb catalyst preparation</li>
       </ul>
     </section>
 
     <Features
       columns={3}
-      title="Analytical & Testing Capabilities"
+      title="Material Characterization"
+      subtitle="Characterization methods used in our laboratory — capabilities as stated on this site."
       items={[
         { title: 'BET', description: 'Specific surface area and pore structure analysis of materials.', icon: 'tabler:chart-area' },
         { title: 'XRF', description: 'Elemental and composition analysis of materials.', icon: 'tabler:radar-2' },
         { title: 'XRD', description: 'Crystal phase and crystal structure analysis.', icon: 'tabler:prism' },
         { title: 'ICP', description: 'Elemental composition and metal content analysis.', icon: 'tabler:flask-2' },
         {
-          title: 'Dynamic Simulation',
-          description: 'Dynamic simulation testing against the target gas or adsorption medium before batch production.',
+          title: 'Dynamic Testing',
+          description: 'Dynamic simulation testing against the target gas or adsorption medium under controlled conditions.',
           icon: 'tabler:wind',
         },
         {
           title: 'Performance Evaluation',
-          description: 'Catalyst activity, adsorption capacity and mechanical strength testing.',
+          description: 'Adsorption capacity, catalyst activity, mechanical strength and wear resistance testing.',
           icon: 'tabler:gauge',
         },
       ]}
     />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">R&amp;D Workflow</h2>
+      <Steps
+        items={[
+          { title: 'Application requirement', description: 'Target contaminant, conditions and performance goals from the customer.' },
+          { title: 'Material selection', description: 'Candidate raw materials, formulations and forms.' },
+          { title: 'Formulation / modification', description: 'Adjustment of composition, activation and surface chemistry.' },
+          { title: 'Laboratory characterization', description: 'BET, XRF, XRD, ICP and pore analysis of the candidate material.' },
+          { title: 'Performance testing', description: 'Adsorption capacity or catalyst activity under simulated conditions.' },
+          { title: 'Optimization', description: 'Iteration until the target performance is reached in the laboratory.' },
+          { title: 'Pilot / field evaluation', description: 'Verification under real or representative operating conditions.' },
+          { title: 'Production', description: 'Transfer to batch production with process control.' },
+        ]}
+      />
+    </section>
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Cooperation</h2>

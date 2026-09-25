@@ -5,9 +5,9 @@ import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Manufacturing & Process Control',
+  title: 'Manufacturing & Process Control | Xuanbao Environmental',
   description:
-    'Manufacturing processes for plate-type SCR catalysts, honeycomb SCR catalysts and VOC honeycomb catalysts — from raw materials to module assembly.',
+    'Manufacturing processes for plate-type SCR catalysts, honeycomb SCR catalysts and VOC honeycomb catalysts — from raw material control to module assembly, with process inspection and batch traceability.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -20,10 +20,29 @@ const metadata = {
     <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
       Manufacturing &amp; Process Control
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">Controlled processes from raw materials to assembled catalyst modules.</p>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Controlled processes from raw materials to assembled modules. Not all product families share the same
+      production line — each material system follows its own verified process.
+    </p>
   </section>
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">General Process Stages</h2>
+      <Steps
+        items={[
+          { title: 'Raw material control', description: 'Incoming material inspection before production release.' },
+          { title: 'Material preparation', description: 'Crushing, mixing and preparation according to the product recipe.' },
+          { title: 'Forming', description: 'Extrusion, rolling, shearing or shaping into the target geometry.' },
+          { title: 'Activation / coating / calcination', description: 'The process step that develops the material’s active or adsorptive properties.' },
+          { title: 'Drying', description: 'Controlled moisture removal to product specification.' },
+          { title: 'Cutting / assembly', description: 'Cutting to size and assembly into units and modules.' },
+          { title: 'Final inspection', description: 'Product testing and release against the specification.' },
+          { title: 'Batch traceability', description: 'Batch records retained for each shipment.' },
+        ]}
+      />
+    </section>
+
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">SCR Plate-Type Catalyst Process</h2>
       <Steps
@@ -62,8 +81,9 @@ const metadata = {
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Process Control</h2>
       <p class="text-muted leading-relaxed">
         Production processes are supported by QA/QC procedures — incoming material inspection, process inspection,
-        coating and forming inspection, final product inspection and batch traceability. See the quality page for
-        details.
+        coating and forming inspection, final product inspection and batch traceability. Detailed production
+        information for specific product families is shared with customers on request and under confidentiality
+        agreements where appropriate.
       </p>
     </section>
   </div>

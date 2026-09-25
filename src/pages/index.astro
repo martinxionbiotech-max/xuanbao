@@ -6,41 +6,39 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Note from '~/components/widgets/Note.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Industrial Catalysts & VOC Emission Control Materials Manufacturer',
+  title: 'Activated Carbon & Industrial Adsorption Materials | Xuanbao Environmental',
   description:
-    'Xuanbao Environmental Technology manufactures SCR denitrification catalysts, CO oxidation catalysts, VOC catalysts, zeolite molecular sieves and activated carbon for industrial emission control applications.',
+    'Manufacturer of activated carbon, adsorption materials and industrial emission-control materials for gas treatment, water purification and industrial process applications.',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Industrial Emission Control Materials"
+    tagline="Yancheng Xuanbao Environmental Technology Co., Ltd."
     actions={[
-      { variant: 'primary', text: 'Request a Technical Assessment', href: '/contact/', icon: 'tabler:arrow-right' },
-      { text: 'Explore Products', href: '/products/' },
+      { variant: 'primary', text: 'Explore Activated Carbon Products', href: '/products/activated-carbon/', icon: 'tabler:arrow-right' },
+      { text: 'Tell Us Your Application', href: '/contact/' },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial plant pipes',
+      alt: 'Industrial gas treatment installation',
     }}
   >
     <Fragment slot="title">
-      Catalysts &amp; adsorbent materials for <span class="text-accent">cleaner industrial gas</span>
+      Activated Carbon &amp; <span class="text-accent">Industrial Adsorption Materials</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="font-semibold">SCR DeNOx Catalysts · CO Oxidation Catalysts · VOC Catalysts · Zeolite Molecular
-      Sieves · Activated Carbon</span> — developed, manufactured and tested by Yancheng Xuanbao Environmental
-      Technology for power, steel, petrochemical, chemical, building materials, coating, printing, pharmaceutical
-      and other industrial customers. We select and customize catalyst and adsorbent systems based on your pollutant
-      composition, gas temperature, concentration, flow rate, humidity, dust and operating conditions.
+      Xuanbao Environmental manufactures activated carbon, adsorption materials and industrial emission-control
+      materials for gas treatment, water purification and process applications. From raw-material selection and
+      material development to manufacturing, testing and technical support, we help industrial customers select
+      materials according to their operating conditions and performance requirements.
     </Fragment>
   </Hero>
 
@@ -54,169 +52,233 @@ const metadata = {
   />
 
   <Features
-    id="products"
-    tagline="What we supply"
-    title="Industrial Emission Control Materials"
-    subtitle="Five material families covering the main catalytic and adsorption routes in industrial gas treatment."
-    columns={3}
+    id="business-areas"
+    tagline="Business areas"
+    title="Materials for Different Industrial Applications"
+    subtitle="Two connected directions, one material platform: activated carbon, adsorption materials and catalysts selected by application."
+    columns={2}
     items={[
       {
-        title: 'SCR DeNOx Catalysts',
+        title: 'Environmental & Gas Treatment',
         description:
-          'NOx removal for industrial flue gas — plate-type and honeycomb V-Mo-Ti systems for thermal power, steel, cement, alumina and high-dust exhaust.',
+          'Activated carbon and catalytic materials for VOC adsorption, solvent vapor control, odor control, industrial waste gas treatment and gas purification — plus CO oxidation, SCR DeNOx and VOC catalytic oxidation catalysts for flue gas and exhaust streams.',
         icon: 'tabler:wind',
-        callToAction: { text: 'View SCR catalysts', href: '/products/scr-denox-catalysts/' },
+        callToAction: { text: 'Explore Gas Treatment Applications', href: '/industries/' },
       },
       {
-        title: 'CO Oxidation Catalysts',
+        title: 'Water & Process Purification',
         description:
-          'Precious-metal active systems designed for different gas conditions, covering a wide temperature range with SO₂, water and dust tolerance.',
-        icon: 'tabler:flame',
-        callToAction: { text: 'View CO catalyst', href: '/products/co-removal-catalyst/' },
-      },
-      {
-        title: 'VOC Catalysts',
-        description:
-          'Pt, Pt-Pd and non-precious-metal composite oxide honeycomb catalysts for catalytic combustion of VOCs.',
-        icon: 'tabler:atom',
-        callToAction: { text: 'View VOC catalysts', href: '/products/voc-catalysts/' },
-      },
-      {
-        title: 'Zeolite Molecular Sieves',
-        description:
-          'Modified 5A, 13X, ZSM-5 and NaY for VOC adsorption concentration, gas drying, separation and purification.',
-        icon: 'tabler:hexagons',
-        callToAction: { text: 'View molecular sieves', href: '/products/zeolite-molecular-sieve/' },
-      },
-      {
-        title: 'Activated Carbon',
-        description:
-          'Honeycomb, columnar, coconut-shell and fiber forms for gas-phase adsorption, solvent recovery and odor control.',
-        icon: 'tabler:layers-linked',
-        callToAction: { text: 'View activated carbon', href: '/products/activated-carbon/' },
-      },
-      {
-        title: 'Heating Components',
-        description: 'Heating elements supporting catalytic oxidation and adsorption-desorption systems.',
-        icon: 'tabler:temperature',
-        callToAction: { text: 'View heating components', href: '/products/heating-tubes/' },
+          'Activated carbon and adsorption materials for water treatment, wastewater polishing, decolorization, chemical purification, pharmaceutical processing, food and beverage purification and selected industrial process applications.',
+        icon: 'tabler:droplet',
+        callToAction: { text: 'Explore Purification Applications', href: '/products/activated-carbon/coconut-shell-carbon/' },
       },
     ]}
   />
 
-  <Content
-    isReversed
-    tagline="Who we are"
-    title="From Material Development to Industrial Application"
+  <Features
+    id="materials"
+    tagline="By raw material"
+    title="Activated Carbon by Raw Material"
+    subtitle="Activated carbon performance depends on raw material, activation method, pore structure, physical form and target adsorbate. We supply different carbon-material systems for different industrial requirements."
+    columns={3}
     items={[
       {
-        title: 'Technical R&D',
+        title: 'Coconut Shell Activated Carbon',
         description:
-          'Continuous investment in catalyst and adsorbent development with laboratory capability and cooperation with universities and research institutes.',
+          'Commonly associated with a highly microporous structure, used where adsorption of suitable small molecules and high surface-area characteristics are required. Actual suitability depends on product grade and operating conditions.',
+        icon: 'tabler:nut',
+        callToAction: { text: 'View Coconut Shell Activated Carbon', href: '/products/activated-carbon/coconut-shell-carbon/' },
       },
       {
-        title: 'Customized Materials',
+        title: 'Coal-Based Activated Carbon',
         description:
-          'We select and optimize materials by gas composition, concentration, flow rate, temperature, humidity, dust, SO₂ and target removal efficiency.',
+          'Produced from selected coal through carbonization and activation. Supplied in columnar form for gas purification and industrial packed-bed adsorption; selection depends on the target contaminant and operating conditions.',
+        icon: 'tabler:layers-subtract',
+        callToAction: { text: 'View Coal-Based Activated Carbon', href: '/products/activated-carbon/coal-based-columnar-carbon/' },
       },
       {
-        title: 'Experimental Verification',
+        title: 'Other Material Systems',
         description:
-          'Before batch production, molecular sieve products can be dynamically simulated against the target medium; formulation and forming are adjusted from test results.',
-      },
-      {
-        title: 'Quality Control',
-        description:
-          'QA/QC procedures cover production process and product quality, with third-party or customer-specified testing available.',
+          'Additional raw-material systems — for example fruit-shell, bamboo or wood-based carbons — can be discussed for specific applications. We confirm supply and recommend the system from the application, not the other way around.',
+        icon: 'tabler:packages',
+        callToAction: { text: 'Discuss Material Options', href: '/contact/' },
       },
     ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Engineer working in industrial laboratory',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Industrial exhaust is never identical</h3>
-      Material selection must follow the actual gas conditions — that is how we work.
-    </Fragment>
-  </Content>
+  />
 
-  <Steps
-    title="Technology-driven environmental materials"
+  <Features
+    id="forms"
+    tagline="By product form"
+    title="Activated Carbon Forms"
+    subtitle="Raw material and physical form are two separate dimensions of selection. Granular and powdered forms can additionally be discussed for specific applications."
+    columns={3}
     items={[
       {
-        title: 'R&D & testing',
-        description: 'BET, XRF, XRD, ICP characterization, zeolite synthesis, modification treatment and performance evaluation.',
-        icon: 'tabler:microscope',
+        title: 'Honeycomb Activated Carbon',
+        description: 'For gas-treatment systems requiring low pressure drop and structured contact surfaces.',
+        icon: 'tabler:hexagons',
+        callToAction: { text: 'View Honeycomb Activated Carbon', href: '/products/activated-carbon/honeycomb-activated-carbon/' },
       },
       {
-        title: 'Customization',
-        description: 'Dynamic simulation testing against your target medium before batch production.',
+        title: 'Columnar Activated Carbon',
+        description: 'For gas-phase adsorption and industrial packed-bed systems where applicable.',
+        icon: 'tabler:columns-3',
+        callToAction: { text: 'View Columnar Activated Carbon', href: '/products/activated-carbon/coal-based-columnar-carbon/' },
+      },
+      {
+        title: 'Fiber Activated Carbon',
+        description: 'For low-concentration gas-phase pollutants, odor control and combined dust filtration.',
+        icon: 'tabler:line',
+        callToAction: { text: 'View Activated Carbon Fiber', href: '/products/activated-carbon/activated-carbon-fiber/' },
+      },
+    ]}
+  />
+
+  <Steps
+    id="selection"
+    title="Material Selection Starts With Your Operating Conditions"
+    items={[
+      {
+        title: 'Target material',
+        description: 'Which contaminant or adsorbate must be removed or recovered — VOC, odor, CO, NOx or a specific impurity.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Application',
+        description: 'Gas treatment, water purification or a process application — each has its own contact conditions.',
         icon: 'tabler:adjustments-horizontal',
       },
       {
-        title: 'Quality control',
-        description: 'Process and product QA/QC with third-party or customer-specified testing available.',
-        icon: 'tabler:shield-check',
+        title: 'Gas / liquid conditions',
+        description: 'Composition, concentration, flow, temperature, humidity, pressure, dust, pH and existing equipment.',
+        icon: 'tabler:gauge',
       },
       {
-        title: 'Lifecycle support',
-        description: 'Installation guidance, performance evaluation and replacement recommendations.',
-        icon: 'tabler:lifebuoy',
+        title: 'Adsorption requirements',
+        description: 'Target outlet concentration, contact time, pressure drop budget and required service life.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Material selection',
+        description: 'Raw material, pore structure, form and modification are proposed from the conditions above.',
+        icon: 'tabler:selector',
+      },
+      {
+        title: 'Laboratory / dynamic testing',
+        description: 'Where applicable, materials are tested against the target gas or adsorption medium before batch production.',
+        icon: 'tabler:flask',
+      },
+      {
+        title: 'Product recommendation',
+        description: 'A recommendation based on measured data rather than catalogue assumptions.',
+        icon: 'tabler:file-check',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial quality inspection',
+      alt: 'Laboratory material testing',
     }}
   />
 
-  <Features2
-    id="industries"
-    tagline="Applications"
-    title="Applications Across Industrial Emission Control"
-    subtitle="Materials matched to each industry's emission problems."
-    columns={4}
+  <Features
+    id="capabilities"
+    tagline="Technical capabilities"
+    title="From Material Development to Verified Performance"
+    subtitle="Characterization, testing and quality control support the material-selection process."
+    columns={3}
     items={[
-      { title: 'Thermal Power', description: 'High-temperature, high-dust SCR DeNOx.', icon: 'tabler:power', href: '/industries/thermal-power/' },
-      { title: 'Steel & Sintering', description: 'Sintering gas, CO removal and catalytic oxidation.', icon: 'tabler:flame', href: '/industries/steel/' },
-      { title: 'Cement & Building Materials', description: 'High-dust industrial gas treatment.', icon: 'tabler:building-factory-2', href: '/industries/cement/' },
-      { title: 'Petrochemical & Chemical', description: 'VOC catalytic oxidation and adsorption concentration.', icon: 'tabler:flask', href: '/industries/petrochemical/' },
-      { title: 'Coating & Printing', description: 'Benzene, toluene, xylene, esters and alcohol VOC control.', icon: 'tabler:paint', href: '/industries/coating/' },
-      { title: 'Pharmaceutical', description: 'Complex organic exhaust adsorption and oxidation.', icon: 'tabler:pill', href: '/industries/pharmaceutical/' },
-      { title: 'Automotive Manufacturing', description: 'Paint shop VOC emission control.', icon: 'tabler:car', href: '/industries/automotive/' },
-      { title: 'Waste Incineration', description: 'CO and organic pollutant control.', icon: 'tabler:recycle', href: '/industries/waste-incineration/' },
+      {
+        title: 'Material Characterization',
+        description: 'BET surface area and pore structure, XRF elemental composition, XRD crystal phase and ICP metal content analysis.',
+        icon: 'tabler:microscope',
+      },
+      {
+        title: 'Dynamic Adsorption Testing',
+        description: 'Dynamic simulation testing against the target gas or adsorption medium under controlled conditions.',
+        icon: 'tabler:wind',
+      },
+      {
+        title: 'Catalyst Performance Testing',
+        description: 'Catalyst activity evaluation under simulated operating conditions.',
+        icon: 'tabler:flame',
+      },
+      {
+        title: 'Mechanical Testing',
+        description: 'Compressive strength, wear resistance and physical property testing.',
+        icon: 'tabler:gauge',
+      },
+      {
+        title: 'Quality Control',
+        description: 'Incoming material, process and final inspection with batch traceability.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Field Testing',
+        description: 'Documented industrial field tests with original records retained for reference.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Features2
+    id="evidence"
+    tagline="Field evidence"
+    title="Field-Tested Industrial Applications"
+    subtitle="Results below are specific to the tested operating conditions and should not be interpreted as a universal performance guarantee."
+    columns={2}
+    items={[
+      {
+        title: 'Sintering Machine CO Removal',
+        description:
+          'Field test recorded CO concentration reduction from 1,499 ppm to 18 ppm under the stated test conditions — approximately 98.8% CO reduction.',
+        icon: 'tabler:flame',
+        href: '/case-studies/sintering-machine-co-removal/',
+      },
+      {
+        title: 'Medical Waste Incinerator CO Removal',
+        description:
+          'Field test recorded CO concentration reduction from 11,224.2 mg/Nm³ to 16.2 mg/Nm³ under the stated test conditions — approximately 99.86% CO reduction.',
+        icon: 'tabler:recycle',
+        href: '/case-studies/medical-waste-incinerator-co-removal/',
+      },
     ]}
   />
 
   <Content
-    tagline="Field results"
-    title="Selected Industrial Applications"
+    tagline="Why Xuanbao"
+    title="Selection Support, Not Catalogue Sales"
     items={[
       {
-        title: 'Sintering Machine CO Removal',
-        description: 'Field test: CO 1,499 ppm → 18 ppm — tested 2022-08-23.',
+        title: 'Material Development',
+        description: 'Formulation, activation and modification developed according to application requirements.',
       },
       {
-        title: 'Medical Waste Incinerator',
-        description: 'Field test: CO 11,224.2 mg/Nm³ → 16.2 mg/Nm³ — tested 2023-03-20.',
+        title: 'Controlled Manufacturing',
+        description: 'Defined production processes with incoming, process and final inspection.',
+      },
+      {
+        title: 'Testing',
+        description: 'Material characterization and performance testing using available analytical methods.',
+      },
+      {
+        title: 'Engineering Support',
+        description: 'Preliminary material selection based on your gas or liquid operating conditions.',
+      },
+      {
+        title: 'Field Experience',
+        description: 'Documented application data where original test records are available.',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial facility',
+      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80',
+      alt: 'Engineer reviewing material samples in a laboratory',
     }}
   >
     <Fragment slot="content">
-      Original test records, operating conditions and test organizations are retained for reference;{' '}
-      <a class="font-semibold text-primary hover:underline" href="/case-studies/">view the case studies</a> for details.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Industrial conditions are never identical</h3>
+      Material selection must follow the actual operating conditions — that is how we work.
     </Fragment>
   </Content>
-
-  <Note
-    title="Need help selecting the right catalyst or adsorbent?"
-    description="Provide gas flow rate, composition, temperature, humidity, SO₂, dust and target concentrations — we will make a preliminary material selection."
-  />
 
   <FAQs
     id="faqs"
@@ -226,7 +288,12 @@ const metadata = {
     schema
     items={[
       {
-        title: 'Can you customize catalysts for our specific gas conditions?',
+        title: 'How should I select activated carbon for my application?',
+        description:
+          'Selection starts with the operating conditions: target contaminant, concentration, gas or liquid flow, temperature, humidity, contact conditions, pressure drop budget and required service life. Send us these parameters and we will propose a preliminary material-selection approach.',
+      },
+      {
+        title: 'Can you customize catalysts or adsorbents for our specific conditions?',
         description:
           'Yes. We select and optimize the material system — formulation, structure and geometry — based on your gas composition, temperature, concentration, flow, humidity, SO₂ and dust conditions. Dynamic simulation testing against your target medium is available before batch production.',
       },
@@ -240,24 +307,20 @@ const metadata = {
         description:
           'Production and quality records are provided with shipments. Third-party or customer-specified testing is available on request. Original field test records are retained for reference.',
       },
-      {
-        title: 'Do you export?',
-        description:
-          'Yes, we supply international industrial customers. Please contact us with your destination and application for delivery and documentation details.',
-      },
     ]}
   />
 
   <CallToAction
-    actions={[{ variant: 'primary', text: 'Request a Technical Consultation', href: '/contact/', icon: 'tabler:arrow-right' }]}
+    actions={[{ variant: 'primary', text: 'Send Your Operating Conditions', href: '/contact/', icon: 'tabler:arrow-right' }]}
   >
     <Fragment slot="title">
-      Tell us your <span class="text-accent">gas conditions</span>
+      Need help selecting activated carbon or <span class="text-accent">an industrial treatment material?</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Gas composition + flow + concentration + temperature + humidity + dust + existing equipment — we will discuss
-      the right catalyst or adsorbent solution with you.
+      Send your application, target contaminant, flow rate, concentration, temperature, humidity and other relevant
+      operating conditions. We will review the available information and discuss a preliminary material-selection
+      approach.
     </Fragment>
   </CallToAction>
 </Layout>
