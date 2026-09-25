@@ -1,0 +1,93 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Coal-Based Activated Carbon: Properties, Uses & Selection',
+  description:
+    'Coal-based activated carbon: wide pore distribution, high density, domestic supply stability in China — properties, columnar and granular forms, typical specification ranges and selection guidance.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Materials', href: '/materials/' }, { text: 'Coal-Based Activated Carbon' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Materials</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Coal-Based Activated Carbon
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      The volume backbone of Chinese adsorption — wide pore distribution, high density, and stable domestic supply.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">What defines it</h2>
+      <p class="text-muted leading-relaxed">
+        Coal-based carbon is produced from anthracite, bituminous coal or lignite by crushing or extrusion,
+        carbonization and steam activation. Its signature is a <strong class="text-heading">wide pore-size
+        distribution</strong> — micropores, mesopores and macropores in one particle — which makes it adaptable to a
+        broad range of molecule sizes. Bituminous-coal grades typically reach iodine 800–1100 mg/g and BET
+        800–1200 m²/g with hardness 85–95% and ash 8–15%; anthracite grades run slightly lower in iodine (700–900
+        mg/g) but higher in hardness; lignite grades are lower in both (vendor-typical values — confirm per batch).
+        Chinese standard thresholds: GB/T 7701.2-2008 for water-purification coal carbon requires iodine ≥800 mg/g;
+        CJ/T 345-2010 for municipal drinking-water plants raises the bar to iodine ≥950 mg/g, BET ≥950 m²/g.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material characteristics"
+      items={[
+        { title: 'Wide pore distribution', description: 'Micro-, meso- and macropores together — adaptable across molecule sizes.', icon: 'tabler:adjustments-horizontal' },
+        { title: 'High density', description: 'Dense particles suit packed-bed and deep-bed gas duty.', icon: 'tabler:stack-2' },
+        { title: 'Domestic supply', description: 'Coal is abundant in China — stable sourcing and predictable lead times.', icon: 'tabler:map-pin' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Forms and where they fit</h2>
+      <ul class="space-y-3 text-muted">
+        <li><strong class="text-heading">Columnar (extruded)</strong> — coal powder kneaded with tar binder and extruded: high density, low dust, reactivatable. Standard for gas-phase packed beds and solvent recovery.</li>
+        <li><strong class="text-heading">Broken/irregular granular</strong> — crushed, carbonized and activated: municipal water-treatment filters and general liquid duty.</li>
+        <li><strong class="text-heading">Powdered</strong> — milled coal carbon: water-treatment dosing and flue-gas injection.</li>
+        <li><strong class="text-heading">Honeycomb</strong> — formed from coal carbon powder: high-flow, low-pressure-drop VOC treatment.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        In China, coal-based carbon is the dominant material for municipal water plants and gas-phase treatment —
+        roughly two-thirds of national production. Supply note: the sector sits under "two high" (high energy
+        consumption, high emissions) policy constraints, and premium coal supply is tightening; this is background
+        for long-term planning, not a daily procurement factor.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">How to specify it</h2>
+      <ol class="list-decimal list-inside space-y-2 text-muted">
+        <li>State the phase and duty: gas packed bed, water filter, or flue-gas injection.</li>
+        <li>Choose the form first — columnar, granular, powdered or honeycomb — then the grade.</li>
+        <li>Fix the standard: GB/T 7701.2 (general water) or CJ/T 345 (municipal) for water; GB/T 7701.1 for gas-phase grades.</li>
+        <li>Add hardness and ash if the bed is regenerated or dust-sensitive.</li>
+      </ol>
+      <p class="text-muted mt-4 text-sm">
+        Technical background: <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-raw-materials/">raw materials comparison</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Request Coal-Based Carbon Specification', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Specify the form, <span class="text-accent">we match the grade</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Tell us gas or water, flow and contaminant — columnar, granular, powdered or honeycomb.
+    </Fragment>
+  </CallToAction>
+</Layout>

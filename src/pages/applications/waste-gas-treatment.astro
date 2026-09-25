@@ -1,0 +1,83 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Industrial Waste Gas Treatment: NOx, CO & VOC Control',
+  description:
+    'Industrial waste gas treatment applications: SCR DeNOx, CO oxidation and VOC removal systems — how Xuanbao matches catalyst systems to gas composition, temperature and dust loading.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Industrial Waste Gas Treatment' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Industrial Waste Gas Treatment
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Multi-component industrial exhaust — NOx, CO and VOC — matched to catalysts by composition, temperature and dust.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">The three pollutants, three chemistries</h2>
+      <p class="text-muted leading-relaxed">
+        Industrial exhaust rarely contains a single pollutant. The treatment stack is assembled from pollutant-specific
+        chemistries, and the selection logic starts from the gas conditions — composition first, then temperature
+        window, then dust:
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Pollutant → system"
+      items={[
+        { title: 'NOx → SCR', description: 'Selective catalytic reduction with V-Mo-Ti catalysts, 150–420°C; plate type for high-dust flue gas, honeycomb for tight layouts.', icon: 'tabler:cloud-off', callToAction: { text: 'SCR DeNOx catalysts', href: '/products/scr-denox-catalysts/' } },
+        { title: 'CO → catalytic oxidation', description: '2CO + O₂ → 2CO₂ on precious-metal honeycomb or alumina substrates, 150–600°C — sintering machines, incinerators, furnaces.', icon: 'tabler:flame', callToAction: { text: 'CO removal catalyst', href: '/products/co-removal-catalyst/' } },
+        { title: 'VOC → adsorption or oxidation', description: 'Low concentration: adsorption; higher concentration and temperature: catalytic oxidation.', icon: 'tabler:wind', callToAction: { text: 'VOC treatment routes', href: '/solutions/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Selection questions that matter</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">Gas composition</strong> — which pollutants, in what concentration, and what poisons (SO₂, dust, alkali metals) travel with them?</li>
+        <li><strong class="text-heading">Temperature window</strong> — catalyst activity is windowed; the reactor position in the process decides the temperature the catalyst sees.</li>
+        <li><strong class="text-heading">Dust loading</strong> — high-dust positions call for plate-type SCR with large pitch and open area; low-dust positions allow honeycomb.</li>
+        <li><strong class="text-heading">Emission targets</strong> — China's ultra-low-emission standards per industry set the removal-efficiency bar.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Where our systems run</h2>
+      <ul class="grid gap-2 sm:grid-cols-2 text-muted">
+        <li><a class="text-primary hover:underline" href="/industries/thermal-power/">Coal-fired power</a> — SCR DeNOx</li>
+        <li><a class="text-primary hover:underline" href="/industries/sintering/">Sintering machines</a> — CO oxidation + DeNOx</li>
+        <li><a class="text-primary hover:underline" href="/industries/steel/">Steel</a> — multi-pollutant flue gas</li>
+        <li><a class="text-primary hover:underline" href="/industries/cement/">Cement</a> — high-dust DeNOx</li>
+        <li><a class="text-primary hover:underline" href="/industries/alumina/">Alumina</a> — plate SCR</li>
+        <li><a class="text-primary hover:underline" href="/industries/waste-incineration/">Waste incineration</a> — CO + flue gas</li>
+        <li><a class="text-primary hover:underline" href="/industries/petrochemical/">Petrochemical</a> — process vents</li>
+        <li><a class="text-primary hover:underline" href="/industries/chemical/">Chemical</a> — VOC streams</li>
+      </ul>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Exhaust Composition', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Composition first, <span class="text-accent">chemistry follows</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send the gas analysis, temperature and dust loading — we match the catalyst system.
+    </Fragment>
+  </CallToAction>
+</Layout>

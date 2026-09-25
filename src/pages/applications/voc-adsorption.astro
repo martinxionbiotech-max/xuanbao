@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'VOC Adsorption: Materials, Engineering Limits & System Design',
+  description:
+    'VOC adsorption applications: activated carbon and zeolite materials, humidity and temperature engineering limits (HJ 2026-2013), and how Xuanbao matches adsorbents to your exhaust conditions.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'VOC Adsorption' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      VOC Adsorption
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Adsorption removes organic vapors that oxidation alone handles poorly — low concentration, high flow, humid air.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">When adsorption is the right route</h2>
+      <p class="text-muted leading-relaxed">
+        Adsorption is the workhorse where catalytic oxidation struggles: low-concentration VOC streams (roughly
+        single-digit to low-hundreds mg/m³), high flow rates, and near-ambient temperatures. Activated carbon and
+        zeolite molecular sieves hold the organics on internal surfaces; the bed is then regenerated (steam, hot gas,
+        or off-site reactivation) or replaced. For medium-to-high concentration streams, adsorption is often the
+        <em>concentration step</em> feeding a catalytic or thermal oxidizer — see{' '}
+        <a class="text-primary hover:underline" href="/solutions/adsorption-catalytic-combustion/">Adsorption + Catalytic Combustion</a>.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Engineering limits that decide success"
+      items={[
+        { title: 'Inlet temperature', description: 'Keep exhaust below 40°C entering the bed — capacity falls as temperature rises (HJ 2026-2013).', icon: 'tabler:thermometer' },
+        { title: 'Humidity', description: 'Capacity holds to ~50% RH, then erodes; humid low-concentration duty needs hydrophobic carbons or zeolites.', icon: 'tabler:droplet' },
+        { title: 'Velocity & pressure drop', description: 'Granular beds below 0.60 m/s, honeycomb below 1.20 m/s — velocity caps protect bed utilization.', icon: 'tabler:wind' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Material selection by conditions</h2>
+      <ul class="space-y-3 text-muted">
+        <li><strong class="text-heading">Honeycomb activated carbon</strong> — high flow, low pressure drop, replaceable blocks; the default for general VOC units.</li>
+        <li><strong class="text-heading">Columnar coal-based carbon</strong> — packed-bed duty where reactivation matters.</li>
+        <li><strong class="text-heading">Activated carbon fiber</strong> — very fast kinetics for low-concentration, fast-cycling duty.</li>
+        <li><strong class="text-heading">High-silica zeolite (ZSM-5)</strong> — humid exhaust where carbon capacity collapses; regenerates hotter.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Related products: <a class="text-primary hover:underline" href="/products/activated-carbon/honeycomb-activated-carbon/">honeycomb activated carbon</a>,{' '}
+        <a class="text-primary hover:underline" href="/products/zeolite-molecular-sieve/zsm-5/">ZSM-5 zeolite</a>,{' '}
+        <a class="text-primary hover:underline" href="/products/activated-carbon/activated-carbon-fiber/">activated carbon fiber</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Compliance & maintenance realities</h2>
+      <ul class="space-y-2 text-muted">
+        <li>China's HJ 2026-2013 requires ≥90% removal efficiency for adsorption units and bed temperature below 83°C with alarm.</li>
+        <li>Replace adsorbent when dynamic capacity falls to 80% of design — document the reference test conditions.</li>
+        <li>VOC honeycomb-carbon adsorption without on-site regeneration was briefly listed for phase-out in a 2024 draft catalogue and removed — but local EPBs increasingly check carbon quality (iodine number) and replacement records.</li>
+        <li>Hot-air regeneration is prohibited for ketone-containing and easily ignitable exhausts.</li>
+      </ul>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Send Your VOC Stream Conditions', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Adsorption works — <span class="text-accent">when the material matches the air</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send concentration, flow, temperature and humidity — we recommend adsorbent, form and regeneration route.
+    </Fragment>
+  </CallToAction>
+</Layout>

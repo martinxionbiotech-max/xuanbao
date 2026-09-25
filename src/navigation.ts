@@ -14,6 +14,14 @@ export const headerData = {
       ],
     },
     {
+      text: 'Applications',
+      href: getPermalink('/applications'),
+    },
+    {
+      text: 'Materials',
+      href: getPermalink('/materials'),
+    },
+    {
       text: 'Solutions',
       links: [
         { text: 'All Solutions', href: getPermalink('/solutions') },
@@ -85,6 +93,8 @@ export const footerData = {
       title: 'Resources',
       links: [
         { text: 'Knowledge Center', href: 'https://data.xuanbaoenvironment.com' },
+        { text: 'Applications', href: getPermalink('/applications') },
+        { text: 'Materials', href: getPermalink('/materials') },
         { text: 'Case Studies', href: getPermalink('/case-studies') },
         { text: 'Industries', href: getPermalink('/industries') },
         { text: 'Contact', href: getPermalink('/contact') },

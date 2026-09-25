@@ -1,0 +1,92 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Coconut Shell Activated Carbon: Properties, Uses & Selection',
+  description:
+    'Coconut-shell activated carbon: microporous structure, high hardness, low ash — properties, typical specification ranges, where it performs best, and how to specify it.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Materials', href: '/materials/' }, { text: 'Coconut Shell Activated Carbon' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Materials</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Coconut Shell Activated Carbon
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      The hard, microporous workhorse — high hardness, low ash, and a pore system built for small-molecule adsorption.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">What defines it</h2>
+      <p class="text-muted leading-relaxed">
+        Coconut-shell carbon is made from coconut-shell char activated at high temperature with steam. The dense
+        natural shell structure survives activation: the finished carbon is the hardest of the common raw-material
+        families, low in ash, and dominated by micropores — pores under 2 nm that fit small molecules such as
+        chlorine, small solvent molecules and trace organics. Typical commercial specification ranges (vendor-typical
+        values): iodine number 900–1200+ mg/g, BET surface area 900–1300 m²/g, hardness 95–99%, ash 2–5%, apparent
+        density 0.45–0.55 g/mL. All figures must be confirmed against the product certificate for the specific batch —
+        raw-material family is a starting point, not a specification.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material characteristics"
+      items={[
+        { title: 'High hardness', description: 'The hardest common feedstock — resists attrition and dust generation in service.', icon: 'tabler:diamond' },
+        { title: 'Low ash', description: 'Naturally low mineral content; food/pharma-friendly grades build on this.', icon: 'tabler:droplet-off' },
+        { title: 'Micropore-dominant', description: 'Narrow pore distribution optimized for small-molecule adsorption.', icon: 'tabler:hexagons' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Where it performs best</h2>
+      <ul class="grid gap-2 sm:grid-cols-2 text-muted">
+        <li>Drinking-water purification and dechlorination</li>
+        <li>Industrial water treatment</li>
+        <li>Gold recovery (CIP/CIL, heap leaching)</li>
+        <li>Food and pharmaceutical purification grades</li>
+        <li>Gas-phase VOC adsorption</li>
+        <li>Electronics-grade high-purity water</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Supply note for China-based buyers: commercial coconut-shell char is almost entirely imported (Southeast Asia,
+        mainly Indonesia and the Philippines). Lead times and pricing track import logistics — relevant for planning.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">How to specify it</h2>
+      <ol class="list-decimal list-inside space-y-2 text-muted">
+        <li>State the contaminant and concentration — not just the raw material.</li>
+        <li>Fix the test method: iodine number per GB/T 7702.7, GB/T 12496.8 or ASTM D4607 are different methods; values are not directly interchangeable.</li>
+        <li>Add the property checks that matter to your duty: hardness/strength, ash, density, mesh size.</li>
+        <li>For humid gas duty, ask for breakthrough data at your humidity, not dry-lab conditions.</li>
+      </ol>
+      <p class="text-muted mt-4 text-sm">
+        Technical background: <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-raw-materials/">raw materials comparison</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Request Coconut-Shell Carbon Specification', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Match the coconut-shell grade to <span class="text-accent">your contaminant</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send your medium, concentration and flow — we recommend the grade and form.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,79 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Industrial Odor Control: Activated Carbon for H₂S & VOC Odors',
+  description:
+    'Industrial odor control with activated carbon: low-concentration odor streams from wastewater facilities and industrial processes — material choice, humidity effects and replacement practice.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Odor Control' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Industrial Odor Control
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Low-concentration odor streams — H₂S, mercaptans, amines, solvent smells — where adsorption is the practical answer.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">The odor-control problem</h2>
+      <p class="text-muted leading-relaxed">
+        Odor duty is the hardest regime for adsorption: concentrations are very low (single-digit mg/m³ or lower),
+        flows are large, and the air is often saturated with humidity — exactly the conditions where activated
+        carbon's capacity is most fragile. Hydrogen sulfide and mercaptans from wastewater treatment additionally
+        call for chemically reactive carbons: impregnated grades convert H₂S on the surface rather than merely
+        holding it. Two design rules follow:
+      </p>
+      <ul class="space-y-2 text-muted mt-4">
+        <li><strong class="text-heading">Humidity decides capacity.</strong> Below ~50% RH, carbon holds its working capacity; above it, capacity erodes progressively — choose hydrophobic grades or dehumidify upstream.</li>
+        <li><strong class="text-heading">H₂S is a reaction, not an adsorption.</strong> For sulfur-laden streams, impregnated (catalytic) carbon outlasts plain carbon by converting the sulfide — see our knowledge center's impregnated-carbon guide.</li>
+      </ul>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material routes"
+      items={[
+        { title: 'Impregnated carbon', description: 'Catalytic conversion of H₂S and mercaptans — the long-life route for sulfur odors.', icon: 'tabler:flask-2', callToAction: { text: 'Impregnated carbon guide', href: 'https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-impregnated/' } },
+        { title: 'Activated carbon fiber', description: 'Fast kinetics for low-concentration duty in compact units.', icon: 'tabler:line', callToAction: { text: 'ACF products', href: '/products/activated-carbon/activated-carbon-fiber/' } },
+        { title: 'Honeycomb carbon', description: 'High-flow units with limited fan power — structured contact surface.', icon: 'tabler:hexagons', callToAction: { text: 'Honeycomb products', href: '/products/activated-carbon/honeycomb-activated-carbon/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Operating practice</h2>
+      <ul class="space-y-2 text-muted">
+        <li>Monitor bed temperature — keep it below 83°C with alarm (HJ 2026-2013 anti-self-ignition limit).</li>
+        <li>Replace when dynamic capacity falls to 80% of design; keep the reference test conditions on record.</li>
+        <li>For wastewater-facility odors, sample the inlet H₂S profile — peak loads, not averages, size the bed.</li>
+        <li>Wet scrubbers upstream remove gross contaminants and protect the carbon bed from premature exhaustion.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Technical background: <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-humidity-temperature/">humidity &amp; temperature effects</a> and{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-impregnated/">impregnated carbon</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Odor Source', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Odor is solvable — <span class="text-accent">with the right chemistry</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send flow, odor compounds and humidity — we specify the carbon and bed.
+    </Fragment>
+  </CallToAction>
+</Layout>

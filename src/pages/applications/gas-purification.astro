@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Industrial Gas Purification: Trace Contaminant Polishing',
+  description:
+    'Industrial gas purification with adsorption materials and molecular sieves: trace contaminant polishing, drying and separation duties — matched to the impurity and its concentration.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Gas Purification' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Industrial Gas Purification
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Trace contaminant polishing and drying — adsorption materials and molecular sieves matched to the impurity.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Two purification problems</h2>
+      <p class="text-muted leading-relaxed">
+        Gas purification splits into two duties that look similar but select very different materials:
+      </p>
+      <ul class="space-y-3 text-muted">
+        <li><strong class="text-heading">Trace contaminant removal</strong> — ppm-level impurities (VOC traces, CO₂, H₂S, NH₃) polished from a gas stream. Selection depends on the impurity's molecular size and the gas's humidity: activated carbon for organic traces, zeolites for size-selective separation.</li>
+        <li><strong class="text-heading">Drying</strong> — water removal to a dew-point target. Molecular sieves win here: 3A reaches deep dew points (to −70°C and below) by excluding everything except water, 4A co-adsorbs small molecules for general drying.</li>
+      </ul>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material routes"
+      items={[
+        { title: 'Zeolite molecular sieves', description: 'Size-selective: 3A/4A for drying, 5A/13X for separation and purification.', icon: 'tabler:octahedron', callToAction: { text: 'Molecular sieve products', href: '/products/zeolite-molecular-sieve/' } },
+        { title: 'Activated carbon', description: 'Organic trace polishing in gas streams — columnar and honeycomb forms.', icon: 'tabler:hexagons', callToAction: { text: 'Activated carbon products', href: '/products/activated-carbon/' } },
+        { title: 'Modified zeolites', description: 'NaY and modified 5A/13X for specific separation and purification duties.', icon: 'tabler:adjustments', callToAction: { text: 'Modified zeolite guide', href: 'https://data.xuanbaoenvironment.com/molecular-sieves/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">The impurity</strong> — name it and its concentration. "Purification" is not a specification.</li>
+        <li><strong class="text-heading">The target</strong> — outlet concentration or dew point, with the test method.</li>
+        <li><strong class="text-heading">The co-adsorbates</strong> — what else is in the gas that would compete (water vapor especially).</li>
+        <li><strong class="text-heading">The regeneration route</strong> — molecular sieves regenerate at 200–350°C; carbon within its own limits (below 120°C hot-air per HJ 2026-2013).</li>
+      </ul>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'State Your Impurity and Target', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Name the impurity, <span class="text-accent">we name the sieve</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Impurity, concentration, target and gas composition — the four inputs of a purification spec.
+    </Fragment>
+  </CallToAction>
+</Layout>

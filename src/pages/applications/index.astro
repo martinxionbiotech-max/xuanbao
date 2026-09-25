@@ -1,0 +1,130 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Industrial Applications: Gas Treatment & Purification | Xuanbao',
+  description:
+    'Application-level guide to Xuanbao materials: VOC adsorption, industrial waste gas treatment, odor control and gas purification — and how each application determines the material system.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    badge="Applications"
+    title="Industrial Applications: Gas Treatment & Purification"
+    subtitle="Each application has its own operating conditions — and the conditions determine the material. Start from your pollutant and process, and the material follows."
+  />
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 pb-8 space-y-14">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">Gas treatment applications</h2>
+      <Features
+        columns={2}
+        items={[
+          {
+            title: 'VOC Adsorption',
+            description:
+              'Solvent vapors and organic pollutants in coating, printing and chemical exhaust — treated with activated carbon or zeolite adsorption, alone or combined with oxidation.',
+            icon: 'tabler:wind',
+            callToAction: { text: 'VOC adsorption application guide', href: '/applications/voc-adsorption/' },
+          },
+          {
+            title: 'Industrial Waste Gas Treatment',
+            description:
+              'Multi-component industrial exhaust including NOx, CO and VOC — treated with catalysts matched to the gas composition and temperature window.',
+            icon: 'tabler:building-factory',
+            callToAction: { text: 'Waste gas treatment guide', href: '/applications/waste-gas-treatment/' },
+          },
+          {
+            title: 'Odor Control',
+            description:
+              'Low-concentration odor streams from wastewater facilities and industrial processes — adsorption with activated carbon or fiber, selected by flow and concentration.',
+            icon: 'tabler:windmill',
+            callToAction: { text: 'Odor control application guide', href: '/applications/odor-control/' },
+          },
+          {
+            title: 'Gas Purification',
+            description:
+              'Trace contaminant polishing and purification duties in industrial gas streams — adsorption materials and molecular sieves matched to the impurity.',
+            icon: 'tabler:filter',
+            callToAction: { text: 'Gas purification application guide', href: '/applications/gas-purification/' },
+          },
+        ]}
+      />
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">Industries we serve</h2>
+      <p class="text-muted mb-6 max-w-3xl">
+        The same material logic applies across industries — from power and steel to coating and pharmaceutical.
+        Industry-specific conditions and material requirements are documented per industry.
+      </p>
+      <Features
+        columns={3}
+        items={[
+          {
+            title: 'Power & Steel',
+            description: 'SCR DeNOx for NOx, CO oxidation for sintering machine exhaust, flue gas treatment.',
+            icon: 'tabler:bolt',
+            callToAction: { text: 'Thermal power', href: '/industries/thermal-power/' },
+          },
+          {
+            title: 'Cement & Alumina',
+            description: 'High-dust flue gas NOx removal with plate-type SCR catalysts.',
+            icon: 'tabler:building-factory-2',
+            callToAction: { text: 'Cement', href: '/industries/cement/' },
+          },
+          {
+            title: 'Chemical & Petrochemical',
+            description: 'VOC catalytic oxidation and adsorption for process vents.',
+            icon: 'tabler:flask',
+            callToAction: { text: 'Chemical', href: '/industries/chemical/' },
+          },
+          {
+            title: 'Coating & Printing',
+            description: 'Solvent-laden exhaust treatment with VOC catalysts and adsorption.',
+            icon: 'tabler:brush',
+            callToAction: { text: 'Coating', href: '/industries/coating/' },
+          },
+          {
+            title: 'Pharmaceutical',
+            description: 'Purification and emission control for production processes.',
+            icon: 'tabler:pill',
+            callToAction: { text: 'Pharmaceutical', href: '/industries/pharmaceutical/' },
+          },
+          {
+            title: 'Waste Incineration',
+            description: 'CO removal and flue gas treatment for incineration lines.',
+            icon: 'tabler:recycle',
+            callToAction: { text: 'Waste incineration', href: '/industries/waste-incineration/' },
+          },
+        ]}
+      />
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-2">Application → material logic</h2>
+      <p class="text-muted max-w-3xl leading-relaxed">
+        The application sets the target; the conditions set the material. A VOC stream at low concentration and
+        ambient temperature points to adsorption; the same stream at 300°C points to catalytic oxidation. NOx in
+        high-dust flue gas points to plate SCR; NOx with tight space constraints points to honeycomb. We document
+        this logic per industry and per solution — and our engineers apply it to your actual operating data.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Application', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Tell us your application, <span class="text-accent">we propose the material</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Pollutant, flow, concentration, temperature, humidity — the five numbers that start every selection.
+    </Fragment>
+  </CallToAction>
+</Layout>
