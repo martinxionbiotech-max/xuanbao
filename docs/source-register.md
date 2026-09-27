@@ -29,6 +29,10 @@
 | C19 | Risk record: 2 judicial cases, 1 judgment document, 2 case filings | THIRD_PARTY_SOURCE (qcc) | VERIFIED as record | Case details not publicly retrievable; do not discuss on site |
 | C20 | B2B listing (easycarbon.cn): wood/coal/honeycomb/coconut-shell AC, catalysts, off-gas consumables, DeSOx/DeNOx, solvent recovery, water treatment, food decolorization | THIRD_PARTY_SOURCE (B2B platform) | VERIFIED | Corroborates C14 scope; CN contacts 宋经理/崔经理 — do NOT use on EN site |
 | C21 | Business scope confirmed by company (owner, 2026-09-27): granular & powdered AC; nut-shell/bamboo/wood AC; gold-recovery AC; water-treatment AC | COMPANY_BROCHURE (owner confirmation) | BROCHURE | Usable as company-stated scope; gold-recovery AC not yet on site — new product page candidate |
+| C22 | Factory/operation address: 盐城市盐都区义丰镇胥仇村118号厂房; Zibo sales office: 淄博市张店区华光路108号黄金1号总部大厦 | COMPANY_BROCHURE (brochure contact page, 2026-09-27) | BROCHURE | Registered office (亭湖区) differs from factory (盐都区) — both real; policy: street address stays OFF the EN site (per C3) |
+| C23 | Company-stated honors (brochure): 重合同守信用/诚信经营/重服务/重质量 AAA 级企业, 企业信用评价 AAA, 诚信供应商, 质量服务 AAA 诚信企业, 企业资信评价 AAA 信用企业, 2020年度优秀供应商 | COMPANY_BROCHURE (brochure honors page) | BROCHURE | Third-party credit-rating honors, not ISO/product certs; usable on About as "company-stated honors" only |
+| C24 | Brochure contact phones: 18560299835 / 18653383925 (differs from site phone C6 +86 151 6936 1313) | COMPANY_BROCHURE | BROCHURE | Site phone (C6) stays canonical; do not add brochure numbers to site without owner decision |
+| C25 | Company positioning (brochure): 高新科技企业 focused on organic waste-gas treatment; core products 贵金属蜂窝陶瓷催化剂 + 蜂窝活性炭 | COMPANY_BROCHURE | BROCHURE | Consistent with C12; no new claims |
 
 ## 2. Product Specifications
 
@@ -37,15 +41,17 @@
 | P1 | Plate SCR: V-Mo-Ti, 150–420°C, ≥90% DeNOx | OFFICIAL_COMPANY_SOURCE | VERIFIED | Pitch 5.6–7.4 mm; several (*) values have OCR/unit ambiguity — keep markers |
 | P2 | Honeycomb SCR: 13×13…60×60, SSA 302–1,347 m²/m³ | OFFICIAL_COMPANY_SOURCE | VERIFIED | Table reproduced from company data |
 | P3 | CO catalyst: 150–600°C, 10k–15k h⁻¹, cordierite/alumina | OFFICIAL_COMPANY_SOURCE | VERIFIED | "up to ≥95%" marked (*) |
-| P4 | VOC YC-XB-A/B/C: 200 cpsi cordierite 100×100×50, temps 220–600 / 240–400 / 260–450°C | OFFICIAL_COMPANY_SOURCE | VERIFIED | concentration/conversion/lifetime marked (*) |
+| P4 | VOC YC-XB-A/B/C: 200 cpsi cordierite 100×100×50, temps 220–600 / 240–400 / 260–450°C | OFFICIAL_COMPANY_SOURCE + COMPANY_BROCHURE | VERIFIED | Brochure spec table (2026-09-27): water absorption <25%; axial ≥10 MPa; lateral ≥4/2/2 MPa; max temps 800/900/500°C; GHSV 10k–20k / 15k–20k / 10k–15k h⁻¹; concentration 1500–8000 / 1500–8000 / 1500–4000 mg (unit not printed — keep ambiguity marker); design conversion ≥98% all; lifetime 2+/2+/1+ yr |
 | P5 | ZSM-5: SiO₂/Al₂O₃ ≈300, BET ≥380 m²/g, D50 ≤10 μm | OFFICIAL_COMPANY_SOURCE | VERIFIED | |
 | P6 | NaY: SiO₂/Al₂O₃ ≈100, BET ≥700 m²/g | OFFICIAL_COMPANY_SOURCE | VERIFIED | formed-product spec "being confirmed by R&D" — keep |
 | P7 | 5A / 13X: modification per application | OFFICIAL_COMPANY_SOURCE | VERIFIED | no numeric spec published |
-| P8 | Honeycomb AC SFW-10/SFW-5: iodine 600–900, BET 700–1,000 | OFFICIAL_COMPANY_SOURCE | VERIFIED | some (*) values |
-| P9 | Columnar AC: 1.5/4/6/8 mm, BET ≥600–1,000, iodine ≥600–1,000 | OFFICIAL_COMPANY_SOURCE | VERIFIED | |
-| P10 | Coconut-shell AC: hardness/purity claims, no numbers | OFFICIAL_COMPANY_SOURCE | VERIFIED | no numeric spec published |
-| P11 | AC fiber: benzene/xylene/formaldehyde/methanol/odor | OFFICIAL_COMPANY_SOURCE | VERIFIED | |
+| P8 | Honeycomb AC SFW-10/SFW-5: iodine 600–900, BET 700–1,000 | OFFICIAL_COMPANY_SOURCE + COMPANY_BROCHURE | VERIFIED | Brochure full table: 10×10×10 / 10×10×5 cm; moisture ≤10%; ash ≤10%; CTC 45–65%; compressive 1.2 MPa; density 500±30 kg/m³; benzene adsorption 25–35%; wall 1 mm; ΔP 490 Pa |
+| P9 | Columnar AC: 1.5/4/6/8 mm, BET ≥600–1,000, iodine ≥600–1,000 | OFFICIAL_COMPANY_SOURCE + COMPANY_BROCHURE | VERIFIED | Brochure full table per diameter: BET ≥600/800/900/1000; CTC ≥40/50/55/65%; iodine ≥600/800/900/1000; strength ≥96/95/94/93%; moisture ≤10%; density 600–700/500–600 g/cm³ (φ1.5 vs others). ⚠️ φ6 moisture printed "10" (no ≤) — OCR/print anomaly, keep marker |
+| P10 | Coconut-shell AC: hardness/purity claims, no numbers | OFFICIAL_COMPANY_SOURCE | VERIFIED | no numeric spec published; brochure has 果壳 (fruit/nut-shell) AC, distinct raw material — see P13 |
+| P11 | AC fiber: benzene/xylene/formaldehyde/methanol/odor | OFFICIAL_COMPANY_SOURCE + COMPANY_BROCHURE | VERIFIED | Brochure table: thickness 2/5/8/10/20 mm; width 500–1500 mm; carbon content 40–80%; air resistance ≤30/50/120/160/410 Pa·m/s; benzene adsorption ≥200 mg/g |
 | P12 | Heating components: no public spec | OFFICIAL_COMPANY_SOURCE | VERIFIED | "specified per project" — keep |
+| P13 | Heating tubes (brochure): finned/U-type electric heating tubes | COMPANY_BROCHURE (brochure, 2026-09-27) | BROCHURE | Spec table: 220V 500W–380V 6kW (7 rows); tube Ø12/16 mm; thread 18/22 mm; length 30–98 cm; center distance 55 mm; iron/SS body; design life 5000+ h |
+| P14 | Fruit/nut-shell AC STK-B/STK-A/SXK-B/SXK-A (brochure) | COMPANY_BROCHURE | BROCHURE | 4–20 mesh; iodine 500–1000; moisture ≤10%; ash ≤6%; strength 95–97%; pH 7–9; uses: catalyst support, decolorization for sugar/wine/amino-acid/beverage/drinking water, food & pharma |
 
 ## 3. Case Study Field Data (§51 policy)
 
