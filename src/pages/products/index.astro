@@ -1,8 +1,11 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import realProductPhotos from '~/assets/images/products/real-product-photos.jpg';
 
 const metadata = {
   title: 'Industrial Catalysts & Activated Carbon Products | Xuanbao Environmental',
@@ -91,6 +94,21 @@ const groups = [
       ))
     }
   </div>
+
+  <section class="mx-auto max-w-5xl px-4 sm:px-6">
+    <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Real Product Photos</h2>
+    <figure class="rounded-xl border border-slate-800 bg-slate-900/40 p-2">
+      <Image
+        src={realProductPhotos}
+        alt="Real product photos from Xuanbao Environmental — activated carbon and industrial catalyst products"
+        class="w-full h-auto rounded-lg"
+        width={1600}
+      />
+      <figcaption class="px-2 py-2 text-sm text-muted">
+        Real product photos — Xuanbao Environmental
+      </figcaption>
+    </figure>
+  </section>
 
   <CallToAction
     actions={[{ variant: 'primary', text: 'Ask for Material Selection', href: '/contact/', icon: 'tabler:arrow-right' }]}
