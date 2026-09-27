@@ -7,9 +7,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'VOC Catalysts & Activated Carbon Manufacturer | Xuanbao Environmental'
+    default: 'Industrial Environmental & Purification Materials Manufacturer | Xuanbao Environmental'
     template: '%s | Xuanbao Environmental'
-  description: 'Manufacturer of precious-metal honeycomb ceramic VOC catalysts, industrial emission-control catalysts and activated carbon for gas treatment, water purification and industrial process applications.'
+  description: 'Yancheng Xuanbao Environmental Technology Co., Ltd. manufactures VOC catalysts, SCR DeNOx catalysts, CO oxidation catalysts, activated carbon and zeolite molecular sieves for industrial gas treatment, water purification and process applications.'
   robots:
     index: true
     follow: true
