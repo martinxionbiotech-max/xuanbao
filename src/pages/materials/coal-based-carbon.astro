@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Materials', href: '/materials/' }, { text: 'Coal-Based Activated Carbon' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Materials</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Materials</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       Coal-Based Activated Carbon
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       The volume backbone of Chinese adsorption — wide pore distribution, high density, and stable domestic supply.
     </p>
   </section>
@@ -52,12 +52,7 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Forms and where they fit</h2>
-      <ul class="space-y-3 text-muted">
-        <li><strong class="text-heading">Columnar (extruded)</strong> — coal powder kneaded with tar binder and extruded: high density, low dust, reactivatable. Standard for gas-phase packed beds and solvent recovery.</li>
-        <li><strong class="text-heading">Broken/irregular granular</strong> — crushed, carbonized and activated: municipal water-treatment filters and general liquid duty.</li>
-        <li><strong class="text-heading">Powdered</strong> — milled coal carbon: water-treatment dosing and flue-gas injection.</li>
-        <li><strong class="text-heading">Honeycomb</strong> — formed from coal carbon powder: high-flow, low-pressure-drop VOC treatment.</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Columnar (extruded)</td><td class="px-3 py-2 align-top text-muted">coal powder kneaded with tar binder and extruded: high density, low dust, reactivatable. Standard for gas-phase packed beds and solvent recovery.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Broken/irregular granular</td><td class="px-3 py-2 align-top text-muted">crushed, carbonized and activated: municipal water-treatment filters and general liquid duty.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Powdered</td><td class="px-3 py-2 align-top text-muted">milled coal carbon: water-treatment dosing and flue-gas injection.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Honeycomb</td><td class="px-3 py-2 align-top text-muted">formed from coal carbon powder: high-flow, low-pressure-drop VOC treatment.</td></tr></tbody></table></div>
       <p class="text-muted mt-4 text-sm">
         In China, coal-based carbon is the dominant material for municipal water plants and gas-phase treatment —
         roughly two-thirds of national production. Supply note: the sector sits under "two high" (high energy

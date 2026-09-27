@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Gas Purification' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       Industrial Gas Purification
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Trace contaminant polishing and drying — adsorption materials and molecular sieves matched to the impurity.
     </p>
   </section>
@@ -49,12 +49,7 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Selection checklist</h2>
-      <ul class="space-y-2 text-muted">
-        <li><strong class="text-heading">The impurity</strong> — name it and its concentration. "Purification" is not a specification.</li>
-        <li><strong class="text-heading">The target</strong> — outlet concentration or dew point, with the test method.</li>
-        <li><strong class="text-heading">The co-adsorbates</strong> — what else is in the gas that would compete (water vapor especially).</li>
-        <li><strong class="text-heading">The regeneration route</strong> — molecular sieves regenerate at 200–350°C; carbon within its own limits (below 120°C hot-air per HJ 2026-2013).</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">The impurity</td><td class="px-3 py-2 align-top text-muted">name it and its concentration. "Purification" is not a specification.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">The target</td><td class="px-3 py-2 align-top text-muted">outlet concentration or dew point, with the test method.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">The co-adsorbates</td><td class="px-3 py-2 align-top text-muted">what else is in the gas that would compete (water vapor especially).</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">The regeneration route</td><td class="px-3 py-2 align-top text-muted">molecular sieves regenerate at 200–350°C; carbon within its own limits (below 120°C hot-air per HJ 2026-2013).</td></tr></tbody></table></div>
     </section>
   </div>
 

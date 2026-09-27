@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'VOC Adsorption' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       VOC Adsorption
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Adsorption removes organic vapors that oxidation alone handles poorly — low concentration, high flow, humid air.
     </p>
   </section>
@@ -50,12 +50,7 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Material selection by conditions</h2>
-      <ul class="space-y-3 text-muted">
-        <li><strong class="text-heading">Honeycomb activated carbon</strong> — high flow, low pressure drop, replaceable blocks; the default for general VOC units.</li>
-        <li><strong class="text-heading">Columnar coal-based carbon</strong> — packed-bed duty where reactivation matters.</li>
-        <li><strong class="text-heading">Activated carbon fiber</strong> — very fast kinetics for low-concentration, fast-cycling duty.</li>
-        <li><strong class="text-heading">High-silica zeolite (ZSM-5)</strong> — humid exhaust where carbon capacity collapses; regenerates hotter.</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Honeycomb activated carbon</td><td class="px-3 py-2 align-top text-muted">high flow, low pressure drop, replaceable blocks; the default for general VOC units.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Columnar coal-based carbon</td><td class="px-3 py-2 align-top text-muted">packed-bed duty where reactivation matters.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Activated carbon fiber</td><td class="px-3 py-2 align-top text-muted">very fast kinetics for low-concentration, fast-cycling duty.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">High-silica zeolite (ZSM-5)</td><td class="px-3 py-2 align-top text-muted">humid exhaust where carbon capacity collapses; regenerates hotter.</td></tr></tbody></table></div>
       <p class="text-muted mt-4 text-sm">
         Related products: <a class="text-primary hover:underline" href="/products/activated-carbon/honeycomb-activated-carbon/">honeycomb activated carbon</a>,{' '}
         <a class="text-primary hover:underline" href="/products/zeolite-molecular-sieve/zsm-5/">ZSM-5 zeolite</a>,{' '}

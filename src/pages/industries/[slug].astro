@@ -21,11 +21,11 @@ const ind = industry as (typeof industries)[number];
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Industries', href: '/industries/' }, { text: ind.name }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Industry</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Industry</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       {ind.h1}
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Emission problems, pollutants, operating conditions and recommended materials for the {ind.name.toLowerCase()}{' '}
       sector.
     </p>
@@ -34,12 +34,12 @@ const ind = industry as (typeof industries)[number];
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Typical emission problems</h2>
-      <ul class="grid gap-3 sm:grid-cols-2 text-muted" set:html={ind.problems} />
+      <ul class="grid gap-3 sm:grid-cols-2 [&>li]:rounded-lg [&>li]:border [&>li]:border-slate-700/60 [&>li]:bg-slate-900/40 [&>li]:p-3 [&>li]:text-muted" set:html={ind.problems} />
     </section>
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Main pollutants</h2>
-      <ul class="grid gap-3 sm:grid-cols-2 text-muted" set:html={ind.pollutants} />
+      <ul class="grid gap-3 sm:grid-cols-2 [&>li]:rounded-lg [&>li]:border [&>li]:border-slate-700/60 [&>li]:bg-slate-900/40 [&>li]:p-3 [&>li]:text-muted" set:html={ind.pollutants} />
     </section>
 
     <section>
@@ -49,7 +49,7 @@ const ind = industry as (typeof industries)[number];
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Recommended material selection</h2>
-      <ul class="grid gap-3 sm:grid-cols-2 text-muted" set:html={ind.selection} />
+      <ul class="grid gap-3 sm:grid-cols-2 [&>li]:rounded-lg [&>li]:border [&>li]:border-slate-700/60 [&>li]:bg-slate-900/40 [&>li]:p-3 [&>li]:text-muted" set:html={ind.selection} />
     </section>
 
     {industryDetails[ind.slug] && (

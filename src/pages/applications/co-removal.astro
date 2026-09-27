@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'CO Removal' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       CO Removal from Industrial Exhaust
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Catalytic oxidation converts carbon monoxide to CO₂ — the practical route where combustion control alone cannot meet emission limits.
     </p>
   </section>
@@ -49,13 +49,7 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Selection checklist</h2>
-      <ul class="space-y-2 text-muted">
-        <li><strong class="text-heading">CO inlet concentration</strong> — the catalyst converts what combustion leaves behind; state the inlet and target outlet.</li>
-        <li><strong class="text-heading">Exhaust temperature</strong> — catalytic oxidation is windowed; position the reactor where the exhaust temperature matches the catalyst.</li>
-        <li><strong class="text-heading">O₂ content</strong> — the reaction needs oxygen; verify the excess-air level at the reactor position.</li>
-        <li><strong class="text-heading">Co-pollutants</strong> — dust, SO₂ and alkali metals degrade catalyst activity over time; they set the maintenance interval.</li>
-        <li><strong class="text-heading">Flow fluctuation</strong> — incinerator streams cycle; the catalyst must tolerate thermal cycling (see field test records).</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">CO inlet concentration</td><td class="px-3 py-2 align-top text-muted">the catalyst converts what combustion leaves behind; state the inlet and target outlet.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Exhaust temperature</td><td class="px-3 py-2 align-top text-muted">catalytic oxidation is windowed; position the reactor where the exhaust temperature matches the catalyst.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">O₂ content</td><td class="px-3 py-2 align-top text-muted">the reaction needs oxygen; verify the excess-air level at the reactor position.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Co-pollutants</td><td class="px-3 py-2 align-top text-muted">dust, SO₂ and alkali metals degrade catalyst activity over time; they set the maintenance interval.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Flow fluctuation</td><td class="px-3 py-2 align-top text-muted">incinerator streams cycle; the catalyst must tolerate thermal cycling (see field test records).</td></tr></tbody></table></div>
       <p class="text-muted mt-4 text-sm">
         Related product:{' '}
         <a class="text-primary hover:underline" href="/products/co-removal-catalyst/">CO oxidation catalyst</a> —{' '}

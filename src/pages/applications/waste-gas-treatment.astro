@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Industrial Waste Gas Treatment' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       Industrial Waste Gas Treatment
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Multi-component industrial exhaust — NOx, CO and VOC — matched to catalysts by composition, temperature and dust.
     </p>
   </section>
@@ -47,12 +47,7 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Selection questions that matter</h2>
-      <ul class="space-y-2 text-muted">
-        <li><strong class="text-heading">Gas composition</strong> — which pollutants, in what concentration, and what poisons (SO₂, dust, alkali metals) travel with them?</li>
-        <li><strong class="text-heading">Temperature window</strong> — catalyst activity is windowed; the reactor position in the process decides the temperature the catalyst sees.</li>
-        <li><strong class="text-heading">Dust loading</strong> — high-dust positions call for plate-type SCR with large pitch and open area; low-dust positions allow honeycomb.</li>
-        <li><strong class="text-heading">Emission targets</strong> — China's ultra-low-emission standards per industry set the removal-efficiency bar.</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Gas composition</td><td class="px-3 py-2 align-top text-muted">which pollutants, in what concentration, and what poisons (SO₂, dust, alkali metals) travel with them?</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Temperature window</td><td class="px-3 py-2 align-top text-muted">catalyst activity is windowed; the reactor position in the process decides the temperature the catalyst sees.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Dust loading</td><td class="px-3 py-2 align-top text-muted">high-dust positions call for plate-type SCR with large pitch and open area; low-dust positions allow honeycomb.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Emission targets</td><td class="px-3 py-2 align-top text-muted">China's ultra-low-emission standards per industry set the removal-efficiency bar.</td></tr></tbody></table></div>
     </section>
 
     <section>

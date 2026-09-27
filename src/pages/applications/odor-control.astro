@@ -16,11 +16,11 @@ const metadata = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Odor Control' }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       Industrial Odor Control
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
       Low-concentration odor streams — H₂S, mercaptans, amines, solvent smells — where adsorption is the practical answer.
     </p>
   </section>
@@ -35,10 +35,7 @@ const metadata = {
         call for chemically reactive carbons: impregnated grades convert H₂S on the surface rather than merely
         holding it. Two design rules follow:
       </p>
-      <ul class="space-y-2 text-muted mt-4">
-        <li><strong class="text-heading">Humidity decides capacity.</strong> Below ~50% RH, carbon holds its working capacity; above it, capacity erodes progressively — choose hydrophobic grades or dehumidify upstream.</li>
-        <li><strong class="text-heading">H₂S is a reaction, not an adsorption.</strong> For sulfur-laden streams, impregnated (catalytic) carbon outlasts plain carbon by converting the sulfide — see our knowledge center's impregnated-carbon guide.</li>
-      </ul>
+      <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-900/40 p-1"><table class="w-full text-sm md:text-base"><tbody><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">Humidity decides capacity.</td><td class="px-3 py-2 align-top text-muted">Below ~50% RH, carbon holds its working capacity; above it, capacity erodes progressively — choose hydrophobic grades or dehumidify upstream.</td></tr><tr class="border-b border-slate-800 last:border-0"><td class="px-3 py-2 align-top font-semibold text-heading whitespace-nowrap">H₂S is a reaction, not an adsorption.</td><td class="px-3 py-2 align-top text-muted">For sulfur-laden streams, impregnated (catalytic) carbon outlasts plain carbon by converting the sulfide — see our knowledge center's impregnated-carbon guide.</td></tr></tbody></table></div>
     </section>
 
     <Features
@@ -53,11 +50,11 @@ const metadata = {
 
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Operating practice</h2>
-      <ul class="space-y-2 text-muted">
-        <li>Monitor bed temperature — keep it below 83°C with alarm (HJ 2026-2013 anti-self-ignition limit).</li>
-        <li>Replace when dynamic capacity falls to 80% of design; keep the reference test conditions on record.</li>
-        <li>For wastewater-facility odors, sample the inlet H₂S profile — peak loads, not averages, size the bed.</li>
-        <li>Wet scrubbers upstream remove gross contaminants and protect the carbon bed from premature exhaustion.</li>
+      <ul class="grid gap-3 sm:grid-cols-2">
+        <li class="rounded-lg border border-slate-700/60 bg-slate-900/40 p-3 text-muted">Monitor bed temperature — keep it below 83°C with alarm (HJ 2026-2013 anti-self-ignition limit).</li>
+        <li class="rounded-lg border border-slate-700/60 bg-slate-900/40 p-3 text-muted">Replace when dynamic capacity falls to 80% of design; keep the reference test conditions on record.</li>
+        <li class="rounded-lg border border-slate-700/60 bg-slate-900/40 p-3 text-muted">For wastewater-facility odors, sample the inlet H₂S profile — peak loads, not averages, size the bed.</li>
+        <li class="rounded-lg border border-slate-700/60 bg-slate-900/40 p-3 text-muted">Wet scrubbers upstream remove gross contaminants and protect the carbon bed from premature exhaustion.</li>
       </ul>
       <p class="text-muted mt-4 text-sm">
         Technical background: <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-humidity-temperature/">humidity &amp; temperature effects</a> and{' '}

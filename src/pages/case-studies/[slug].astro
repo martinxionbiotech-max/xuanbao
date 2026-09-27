@@ -40,11 +40,11 @@ const articleSchema = {
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Case Studies', href: '/case-studies/' }, { text: cs.name }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
-    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Case Study</p>
-    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Case Study</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
       {cs.h1}
     </h1>
-    <p class="mt-4 max-w-3xl text-lg text-muted">{cs.intro}</p>
+    <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">{cs.intro}</p>
   </section>
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
