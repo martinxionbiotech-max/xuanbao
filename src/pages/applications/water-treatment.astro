@@ -1,0 +1,85 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Water Treatment with Activated Carbon: PAC, GAC & Selection',
+  description:
+    'Activated carbon for water treatment: PAC vs GAC, drinking water, wastewater polishing and industrial process water — material routes, contact time and selection guidance.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Water Treatment' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Water Treatment with Activated Carbon
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Dissolved organics, taste and odor, micropollutants, color — removed by adsorption, with the carbon form matched to the duty.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">The water-treatment problem</h2>
+      <p class="text-muted leading-relaxed">
+        Activated carbon treats water by adsorbing dissolved organic molecules onto its internal pore surface —
+        humic substances, micropollutants, taste and odor compounds, color bodies and residual solvents. Water
+        treatment splits into two regimes that use carbon differently:
+      </p>
+      <ul class="space-y-3 text-muted mt-4">
+        <li><strong class="text-heading">Standing barrier</strong> — a granular carbon bed (GAC) in a contactor or filter that every liter of water must pass through, designed around empty-bed contact time. This is the municipal and industrial baseline for trace-organics compliance.</li>
+        <li><strong class="text-heading">Spike response</strong> — powdered carbon (PAC) dosed as a slurry for seasonal taste-and-odor events, algae blooms or pollution incidents, then removed with the sludge. Fast kinetics, single use.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Design ranges used in Chinese practice: PAC dosing typically 5–30 mg/L; GAC empty-bed contact time
+        typically 8–20 minutes. Background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/water-purification/pac-vs-gac/">PAC vs GAC guide</a> in our knowledge center.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material routes"
+      items={[
+        { title: 'Coconut-shell granular', description: 'Micropore-dominant, high hardness, low ash — drinking-water purification and dechlorination.', icon: 'tabler:droplet', callToAction: { text: 'Coconut-shell carbon', href: '/products/activated-carbon/coconut-shell-carbon/' } },
+        { title: 'Coal-based granular', description: 'Wide pore distribution for municipal filters and industrial liquid duty — iodine ≥800 mg/g per GB/T 7701.2.', icon: 'tabler:layers-difference', callToAction: { text: 'Coal-based columnar carbon', href: '/products/activated-carbon/coal-based-columnar-carbon/' } },
+        { title: 'Powdered (PAC)', description: 'Milled to fine particle size for slurry dosing — the fast-response tool for events and emergencies.', icon: 'tabler:grain', callToAction: { text: 'Activated carbon products', href: '/products/activated-carbon/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">The contaminant</strong> — name it and its concentration. "Polishing" is not a specification.</li>
+        <li><strong class="text-heading">The duty</strong> — continuous barrier or event response. GAC beds are regenerable (thermal reactivation); PAC is single-use.</li>
+        <li><strong class="text-heading">The contact conditions</strong> — flow, empty-bed contact time, temperature and competing dissolved species.</li>
+        <li><strong class="text-heading">The test method</strong> — iodine number per GB/T 7702.7, GB/T 12496.8 or ASTM D4607 are different methods; values are not directly interchangeable.</li>
+        <li><strong class="text-heading">The end-of-life route</strong> — replacement, off-site thermal reactivation, or disposal — fixed before the bed is sized.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Technical background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/water-purification/">activated carbon in water treatment</a>{' '}
+        and{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-capacity-calculation/">capacity calculation</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Water Problem', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Tell us the water, <span class="text-accent">we size the carbon</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Contaminant, concentration, flow and treatment target — the four inputs of a water-carbon specification.
+    </Fragment>
+  </CallToAction>
+</Layout>

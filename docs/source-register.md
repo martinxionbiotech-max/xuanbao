@@ -1,6 +1,6 @@
 # Source Register — Xuanbao Environmental (V3.0 Phase 2)
 
-> Date: 2026-09-25 ｜ Purpose: single source of truth for company/product claims before any content is published.
+> Date: 2026-09-25 ｜ Updated: 2026-09-27 (CN registry research) ｜ Purpose: single source of truth for company/product claims before any content is published.
 > Source classes: `COMPANY_BROCHURE` (company-provided, not independently verified) ｜ `OFFICIAL_COMPANY_SOURCE` (site/llms.txt/KB as published by company) ｜ `GOVERNMENT_SOURCE` ｜ `CERTIFICATION_SOURCE` ｜ `THIRD_PARTY_SOURCE` ｜ `PUBLIC_TECHNICAL_SOURCE` ｜ `UNVERIFIED`
 > Status: VERIFIED / BROCHURE / NEEDS_CONFIRMATION / DO_NOT_USE
 
@@ -8,21 +8,27 @@
 
 | # | Claim | Source | Status | Notes |
 |---|---|---|---|---|
-| C1 | Legal name: Yancheng Xuanbao Environmental Technology Co., Ltd. | OFFICIAL_COMPANY_SOURCE (site footer, KB, llms.txt) | VERIFIED | Use full name in schema/footer/About |
+| C1 | Legal name: Yancheng Xuanbao Environmental Technology Co., Ltd. (CN registered name: 盐城萱宝环境科技有限公司 — ⚠️ 萱, not 轩) | OFFICIAL_COMPANY_SOURCE + THIRD_PARTY_SOURCE (CN registries) | VERIFIED | Use full English name in schema/footer/About; if Chinese text is ever needed, use 萱宝 |
 | C2 | Short brand: Xuanbao Environmental | OFFICIAL_COMPANY_SOURCE | VERIFIED | V3.0 §43 |
-| C3 | Location: Yancheng (company name) | OFFICIAL_COMPANY_SOURCE | VERIFIED | Street address NOT published — do not add |
+| C3 | Location: Yancheng (company name) | OFFICIAL_COMPANY_SOURCE | VERIFIED | CN registry shows registered office 盐城市亭湖区环保大道198号1幢165室 — registered address only, NOT factory; keep street address off the site |
 | C4 | Main site: xuanbaoenvironment.com; KB: data.xuanbaoenvironment.com | OFFICIAL_COMPANY_SOURCE | VERIFIED | |
 | C5 | Email: 625534887@qq.com | OFFICIAL_COMPANY_SOURCE (site) | VERIFIED | Do not invent corporate email |
 | C6 | Phone/WhatsApp: +86 151 6936 1313 | OFFICIAL_COMPANY_SOURCE (site) | VERIFIED | |
 | C7 | Contact person "Ms. Chen" | UNVERIFIED (placeholder on site) | DO_NOT_USE | Replaced by "International Sales & Technical Support" (§39) |
-| C8 | Founding year | — | NEEDS_CONFIRMATION | Not published anywhere; ask company |
-| C9 | Production capacity (t/y), factory area | — | NEEDS_CONFIRMATION | Never invent (§50) |
-| C10 | Certifications (ISO etc.) | — | NEEDS_CONFIRMATION | None claimed on site; do not add |
-| C11 | Customers / export countries | — | NEEDS_CONFIRMATION | Site says "international industrial customers" only in FAQ — keep at that level |
+| C8 | Founding year: 2020 (registered 2020-05-12) | THIRD_PARTY_SOURCE (CN registries — aiqicha, qcc, Boss Zhipin agree) | VERIFIED | tianyancha snapshot shows 2020-05-11 (stale); publish "founded in 2020" only |
+| C9 | Production capacity (t/y), factory area | — | NEEDS_CONFIRMATION | Not in CN public registries either; never invent (§50) |
+| C10 | Certifications (ISO etc.) | — | NEEDS_CONFIRMATION | None claimed on site nor found in CN registries; do not add |
+| C11 | Customers / export countries | — | NEEDS_CONFIRMATION | Not published anywhere; site says "international industrial customers" only in FAQ — keep at that level |
 | C12 | "High-tech environmental materials company" (vision) | COMPANY_BROCHURE (About page) | BROCHURE | Usable as company-stated vision, not as verified fact |
 | C13 | University/research cooperation | COMPANY_BROCHURE (R&D page) | BROCHURE | Already phrased "details disclosed with formal agreements" — keep that hedge |
 | C14 | Products: SCR catalysts, CO catalyst, VOC catalysts, zeolite sieves, activated carbon, heating components | OFFICIAL_COMPANY_SOURCE (products.ts) | VERIFIED | 14 product entries + heating components |
 | C15 | Industries served (12): power, steel, sintering, cement, alumina, petrochemical, chemical, printing, coating, pharma, automotive, waste incineration | OFFICIAL_COMPANY_SOURCE (industries.ts) | VERIFIED | |
+| C16 | Legal representative: 于洪玲 (Yu Hongling) | THIRD_PARTY_SOURCE (CN registries: aiqicha, qcc) | VERIFIED | tianyancha stale snapshot lists 王荣 — treat as superseded; do not publish on site |
+| C17 | Registered capital: RMB 2,000,000; insured employees: 1 (small/micro enterprise) | THIRD_PARTY_SOURCE (qcc) | VERIFIED | Size/capital claims stay OFF the site |
+| C18 | Registry business scope: goods import/export, engineering & technical R&D, environmental consulting, water/air pollution treatment, environmental equipment sales, specialty ceramics, specialty chemicals (non-hazardous) | THIRD_PARTY_SOURCE (gsxt-derived: jiuchutong, qcc) | VERIFIED | Consistent with site scope; import/export registration backs trade content |
+| C19 | Risk record: 2 judicial cases, 1 judgment document, 2 case filings | THIRD_PARTY_SOURCE (qcc) | VERIFIED as record | Case details not publicly retrievable; do not discuss on site |
+| C20 | B2B listing (easycarbon.cn): wood/coal/honeycomb/coconut-shell AC, catalysts, off-gas consumables, DeSOx/DeNOx, solvent recovery, water treatment, food decolorization | THIRD_PARTY_SOURCE (B2B platform) | VERIFIED | Corroborates C14 scope; CN contacts 宋经理/崔经理 — do NOT use on EN site |
+| C21 | Business scope confirmed by company (owner, 2026-09-27): granular & powdered AC; nut-shell/bamboo/wood AC; gold-recovery AC; water-treatment AC | COMPANY_BROCHURE (owner confirmation) | BROCHURE | Usable as company-stated scope; gold-recovery AC not yet on site — new product page candidate |
 
 ## 2. Product Specifications
 

@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Decolorization with Activated Carbon: Food, Sugar & Chemical Liquids',
+  description:
+    'Activated carbon decolorization for food, sugar and chemical liquids: color-body removal by adsorption — powdered contact process vs granular bed, selection and quality indicators.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Decolorization' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Decolorization with Activated Carbon
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Color bodies removed from liquids by adsorption — sugar syrup, food and beverage, and chemical process liquids.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">What decolorization is</h2>
+      <p class="text-muted leading-relaxed">
+        Decolorization removes dissolved color bodies from a liquid stream. The colorants are large organic
+        molecules — melanoidins and caramels in sugar processing, natural pigments in juices and extracts, and
+        oxidized byproducts in chemical and pharmaceutical intermediates. Activated carbon adsorbs them onto its
+        pore surface; the wide pore distribution of decolorizing grades is deliberately sized to accept these
+        larger molecules, which distinguishes the duty from small-molecule purification.
+      </p>
+      <ul class="space-y-3 text-muted mt-4">
+        <li><strong class="text-heading">Contact process</strong> — powdered carbon mixed into the hot liquid, held for the required contact time, then filtered out. The standard route for sugar refining and batch decolorization.</li>
+        <li><strong class="text-heading">Bed process</strong> — granular carbon in a fixed column through which the liquid passes continuously, with thermal reactivation of the spent carbon.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        The decolorization indicator on a certificate is the methylene blue adsorption value — a proxy for the
+        carbon's capacity toward colored organics. Background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-ctc-methylene-blue/">CTC &amp; methylene blue indicators</a> in our knowledge center.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material routes"
+      items={[
+        { title: 'Powdered decolorizing grades', description: 'Contact-process dosing for sugar syrup, food liquids and batch chemical decolorization.', icon: 'tabler:grain', callToAction: { text: 'Activated carbon products', href: '/products/activated-carbon/' } },
+        { title: 'Coal-based granular', description: 'Fixed-bed decolorization and general liquid duty with reactivation economics.', icon: 'tabler:stack-2', callToAction: { text: 'Coal-based columnar carbon', href: '/products/activated-carbon/coal-based-columnar-carbon/' } },
+        { title: 'Coconut-shell grades', description: 'Low ash and high purity — the food-friendly base for decolorizing edible liquids.', icon: 'tabler:droplet-off', callToAction: { text: 'Coconut-shell carbon', href: '/products/activated-carbon/coconut-shell-carbon/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">The liquid</strong> — what it is, its temperature at the contact point, and its viscosity. Hot syrup contacts differently than cold water.</li>
+        <li><strong class="text-heading">The colorant</strong> — the target color value and its test method (ICUMSA for sugar, APHA/Hazen elsewhere); decolorization duty is specified by the residual color, not "removal percentage" alone.</li>
+        <li><strong class="text-heading">The contact mode</strong> — batch contact with powder, or continuous bed. The two use different grades and different economics.</li>
+        <li><strong class="text-heading">The purity constraints</strong> — for food and beverage duty, state ash, heavy-metal and odor requirements; the grade must match the end-use standard.</li>
+        <li><strong class="text-heading">The filter step</strong> — powder must be separated afterward; plan the filtration stage together with the carbon dose.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Technical background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-quality-indicators/">activated carbon quality indicators</a>{' '}
+        and{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-regeneration/">regeneration</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Liquid and Color Target', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Name the liquid, <span class="text-accent">we match the decolorizing grade</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Liquid, temperature, contact mode and target color value — the four inputs of a decolorization spec.
+    </Fragment>
+  </CallToAction>
+</Layout>

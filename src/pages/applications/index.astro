@@ -5,9 +5,9 @@ import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Industrial Applications: Gas Treatment & Purification | Xuanbao',
+  title: 'Industrial Applications: Gas & Liquid Phase Treatment | Xuanbao',
   description:
-    'Application-level guide to Xuanbao materials: VOC adsorption, industrial waste gas treatment, odor control and gas purification — and how each application determines the material system.',
+    'Application-level guide to Xuanbao materials: VOC adsorption, industrial waste gas treatment, odor control, gas purification, water treatment and decolorization — and how each application determines the material system.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -15,8 +15,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <HeroText
     badge="Applications"
-    title="Industrial Applications: Gas Treatment & Purification"
-    subtitle="Each application has its own operating conditions — and the conditions determine the material. Start from your pollutant and process, and the material follows."
+    title="Industrial Applications: Gas & Liquid Phase Treatment"
+    subtitle="Each application has its own operating conditions — and the conditions determine the material. Start from your pollutant or contaminant and process, and the material follows."
   />
 
   <div class="mx-auto max-w-7xl px-4 sm:px-6 pb-8 space-y-14">
@@ -52,6 +52,29 @@ const metadata = {
               'Trace contaminant polishing and purification duties in industrial gas streams — adsorption materials and molecular sieves matched to the impurity.',
             icon: 'tabler:filter',
             callToAction: { text: 'Gas purification application guide', href: '/applications/gas-purification/' },
+          },
+        ]}
+      />
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-6">Liquid-phase applications</h2>
+      <Features
+        columns={2}
+        items={[
+          {
+            title: 'Water Treatment',
+            description:
+              'Drinking water, wastewater polishing and industrial process water — granular beds as a standing barrier, powdered carbon for spike response.',
+            icon: 'tabler:droplet',
+            callToAction: { text: 'Water treatment application guide', href: '/applications/water-treatment/' },
+          },
+          {
+            title: 'Decolorization',
+            description:
+              'Color-body removal from sugar syrup, food and beverage liquids, and chemical process streams — powder contact process or granular bed.',
+            icon: 'tabler:color-swatch',
+            callToAction: { text: 'Decolorization application guide', href: '/applications/decolorization/' },
           },
         ]}
       />
