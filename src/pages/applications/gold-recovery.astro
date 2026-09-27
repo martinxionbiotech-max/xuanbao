@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Gold Recovery with Activated Carbon: CIP, CIL & Heap Leaching',
+  description:
+    'Activated carbon for gold recovery from cyanide leach solutions: CIP/CIL circuit roles, carbon properties that matter — hardness, activity and particle size — and selection guidance.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'Gold Recovery' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Gold Recovery with Activated Carbon
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Adsorbing gold from cyanide leach solutions — where carbon hardness, activity and particle size decide the recovery rate.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">How carbon recovers gold</h2>
+      <p class="text-muted leading-relaxed">
+        In cyanide leaching, gold dissolves as a gold-cyanide complex. Activated carbon adsorbs that complex onto
+        its internal pore surface, concentrating the gold onto the carbon — which is then eluted and the gold
+        recovered, while the carbon is regenerated for reuse. The carbon works in three classic circuit positions:
+      </p>
+      <ul class="space-y-3 text-muted mt-4">
+        <li><strong class="text-heading">CIP — carbon-in-pulp</strong>: carbon moves counter-current to the leached pulp in a series of agitated tanks, each separated by screens that hold the carbon back while pulp flows on.</li>
+        <li><strong class="text-heading">CIL — carbon-in-leach</strong>: carbon is added directly into the leaching tanks, so leaching and adsorption run simultaneously in the same vessels.</li>
+        <li><strong class="text-heading">Heap leaching</strong>: leach solution percolates through a heap of ore, and the pregnant solution passes through carbon adsorption columns to strip the gold.</li>
+      </ul>
+      <p class="text-muted mt-4">
+        Every one of these duties puts the carbon under mechanical stress — agitated tanks, screen transfer, slurry
+        abrasion. That is why gold-recovery carbon is graded on its <strong class="text-heading">hardness and
+        attrition resistance</strong> first: carbon that breaks down is lost through the screens, and gold is lost
+        with it.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Material routes"
+      items={[
+        { title: 'Coconut-shell granular', description: 'High hardness and low attrition loss — the standard workhorse for CIP/CIL agitation circuits.', icon: 'tabler:hexagons', callToAction: { text: 'Coconut-shell carbon', href: '/products/activated-carbon/coconut-shell-carbon/' } },
+        { title: 'Granular bed columns', description: 'Packed adsorption columns for heap-leach pregnant solution — the fixed-bed route to gold capture.', icon: 'tabler:stack-2', callToAction: { text: 'Activated carbon products', href: '/products/activated-carbon/' } },
+        { title: 'Material knowledge', description: 'Raw-material families, pore structure and hardness differences — what to check before you buy.', icon: 'tabler:book', callToAction: { text: 'Raw materials guide', href: 'https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-raw-materials/' } },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">Hardness and attrition</strong> — the decisive property for agitated circuits. Carbon loss through screens is direct gold loss; specify the hardness test method and the attrition limit.</li>
+        <li><strong class="text-heading">Activity</strong> — the gold-loading rate on a reference solution. Compare activity figures only when the test method and reference conditions match.</li>
+        <li><strong class="text-heading">Particle size distribution</strong> — sized to your screens: oversize fouls the inter-stage screens, undersize is lost to the pulp.</li>
+        <li><strong class="text-heading">The elution loop</strong> — carbon leaves the circuit loaded, comes back regenerated. State your elution and thermal reactivation route; it sets the carbon's minimum durability.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Technical background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-adsorption-mechanism/">adsorption mechanism</a>{' '}
+        and{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/activated-carbon/activated-carbon-regeneration/">regeneration</a> in our knowledge center.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Describe Your Circuit', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Tell us the circuit, <span class="text-accent">we match the carbon</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      CIP, CIL or heap leach, screen size and elution route — the inputs of a gold-carbon specification.
+    </Fragment>
+  </CallToAction>
+</Layout>
