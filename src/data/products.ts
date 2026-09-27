@@ -1,3 +1,19 @@
+import type { ImageMetadata } from 'astro';
+import ycxbAPhoto from '~/assets/images/products/ycxb-a-photo.jpg';
+import ycxbASpec from '~/assets/images/products/yc-xb-a-platinum-catalyst-spec.png';
+import ycxbBPhoto from '~/assets/images/products/ycxb-b-photo.jpg';
+import ycxbBSpec from '~/assets/images/products/yc-xb-b-pt-pd-catalyst-spec.png';
+import ycxbCPhoto from '~/assets/images/products/ycxb-c-photo.jpg';
+import ycxbCSpec from '~/assets/images/products/yc-xb-c-non-precious-catalyst-spec.png';
+import honeycombACPhoto from '~/assets/images/products/honeycomb-ac-photo.jpg';
+import honeycombACSpec from '~/assets/images/products/honeycomb-activated-carbon-spec.png';
+import columnarACPhoto from '~/assets/images/products/columnar-ac-photo.jpg';
+import columnarACSpec from '~/assets/images/products/columnar-activated-carbon-spec.png';
+import fruitShellACPhoto from '~/assets/images/products/fruit-shell-ac-photo.jpg';
+import fruitShellACSpec from '~/assets/images/products/fruit-shell-activated-carbon-spec.png';
+import acfPhoto from '~/assets/images/products/acf-photo.jpg';
+import acfSpec from '~/assets/images/products/activated-carbon-fiber-spec.png';
+
 export interface Product {
   slug: string[];        // route segments, e.g. ['scr-denox-catalysts','plate-type-scr-catalyst']
   path?: string;         // set by the route
@@ -16,6 +32,8 @@ export interface Product {
   custom?: string;
   faqs?: { q: string; a: string }[];
   crumbs: { name: string; href?: string }[];
+  image?: ImageMetadata;      // product photo
+  specSheet?: ImageMetadata;  // English specification sheet
 }
 
 export const products: Product[] = [
@@ -159,6 +177,8 @@ export const products: Product[] = [
     h1: 'Platinum Honeycomb Catalyst — YC-XB-A',
     model: 'YC-XB-A',
     category: 'VOC Catalysts',
+    image: ycxbAPhoto,
+    specSheet: ycxbASpec,
     seoTitle: 'Platinum Honeycomb VOC Catalyst YC-XB-A | Xuanbao Environmental',
     metaDescription:
       'Single-metal nano-platinum VOC oxidation catalyst YC-XB-A on 200 cpsi cordierite, 220–600°C, design conversion ≥98%, for coating, printing, chemical and automotive VOC exhaust.',
@@ -178,15 +198,15 @@ export const products: Product[] = [
       <tr><td>Maximum temperature</td><td>800°C</td></tr>
       <tr><td>Typical space velocity</td><td>10,000–20,000 h⁻¹</td></tr>
       <tr><td>Concentration range</td><td>1,500–8,000 mg/m³ *</td></tr>
-      <tr><td>Design conversion</td><td>≥98% *</td></tr>
-      <tr><td>Expected service life</td><td>&gt;2 years *</td></tr>
+      <tr><td>Design conversion</td><td>≥98%</td></tr>
+      <tr><td>Expected service life</td><td>&gt;2 years</td></tr>
     </tbody>`,
     features:
       '<li>Nano Pt active component with good low-temperature activity</li><li>Wide VOC applicability — aromatics, alcohols, ketones, esters</li><li>High mechanical strength</li><li>Customizable element dimensions</li>',
     applications:
       '<li>Coating lines</li><li>Printing</li><li>Chemical manufacturing</li><li>Automotive manufacturing</li><li>Organic chemical processes</li>',
     limitations:
-      'Concentration range, conversion and service life marked (*) are reported values from original documentation and depend strongly on VOC composition, temperature and space velocity. Streams containing catalyst poisons (halogens, heavy metals, polymerizable compounds) require prior evaluation and testing.',
+      'Concentration range marked (*) carries a unit ambiguity in the printed source (value stated without unit). Conversion and service life are manufacturer brochure values and depend on VOC composition, temperature and space velocity. Streams containing catalyst poisons (halogens, heavy metals, polymerizable compounds) require prior evaluation and testing.',
     custom:
       'Element size can be customized; larger catalyst volumes are assembled from standard elements.',
     faqs: [
@@ -207,6 +227,8 @@ export const products: Product[] = [
     h1: 'Platinum-Palladium Honeycomb Catalyst — YC-XB-B',
     model: 'YC-XB-B',
     category: 'VOC Catalysts',
+    image: ycxbBPhoto,
+    specSheet: ycxbBSpec,
     seoTitle: 'Platinum-Palladium VOC Catalyst YC-XB-B | Xuanbao Environmental',
     metaDescription:
       'Dual precious-metal Pt-Pd honeycomb VOC catalyst YC-XB-B on 200 cpsi cordierite, 240–400°C, lower light-off temperature for mixed VOC streams in coating and printing exhaust.',
@@ -226,8 +248,8 @@ export const products: Product[] = [
       <tr><td>Maximum temperature</td><td>900°C</td></tr>
       <tr><td>Typical space velocity</td><td>15,000–20,000 h⁻¹</td></tr>
       <tr><td>Concentration range</td><td>1,500–8,000 mg/m³ *</td></tr>
-      <tr><td>Design conversion</td><td>≥98% *</td></tr>
-      <tr><td>Expected service life</td><td>&gt;2 years *</td></tr>
+      <tr><td>Design conversion</td><td>≥98%</td></tr>
+      <tr><td>Expected service life</td><td>&gt;2 years</td></tr>
     </tbody>`,
     features:
       '<li>Pt-Pd bimetallic system with lower light-off temperature</li><li>Wider VOC applicability on mixed streams</li><li>Higher maximum operating temperature (900°C)</li><li>High mechanical strength</li>',
@@ -249,6 +271,8 @@ export const products: Product[] = [
     h1: 'Non-Precious-Metal VOC Catalyst — YC-XB-C',
     model: 'YC-XB-C',
     category: 'VOC Catalysts',
+    image: ycxbCPhoto,
+    specSheet: ycxbCSpec,
     seoTitle: 'Non-Precious-Metal VOC Catalyst YC-XB-C | Xuanbao Environmental',
     metaDescription:
       'Ag-Cu-Mn composite oxide VOC catalyst YC-XB-C on 200 cpsi cordierite, 260–450°C, a lower-cost alternative for non-hydrocarbon VOC catalytic oxidation.',
@@ -261,19 +285,22 @@ export const products: Product[] = [
       <tr><td>Size</td><td>100×100×50 mm</td></tr>
       <tr><td>Cell density</td><td>200 cpsi</td></tr>
       <tr><td>Active components</td><td>Ag / Cu / Mn</td></tr>
+      <tr><td>Water absorption</td><td>&lt;25%</td></tr>
+      <tr><td>Axial strength</td><td>≥10 MPa</td></tr>
+      <tr><td>Lateral strength</td><td>≥2 MPa</td></tr>
       <tr><td>Operating temperature</td><td>260–450°C</td></tr>
       <tr><td>Maximum temperature</td><td>500°C</td></tr>
       <tr><td>Space velocity</td><td>10,000–15,000 h⁻¹</td></tr>
       <tr><td>Concentration range</td><td>1,500–4,000 mg/m³ *</td></tr>
-      <tr><td>Design conversion</td><td>≥98% *</td></tr>
-      <tr><td>Expected service life</td><td>&gt;1 year *</td></tr>
+      <tr><td>Design conversion</td><td>≥98%</td></tr>
+      <tr><td>Expected service life</td><td>&gt;1 year</td></tr>
     </tbody>`,
     features:
       '<li>No platinum-group metals — lower material cost</li><li>Suitable for non-hydrocarbon VOC streams</li><li>Good thermal stability within its window</li>',
     applications:
       '<li>Non-hydrocarbon VOC catalytic oxidation</li><li>Cost-sensitive VOC abatement projects</li>',
     limitations:
-      'Values marked (*) are reported values from original documentation. Because the system contains no precious metals, light-off temperature is higher and the applicable VOC range is narrower. Halogenated compounds and high-humidity streams require prior evaluation.',
+      'Concentration range marked (*) carries a unit ambiguity in the printed source. Conversion and service life are manufacturer brochure values. Because the system contains no precious metals, light-off temperature is higher and the applicable VOC range is narrower. Halogenated compounds and high-humidity streams require prior evaluation.',
     faqs: [
       {
         q: 'When should I consider the non-precious-metal catalyst?',
@@ -421,6 +448,8 @@ export const products: Product[] = [
     name: 'Honeycomb Activated Carbon',
     h1: 'Honeycomb Activated Carbon',
     category: 'Activated Carbon',
+    image: honeycombACPhoto,
+    specSheet: honeycombACSpec,
     seoTitle: 'Honeycomb Activated Carbon Manufacturer | Xuanbao Environmental',
     metaDescription:
       'Honeycomb activated carbon SFW-10 / SFW-5 with 600–900 mg/g iodine value and 700–1,000 m²/g BET surface area, low pressure drop for gas-phase VOC adsorption.',
@@ -436,10 +465,10 @@ export const products: Product[] = [
       <tr><td>Ash</td><td>≤10%</td><td>≤10%</td></tr>
       <tr><td>CCl₄ adsorption</td><td>45–65%</td><td>45–65%</td></tr>
       <tr><td>Compressive strength</td><td>1.2 MPa</td><td>1.2 MPa</td></tr>
-      <tr><td>Bulk density</td><td>~500 kg/m³ *</td><td>~500 kg/m³ *</td></tr>
-      <tr><td>Benzene adsorption</td><td>25–35%</td><td>—</td></tr>
-      <tr><td>Wall thickness</td><td>1 mm</td><td>—</td></tr>
-      <tr><td>Pressure drop</td><td>~490 Pa *</td><td>—</td></tr>
+      <tr><td>Bulk density</td><td>500±30 kg/m³</td><td>500±30 kg/m³</td></tr>
+      <tr><td>Benzene adsorption</td><td>25–35%</td><td>25–35%</td></tr>
+      <tr><td>Wall thickness</td><td>1 mm</td><td>1 mm</td></tr>
+      <tr><td>Pressure drop</td><td>490 Pa</td><td>490 Pa</td></tr>
     </tbody>`,
     features:
       '<li>Large contact area with low pressure drop</li><li>Good mechanical strength</li><li>Standard block formats, customizable sizes</li>',
@@ -452,7 +481,7 @@ export const products: Product[] = [
     faqs: [
       {
         q: 'What is the typical pressure drop of honeycomb activated carbon?',
-        a: 'The documented value is around 490 Pa (*, to be confirmed) under standard conditions — far lower than granular beds, which is why honeycomb blocks are used for high-flow, low-pressure-drop applications.',
+        a: 'The documented value is 490 Pa under standard conditions — far lower than granular beds, which is why honeycomb blocks are used for high-flow, low-pressure-drop applications.',
       },
       {
         q: 'How often is the carbon replaced?',
@@ -466,6 +495,8 @@ export const products: Product[] = [
     name: 'Coal-Based Columnar Activated Carbon',
     h1: 'Columnar Activated Carbon',
     category: 'Activated Carbon',
+    image: columnarACPhoto,
+    specSheet: columnarACSpec,
     seoTitle: 'Coal-Based Columnar Activated Carbon Manufacturer | Xuanbao',
     metaDescription:
       'Coal-based columnar activated carbon in 1.5–8 mm diameters, BET 600–1,000 m²/g, iodine 600–1,000 mg/g, for gas purification and industrial adsorption.',
@@ -473,21 +504,20 @@ export const products: Product[] = [
       'Extruded coal-based columnar activated carbon in 1.5 / 4 / 6 / 8 mm diameters for gas purification and industrial adsorption applications.',
     overview:
       'Produced from selected coal by crushing, blending, extrusion forming, carbonization and activation, columnar activated carbon offers high mechanical strength and good adsorption capacity, and is widely used in gas-phase purification and solvent recovery.',
-    specs: `<thead><tr><th>Parameter</th><th>Typical range</th></tr></thead><tbody>
-      <tr><td>Diameter</td><td>1.5 / 4 / 6 / 8 mm</td></tr>
-      <tr><td>BET surface area</td><td>≥600–1,000 m²/g</td></tr>
-      <tr><td>CCl₄ adsorption</td><td>≥40–65%</td></tr>
-      <tr><td>Iodine value</td><td>≥600–1,000 mg/g</td></tr>
-      <tr><td>Strength</td><td>≥93–96%</td></tr>
-      <tr><td>Moisture</td><td>≤10%</td></tr>
-      <tr><td>Bulk density</td><td>~500–700 g/L *</td></tr>
+    specs: `<thead><tr><th>Parameter</th><th>φ1.5 mm</th><th>φ4 mm</th><th>φ6 mm</th><th>φ8 mm</th></tr></thead><tbody>
+      <tr><td>BET surface area</td><td>≥600</td><td>≥800</td><td>≥900</td><td>≥1,000 m²/g</td></tr>
+      <tr><td>CCl₄ adsorption</td><td>≥40%</td><td>≥50%</td><td>≥55%</td><td>≥65%</td></tr>
+      <tr><td>Iodine value</td><td>≥600</td><td>800</td><td>900</td><td>1,000 mg/g</td></tr>
+      <tr><td>Strength</td><td>≥96%</td><td>≥95%</td><td>94%</td><td>93%</td></tr>
+      <tr><td>Moisture</td><td>≤10%</td><td>≤10%</td><td>≤10% *</td><td>≤10%</td></tr>
+      <tr><td>Bulk density</td><td>600–700</td><td>500–600</td><td>500–600</td><td>500–600 g/L *</td></tr>
     </tbody>`,
     features:
       '<li>High mechanical strength</li><li>Multiple standard diameters</li><li>Good capacity for organic vapor adsorption</li>',
     applications:
       '<li>Industrial gas purification</li><li>Solvent recovery</li><li>Odor and VOC control</li>',
     limitations:
-      'Carbon is combustible; temperature limits and fire-safety measures apply. Bulk density marked (*) is from original documentation and should be confirmed per batch.',
+      'Carbon is combustible; temperature limits and fire-safety measures apply. Bulk density and the φ6 mm moisture value are marked (*) for unit/print ambiguity in the printed source — confirm per batch.',
     faqs: [
       {
         q: 'Which diameter should I choose?',
@@ -523,10 +553,54 @@ export const products: Product[] = [
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
   {
+    slug: ['activated-carbon', 'fruit-shell-carbon'],
+    name: 'Fruit-Shell Activated Carbon',
+    h1: 'Fruit-Shell Activated Carbon',
+    model: 'STK-B / STK-A / SXK-B / SXK-A',
+    category: 'Activated Carbon',
+    image: fruitShellACPhoto,
+    specSheet: fruitShellACSpec,
+    seoTitle: 'Fruit-Shell Activated Carbon STK/SXK | Xuanbao Environmental',
+    metaDescription:
+      'Fruit-shell activated carbon STK-B / STK-A / SXK-B / SXK-A, 4–20 mesh granular, iodine 500–1,000 mg/g, for decolorization of sugar, wine, beverage and food liquids and water purification.',
+    intro:
+      'Granular fruit-shell activated carbon for liquid-phase decolorization, water purification and catalyst support — STK and SXK series.',
+    overview:
+      'Produced from selected fruit shells by carbonization, crushing, screening, high-temperature steam activation and refining, this irregular granular carbon combines good strength, high surface area and fast liquid-phase adsorption kinetics. Documented uses include decolorization for sugar, wine, MSG, amino-acid, beverage and drinking-water processing, food and pharmaceutical decolorization, and catalyst support.',
+    specs: `<thead><tr><th>Parameter</th><th>Specification</th></tr></thead><tbody>
+      <tr><td>Models</td><td>STK-B / STK-A / SXK-B / SXK-A</td></tr>
+      <tr><td>Mesh</td><td>4–20</td></tr>
+      <tr><td>Iodine value</td><td>500–1,000 mg/g</td></tr>
+      <tr><td>Moisture</td><td>≤10%</td></tr>
+      <tr><td>Ash</td><td>≤6%</td></tr>
+      <tr><td>Strength</td><td>95–97%</td></tr>
+      <tr><td>pH</td><td>7–9</td></tr>
+    </tbody>`,
+    features:
+      '<li>Good strength with fast liquid-phase kinetics</li><li>Developed transitional pore structure</li><li>Documented decolorization duty across food &amp; beverage processing</li>',
+    applications:
+      '<li>Sugar decolorization</li><li>Wine &amp; beverage decolorization</li><li>MSG / amino-acid processing</li><li>Drinking-water purification</li><li>Food &amp; pharmaceutical decolorization</li><li>Catalyst support</li>',
+    limitations:
+      'All four models carry the same brochure specification ranges; the correct grade is confirmed from your liquid, temperature and target color value. Food and pharmaceutical duty requires the purity grade matching the end-use standard — state the standard when requesting a quotation.',
+    faqs: [
+      {
+        q: 'Which grade should I choose?',
+        a: 'All four models (STK-B / STK-A / SXK-B / SXK-A) share the same brochure specification ranges. We confirm the exact grade from your liquid, temperature, contact mode and target color value.',
+      },
+      {
+        q: 'Is fruit-shell carbon the same as coconut-shell carbon?',
+        a: 'Coconut shell is one specific fruit-shell feedstock; the STK/SXK series covers fruit-shell feedstocks generally as irregular granular carbon for liquid-phase duty. For gas-phase or catalyst-support applications, see the coconut-shell product page.',
+      },
+    ],
+    crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
+  },
+  {
     slug: ['activated-carbon', 'activated-carbon-fiber'],
     name: 'Activated Carbon Fiber',
     h1: 'Activated Carbon Fiber',
     category: 'Activated Carbon',
+    image: acfPhoto,
+    specSheet: acfSpec,
     seoTitle: 'Activated Carbon Fiber | Xuanbao Environmental',
     metaDescription:
       'Activated carbon fiber for low-concentration gas-phase pollutant and odor adsorption — benzene, xylene, formaldehyde, methanol and dust filtration.',
@@ -534,12 +608,18 @@ export const products: Product[] = [
       'Fiber-form activated carbon filter material for low-concentration gas-phase pollutants, odors and combined dust filtration.',
     overview:
       'Activated carbon fiber provides fast adsorption kinetics in a flexible filter format, used for low-concentration VOC and odor control in air handling and ventilation systems.',
+    specs: `<thead><tr><th>Parameter</th><th>2 mm</th><th>5 mm</th><th>8 mm</th><th>10 mm</th><th>20 mm</th></tr></thead><tbody>
+      <tr><td>Width</td><td colspan="5">500–1,500 mm</td></tr>
+      <tr><td>Carbon content</td><td colspan="5">40–80%</td></tr>
+      <tr><td>Air resistance</td><td>≤30</td><td>≤50</td><td>≤120</td><td>≤160</td><td>≤410 Pa·m/s</td></tr>
+      <tr><td>Benzene adsorption</td><td colspan="5">≥200 mg/g</td></tr>
+    </tbody>`,
     features:
       '<li>Fast adsorption kinetics</li><li>Flexible filter formats</li><li>Low pressure drop</li>',
     applications:
       '<li>Odor removal</li><li>Benzene adsorption</li><li>Xylene adsorption</li><li>Formaldehyde adsorption</li><li>Methanol adsorption</li><li>Dust filtration (combined use)</li>',
     limitations:
-      'Best suited to low-concentration, low-temperature gas streams; capacity is limited compared with granular beds and replacement cycles must be managed.',
+      'Best suited to low-concentration, low-temperature gas streams; capacity is limited compared with granular beds and replacement cycles must be managed. Specifications shown are manufacturer brochure values and must be confirmed per batch.',
     faqs: [
       {
         q: 'What concentrations suit activated carbon fiber?',
@@ -594,12 +674,12 @@ export const categoryMeta: Record<
   'activated-carbon': {
     name: 'Activated Carbon',
     h1: 'Activated Carbon Products',
-    seoTitle: 'Activated Carbon Manufacturer — Honeycomb, Columnar, Coconut Shell, Fiber | Xuanbao',
+    seoTitle: 'Activated Carbon Manufacturer — Honeycomb, Columnar, Coconut Shell, Fruit Shell, Fiber | Xuanbao',
     metaDescription:
-      'Honeycomb, coal-based columnar, coconut-shell and fiber activated carbon for VOC adsorption, gas purification, solvent recovery and odor control.',
+      'Honeycomb, coal-based columnar, coconut-shell, fruit-shell and fiber activated carbon for VOC adsorption, gas purification, decolorization, solvent recovery and odor control.',
     intro:
-      'Activated carbon products in honeycomb, columnar, coconut-shell and fiber forms for gas-phase adsorption.',
+      'Activated carbon products in honeycomb, columnar, coconut-shell, fruit-shell and fiber forms for gas-phase and liquid-phase adsorption.',
     overview:
-      'Carbon adsorbents offer high capacity per unit cost and are widely used for VOC adsorption, solvent recovery and odor control. Form selection — honeycomb, columnar, coconut-shell or fiber — is driven by flow rate, pressure drop budget and regeneration method.',
+      'Carbon adsorbents offer high capacity per unit cost and are widely used for VOC adsorption, solvent recovery, decolorization and odor control. Form selection — honeycomb, columnar, coconut-shell, fruit-shell or fiber — is driven by flow rate, pressure drop budget, target medium and regeneration method.',
   },
 };

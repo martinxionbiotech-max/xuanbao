@@ -7,6 +7,7 @@ import Note from '~/components/widgets/Note.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 
 import { SITE } from 'astrowind:config';
 import { products, type Product } from '~/data/products';
@@ -97,6 +98,24 @@ const breadcrumbItems = [
     )}
     <p class="mt-4 max-w-3xl text-lg text-muted">{product.intro}</p>
   </section>
+
+  {(product.image || product.specSheet) && (
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-2">
+      <div class="grid gap-6 md:grid-cols-2 items-start">
+        {product.image && (
+          <figure class="rounded-xl border border-slate-800 bg-slate-900/40 p-2">
+            <Image src={product.image} alt={product.name + ' — product photo'} class="w-full h-auto rounded-lg" width={800} />
+            <figcaption class="px-2 py-2 text-sm text-muted">Product photo — Xuanbao Environmental</figcaption>
+          </figure>
+        )}
+        {product.specSheet && (
+          <figure class="rounded-xl border border-slate-800 bg-white p-2">
+            <Image src={product.specSheet} alt={product.name + ' — specification sheet'} class="w-full h-auto rounded-lg" width={840} />
+          </figure>
+        )}
+      </div>
+    </div>
+  )}
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12 md:space-y-16">
     {product.overview && (

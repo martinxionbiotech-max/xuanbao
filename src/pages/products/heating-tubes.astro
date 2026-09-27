@@ -3,6 +3,10 @@ import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { Image } from 'astro:assets';
+
+import heatingTubesPhoto from '~/assets/images/products/heating-tubes-photo.jpg';
+import heatingTubesSpec from '~/assets/images/products/finned-heating-tubes-spec.png';
 
 const metadata = {
   title: 'Heating Components for Catalytic Systems',
@@ -24,6 +28,18 @@ const metadata = {
       Heating elements that support catalytic oxidation and adsorption-desorption systems.
     </p>
   </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-2">
+    <div class="grid gap-6 md:grid-cols-2 items-start">
+      <figure class="rounded-xl border border-slate-800 bg-slate-900/40 p-2">
+        <Image src={heatingTubesPhoto} alt="Finned heating tubes — product photo" class="w-full h-auto rounded-lg" width={704} />
+        <figcaption class="px-2 py-2 text-sm text-muted">Product photo — Xuanbao Environmental</figcaption>
+      </figure>
+      <figure class="rounded-xl border border-slate-800 bg-white p-2">
+        <Image src={heatingTubesSpec} alt="Finned heating tubes — specification sheet" class="w-full h-auto rounded-lg" width={840} />
+      </figure>
+    </div>
+  </div>
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
     <section>
@@ -48,8 +64,10 @@ const metadata = {
     <section class="rounded-xl border border-primary/30 bg-primary/10 p-5 text-muted leading-relaxed">
       <strong class="text-heading">Specifications</strong>
       <span class="block mt-2">
-        Heating component specifications are confirmed per project against flow rate, temperature requirement and
-        power supply. Please share your system parameters for a quotation.
+        Standard configurations per manufacturer brochure include finned/U-type electric heating tubes from
+        220 V 500 W to 380 V 6 kW (tube Ø 12/16 mm, thread 18/22 mm, length 30–98 cm, iron or stainless-steel body,
+        design life 5,000+ hours). Final configuration is confirmed per project against flow rate, temperature
+        requirement and power supply. Please share your system parameters for a quotation.
       </span>
     </section>
   </div>
