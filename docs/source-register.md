@@ -32,7 +32,7 @@
 | C22 | Factory/operation address: 盐城市盐都区义丰镇胥仇村118号厂房; Zibo sales office: 淄博市张店区华光路108号黄金1号总部大厦 | COMPANY_BROCHURE (brochure contact page, 2026-09-27) | BROCHURE | Registered office (亭湖区) differs from factory (盐都区) — both real; policy: street address stays OFF the EN site (per C3) |
 | C23 | Company-stated honors (brochure): 重合同守信用/诚信经营/重服务/重质量 AAA 级企业, 企业信用评价 AAA, 诚信供应商, 质量服务 AAA 诚信企业, 企业资信评价 AAA 信用企业, 2020年度优秀供应商 | COMPANY_BROCHURE (brochure honors page) | BROCHURE | Third-party credit-rating honors, not ISO/product certs; usable on About as "company-stated honors" only |
 | C24 | Brochure contact phones: 18560299835 / 18653383925 (differs from site phone C6 +86 151 6936 1313) | COMPANY_BROCHURE | BROCHURE | Site phone (C6) stays canonical; do not add brochure numbers to site without owner decision |
-| C25 | Company positioning (brochure): 高新科技企业 focused on organic waste-gas treatment; core products 贵金属蜂窝陶瓷催化剂 + 蜂窝活性炭 | COMPANY_BROCHURE | BROCHURE | Consistent with C12; no new claims |
+| C25 | Company positioning (brochure): 高新科技企业 focused on organic waste-gas treatment; core products 贵金属蜂窝陶瓷催化剂 + 蜂窝活性炭 | COMPANY_BROCHURE | BROCHURE | Consistent with C12; no new claims. Site positioning switched to catalyst-first per owner decision 2026-09-27 (homepage, products hub, nav, about) |
 
 ## 2. Product Specifications
 

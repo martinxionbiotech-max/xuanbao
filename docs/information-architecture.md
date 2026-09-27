@@ -25,7 +25,7 @@ Rule (§54): one domain. No split for multi-application reasons.
 
 | Existing URL | Purpose | Status |
 |---|---|---|
-| `/` | Homepage — AC-first positioning, business areas, materials, selection steps, field evidence | REWRITE |
+| `/` | Homepage — catalyst-first positioning (owner decision 2026-09-27), business areas, core catalyst line, AC materials, selection steps, field evidence | REWRITE |
 | `/products/` | Products landing — 3 groups: Activated Carbon / Catalysts / Molecular Sieves | REWRITE |
 | `/about/` | Company — verified facts + source-tagged statements | REWRITE |
 | `/r-and-d/` | R&D — + AC development direction, workflow | REWRITE |

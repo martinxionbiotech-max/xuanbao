@@ -11,9 +11,9 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Activated Carbon & Industrial Adsorption Materials | Xuanbao Environmental',
+  title: 'VOC Catalysts & Activated Carbon Manufacturer | Xuanbao Environmental',
   description:
-    'Manufacturer of activated carbon, adsorption materials and industrial emission-control materials for gas treatment, water purification and industrial process applications.',
+    'Manufacturer of precious-metal honeycomb ceramic VOC catalysts, industrial emission-control catalysts and activated carbon for gas treatment, water purification and industrial process applications.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -22,7 +22,7 @@ const metadata = {
   <Hero
     tagline="Yancheng Xuanbao Environmental Technology Co., Ltd."
     actions={[
-      { variant: 'primary', text: 'Explore Activated Carbon Products', href: '/products/activated-carbon/', icon: 'tabler:arrow-right' },
+      { variant: 'primary', text: 'Explore VOC Catalysts', href: '/products/voc-catalysts/', icon: 'tabler:arrow-right' },
       { text: 'Tell Us Your Application', href: '/contact/' },
     ]}
     image={{
@@ -31,14 +31,15 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      Activated Carbon &amp; <span class="text-accent">Industrial Adsorption Materials</span>
+      Precious-Metal <span class="text-accent">Honeycomb Ceramic Catalysts</span> &amp; Activated Carbon
     </Fragment>
 
     <Fragment slot="subtitle">
-      Xuanbao Environmental manufactures activated carbon, adsorption materials and industrial emission-control
-      materials for gas treatment, water purification and process applications. From raw-material selection and
-      material development to manufacturing, testing and technical support, we help industrial customers select
-      materials according to their operating conditions and performance requirements.
+      Xuanbao Environmental specializes in precious-metal honeycomb ceramic catalysts for VOC catalytic oxidation,
+      alongside industrial emission-control catalysts and activated carbon for gas treatment, water purification and
+      process applications. From raw-material selection and material development to manufacturing, testing and
+      technical support, we help industrial customers select materials according to their operating conditions and
+      performance requirements.
     </Fragment>
   </Hero>
 
@@ -55,13 +56,13 @@ const metadata = {
     id="business-areas"
     tagline="Business areas"
     title="Materials for Different Industrial Applications"
-    subtitle="Two connected directions, one material platform: activated carbon, adsorption materials and catalysts selected by application."
+    subtitle="Core business per company positioning: precious-metal honeycomb ceramic catalysts for VOC oxidation, supported by activated carbon and adsorption materials selected by application."
     columns={2}
     items={[
       {
         title: 'Environmental & Gas Treatment',
         description:
-          'Activated carbon and catalytic materials for VOC adsorption, solvent vapor control, odor control, industrial waste gas treatment and gas purification — plus CO oxidation, SCR DeNOx and VOC catalytic oxidation catalysts for flue gas and exhaust streams.',
+          'Precious-metal honeycomb ceramic catalysts for VOC catalytic oxidation, CO oxidation and SCR DeNOx catalysts for flue gas and exhaust streams — plus activated carbon for VOC adsorption, solvent vapor control, odor control, industrial waste gas treatment and gas purification.',
         icon: 'tabler:wind',
         callToAction: { text: 'Explore Gas Treatment Applications', href: '/industries/' },
       },
@@ -71,6 +72,34 @@ const metadata = {
           'Activated carbon and adsorption materials for water treatment, wastewater polishing, decolorization, chemical purification, pharmaceutical processing, food and beverage purification and selected industrial process applications.',
         icon: 'tabler:droplet',
         callToAction: { text: 'Explore Purification Applications', href: '/products/activated-carbon/coconut-shell-carbon/' },
+      },
+    ]}
+  />
+
+  <Features
+    id="catalysts"
+    tagline="Core products"
+    title="Precious-Metal Honeycomb Ceramic Catalysts"
+    subtitle="The core product line: honeycomb ceramic VOC oxidation catalysts in three series, selected by VOC composition, concentration and operating temperature."
+    columns={3}
+    items={[
+      {
+        title: 'YC-XB-A Platinum Catalyst',
+        description: 'Nano Pt, 220–600°C operating, ≥98% design conversion, >2 years expected service life.',
+        icon: 'tabler:atom',
+        callToAction: { text: 'View Platinum Catalyst', href: '/products/voc-catalysts/platinum-catalyst/' },
+      },
+      {
+        title: 'YC-XB-B Pt-Pd Catalyst',
+        description: 'Bimetallic Pt-Pd, 240–400°C operating, 900°C maximum, >2 years expected service life.',
+        icon: 'tabler:atom-2',
+        callToAction: { text: 'View Pt-Pd Catalyst', href: '/products/voc-catalysts/platinum-palladium-catalyst/' },
+      },
+      {
+        title: 'YC-XB-C Non-Precious-Metal Catalyst',
+        description: 'Ag-Cu-Mn system, 260–450°C operating, ≥98% design conversion, >1 year expected service life.',
+        icon: 'tabler:flask',
+        callToAction: { text: 'View Non-Precious Catalyst', href: '/products/voc-catalysts/non-precious-metal-catalyst/' },
       },
     ]}
   />
@@ -314,7 +343,7 @@ const metadata = {
     actions={[{ variant: 'primary', text: 'Send Your Operating Conditions', href: '/contact/', icon: 'tabler:arrow-right' }]}
   >
     <Fragment slot="title">
-      Need help selecting activated carbon or <span class="text-accent">an industrial treatment material?</span>
+      Need help selecting a VOC catalyst or <span class="text-accent">an industrial treatment material?</span>
     </Fragment>
 
     <Fragment slot="subtitle">

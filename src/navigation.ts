@@ -6,9 +6,9 @@ export const headerData = {
       text: 'Products',
       links: [
         { text: 'All Products', href: getPermalink('/products') },
+        { text: 'VOC Catalysts', href: getPermalink('/products/voc-catalysts') },
         { text: 'SCR DeNOx Catalysts', href: getPermalink('/products/scr-denox-catalysts') },
         { text: 'CO Oxidation Catalyst', href: getPermalink('/products/co-removal-catalyst') },
-        { text: 'VOC Catalysts', href: getPermalink('/products/voc-catalysts') },
         { text: 'Zeolite Molecular Sieves', href: getPermalink('/products/zeolite-molecular-sieve') },
         { text: 'Activated Carbon', href: getPermalink('/products/activated-carbon') },
       ],
@@ -60,9 +60,9 @@ export const footerData = {
     {
       title: 'Products',
       links: [
+        { text: 'VOC Catalysts', href: getPermalink('/products/voc-catalysts') },
         { text: 'SCR DeNOx Catalysts', href: getPermalink('/products/scr-denox-catalysts') },
         { text: 'CO Oxidation Catalyst', href: getPermalink('/products/co-removal-catalyst') },
-        { text: 'VOC Catalysts', href: getPermalink('/products/voc-catalysts') },
         { text: 'Zeolite Molecular Sieves', href: getPermalink('/products/zeolite-molecular-sieve') },
         { text: 'Activated Carbon', href: getPermalink('/products/activated-carbon') },
       ],

@@ -7,9 +7,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: 'Activated Carbon & Industrial Adsorption Materials | Xuanbao Environmental'
+    default: 'VOC Catalysts & Activated Carbon Manufacturer | Xuanbao Environmental'
     template: '%s | Xuanbao Environmental'
-  description: 'Manufacturer of activated carbon, adsorption materials and industrial emission-control materials for gas treatment, water purification and industrial process applications.'
+  description: 'Manufacturer of precious-metal honeycomb ceramic VOC catalysts, industrial emission-control catalysts and activated carbon for gas treatment, water purification and industrial process applications.'
   robots:
     index: true
     follow: true
