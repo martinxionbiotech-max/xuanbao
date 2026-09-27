@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -9,15 +10,33 @@ import { caseStudies } from '~/data/cases';
 import { caseDetails } from '~/data/details';
 import { getPermalink } from '~/utils/permalinks';
 
+import { SITE } from 'astrowind:config';
+
 export function getStaticPaths() {
   return caseStudies.map((c) => ({ params: { slug: c.slug }, props: { caseStudy: c } }));
 }
 
 const { caseStudy } = Astro.props;
 const cs = caseStudy as (typeof caseStudies)[number];
+
+const pageUrl = String(SITE.site).replace(/\/$/, '') + '/case-studies/' + cs.slug;
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  '@id': pageUrl + '#article',
+  headline: cs.h1,
+  description: cs.metaDescription,
+  url: pageUrl,
+  datePublished: cs.testDate,
+  author: { '@id': SITE.site + '/#organization' },
+  publisher: { '@id': SITE.site + '/#organization' },
+  isPartOf: { '@type': 'WebSite', '@id': SITE.site + '/#website' },
+  mainEntityOfPage: pageUrl,
+};
 ---
 
 <Layout metadata={{ title: cs.seoTitle, description: cs.metaDescription, ignoreTitleTemplate: true }}>
+  <StructuredData slot="head" schema={articleSchema} />
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Case Studies', href: '/case-studies/' }, { text: cs.name }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
