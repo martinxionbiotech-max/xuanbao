@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Material Testing & Performance Evaluation | Xuanbao Environmental',
+  description:
+    'Testing capabilities for catalysts and adsorbents: BET, XRF, XRD, ICP characterization, dynamic adsorption testing, catalyst activity testing and third-party verification.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'About Us', href: '/about/' }, { text: 'Testing' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">About Us</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      Material Testing &amp; Performance Evaluation
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Testing converts claims into measurements — characterization, performance evaluation and third-party verification.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <Features
+      columns={3}
+      title="Characterization Methods"
+      subtitle="Methods used in our laboratory — capabilities as stated on this site."
+      items={[
+        { title: 'BET', description: 'Specific surface area and pore structure analysis of materials.', icon: 'tabler:chart-area' },
+        { title: 'XRF', description: 'Elemental and composition analysis of materials.', icon: 'tabler:radar-2' },
+        { title: 'XRD', description: 'Crystal phase and crystal structure analysis.', icon: 'tabler:prism' },
+        { title: 'ICP', description: 'Elemental composition and metal content analysis.', icon: 'tabler:flask-2' },
+        { title: 'Dynamic adsorption testing', description: 'Dynamic simulation testing against the target gas or adsorption medium under controlled conditions.', icon: 'tabler:wind' },
+        { title: 'Mechanical testing', description: 'Compressive strength, wear and physical property testing.', icon: 'tabler:gauge' },
+      ]}
+    />
+
+    <Features
+      columns={3}
+      title="Performance Evaluation"
+      items={[
+        { title: 'Catalyst activity', description: 'Activity testing under simulated operating conditions.', icon: 'tabler:activity' },
+        { title: 'Adsorption capacity', description: 'Capacity measurement against the target contaminant and test method.', icon: 'tabler:layers-subtract' },
+        { title: 'Third-party testing', description: 'Combined with third-party testing or customer-specified requirements.', icon: 'tabler:certificate' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">How test data is classified</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">Manufacturer specification</strong> — the product's defined property range.</li>
+        <li><strong class="text-heading">Typical value</strong> — laboratory or application performance under stated conditions.</li>
+        <li><strong class="text-heading">Test result</strong> — measured data from a specific test, with its conditions.</li>
+        <li><strong class="text-heading">Design value</strong> — engineering reference; actual performance depends on operating conditions.</li>
+        <li><strong class="text-heading">Field data</strong> — measured data from a specific industrial application, valid for the tested conditions and not a universal performance guarantee.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Testing documentation in our knowledge center:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/testing/">
+          testing and verification guides</a>.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'See Quality & Testing Procedures', href: '/quality/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Testing turns claims <span class="text-accent">into measurements</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Ask for the test method behind any figure — we publish the conditions with the data.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'CO Removal from Industrial Exhaust: Catalytic Oxidation',
+  description:
+    'CO removal by catalytic oxidation: precious-metal honeycomb and alumina catalysts, 150–600°C operating window, sintering machine and incineration applications with documented field test results.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'CO Removal' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      CO Removal from Industrial Exhaust
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Catalytic oxidation converts carbon monoxide to CO₂ — the practical route where combustion control alone cannot meet emission limits.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">How catalytic CO oxidation works</h2>
+      <p class="text-muted leading-relaxed max-w-3xl mx-auto text-center">
+        Carbon monoxide is oxidized to CO₂ over a catalyst — 2CO + O₂ → 2CO₂ — at temperatures far below the
+        thermal route. Precious-metal catalysts on honeycomb ceramic (cordierite) or alumina substrates operate
+        across roughly <strong class="text-heading">150–600°C</strong>, covering the exhaust windows of sintering
+        machines, waste incinerators, furnaces and process vents. The catalyst converts CO that survives imperfect
+        combustion; it is not a substitute for combustion control, but the final step that meets the emission limit.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Documented field results"
+      items={[
+        { title: 'Sintering machine', description: 'CO reduced from 1,499 ppm to 18 ppm — field test record dated 2022-08-23.', icon: 'tabler:flame', callToAction: { text: 'Read the case study', href: '/case-studies/sintering-machine-co-removal/' } },
+        { title: 'Medical waste incinerator', description: 'CO reduced from 11,224.2 mg/Nm³ to 16.2 mg/Nm³ — field test record dated 2023-03-20.', icon: 'tabler:recycle', callToAction: { text: 'Read the case study', href: '/case-studies/medical-waste-incinerator-co-removal/' } },
+        { title: 'Furnaces & process vents', description: 'Catalytic CO oxidation for combustion-exhaust polishing across furnace and process applications.', icon: 'tabler:building-factory' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">CO inlet concentration</strong> — the catalyst converts what combustion leaves behind; state the inlet and target outlet.</li>
+        <li><strong class="text-heading">Exhaust temperature</strong> — catalytic oxidation is windowed; position the reactor where the exhaust temperature matches the catalyst.</li>
+        <li><strong class="text-heading">O₂ content</strong> — the reaction needs oxygen; verify the excess-air level at the reactor position.</li>
+        <li><strong class="text-heading">Co-pollutants</strong> — dust, SO₂ and alkali metals degrade catalyst activity over time; they set the maintenance interval.</li>
+        <li><strong class="text-heading">Flow fluctuation</strong> — incinerator streams cycle; the catalyst must tolerate thermal cycling (see field test records).</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Related product:{' '}
+        <a class="text-primary hover:underline" href="/products/co-removal-catalyst/">CO oxidation catalyst</a> —{' '}
+        cordierite honeycomb and alumina substrate configurations.
+      </p>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Send Your CO Stream Data', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      CO is a combustion leftover — <span class="text-accent">we finish the reaction</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Inlet CO, temperature, O₂ and flow — the four inputs of a CO catalyst selection.
+    </Fragment>
+  </CallToAction>
+</Layout>

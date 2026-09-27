@@ -1,0 +1,89 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'NOx Reduction with SCR Catalysts: Plate vs Honeycomb Selection',
+  description:
+    'NOx reduction by selective catalytic reduction (SCR): V-Mo-Ti catalyst chemistry, plate-type vs honeycomb selection by dust loading, temperature windows and industry-specific guidance.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Applications', href: '/applications/' }, { text: 'NOx Reduction' }]} />
+
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
+    <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2">Applications</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading">
+      NOx Reduction with SCR Catalysts
+    </h1>
+    <p class="mt-4 max-w-3xl text-lg text-muted">
+      Selective catalytic reduction turns NOx into N₂ and water — the catalyst geometry follows the dust, the chemistry follows the gas.
+    </p>
+  </section>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-12">
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">How SCR removes NOx</h2>
+      <p class="text-muted leading-relaxed max-w-3xl mx-auto text-center">
+        Selective catalytic reduction (SCR) converts nitrogen oxides to nitrogen and water in the presence of a
+        reducing agent — typically ammonia — over a catalyst. The catalyst lowers the temperature at which the
+        reaction proceeds to a practical operating window: V-Mo-Ti oxide systems work across roughly
+        <strong class="text-heading">150–420°C</strong>. Two process routes exist in practice: high-dust SCR, where
+        the reactor sits upstream of the dust collector and the catalyst faces raw flue gas; and tail-end SCR, where
+        the catalyst sees clean gas. The route — not the chemistry — decides which catalyst geometry you need.
+      </p>
+    </section>
+
+    <Features
+      columns={3}
+      title="Plate vs honeycomb — the geometry decision"
+      items={[
+        { title: 'Plate-type SCR', description: 'Large pitch and open area for high-dust flue gas: power, cement, alumina — resists plugging and abrasion.', icon: 'tabler:layers-subtract' },
+        { title: 'Honeycomb SCR', description: 'High specific surface in a compact volume — for low-dust or tail-end positions and tight layouts.', icon: 'tabler:hexagons' },
+        { title: 'V-Mo-Ti chemistry', description: 'Vanadium-based oxide system with molybdenum promoter — the industrial standard for dust-laden NOx streams.', icon: 'tabler:atom-2' },
+      ]}
+    />
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Selection checklist</h2>
+      <ul class="space-y-2 text-muted">
+        <li><strong class="text-heading">Dust loading</strong> — high-dust positions call for plate-type SCR with large pitch and open area; low-dust positions allow honeycomb.</li>
+        <li><strong class="text-heading">Temperature window</strong> — catalyst activity is windowed; the reactor position in the process decides the temperature the catalyst sees.</li>
+        <li><strong class="text-heading">Gas composition</strong> — SO₂ concentration and alkali metals in the dust affect catalyst formulation and lifetime.</li>
+        <li><strong class="text-heading">Space constraints</strong> — honeycomb packs more active surface per volume; plate systems are more forgiving to dust.</li>
+        <li><strong class="text-heading">Emission target</strong> — China's ultra-low-emission standards per industry set the removal-efficiency bar.</li>
+      </ul>
+      <p class="text-muted mt-4 text-sm">
+        Technical background:{' '}
+        <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/scr-denox/">SCR DeNOx knowledge guide</a>{' '}
+        in our knowledge center.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Where our catalysts run</h2>
+      <ul class="grid gap-2 sm:grid-cols-2 text-muted">
+        <li><a class="text-primary hover:underline" href="/industries/thermal-power/">Coal-fired power</a> — high-dust SCR</li>
+        <li><a class="text-primary hover:underline" href="/industries/cement/">Cement</a> — high-dust DeNOx</li>
+        <li><a class="text-primary hover:underline" href="/industries/alumina/">Alumina</a> — plate SCR</li>
+        <li><a class="text-primary hover:underline" href="/industries/steel/">Steel</a> — multi-pollutant flue gas</li>
+        <li><a class="text-primary hover:underline" href="/industries/sintering/">Sintering machines</a> — CO oxidation + DeNOx</li>
+      </ul>
+    </section>
+  </div>
+
+  <CallToAction
+    actions={[{ variant: 'primary', text: 'Submit Your Flue Gas Data', href: '/contact/', icon: 'tabler:arrow-right' }]}
+  >
+    <Fragment slot="title">
+      Dust decides geometry, <span class="text-accent">chemistry decides the window</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Send NOx inlet concentration, temperature, dust loading and SO₂ — we recommend the catalyst type and reactor position.
+    </Fragment>
+  </CallToAction>
+</Layout>

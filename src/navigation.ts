@@ -17,6 +17,8 @@ export const headerData = {
       text: 'Applications',
       links: [
         { text: 'All Applications', href: getPermalink('/applications') },
+        { text: 'NOx Reduction', href: getPermalink('/applications/nox-reduction') },
+        { text: 'CO Removal', href: getPermalink('/applications/co-removal') },
         { text: 'Gas Purification', href: getPermalink('/applications/gas-purification') },
         { text: 'VOC Adsorption', href: getPermalink('/applications/voc-adsorption') },
         { text: 'Waste Gas Treatment', href: getPermalink('/applications/waste-gas-treatment') },
