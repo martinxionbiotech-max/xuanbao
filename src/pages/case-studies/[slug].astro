@@ -37,7 +37,7 @@ const cs = caseStudy as (typeof caseStudies)[number];
     {cs.sections.map((sec) => (
       <section>
         <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">{sec.h2}</h2>
-        <p class="text-muted leading-relaxed max-w-3xl mx-auto text-center"max-w-3xl mx-auto text-center"" set:html={sec.body} />
+        <p class="text-muted leading-relaxed max-w-3xl mx-auto text-center" set:html={sec.body} />
         {sec.list && <ul class="mt-4 grid gap-2 text-muted" set:html={sec.list} />}
       </section>
     ))}
