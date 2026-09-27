@@ -66,6 +66,7 @@ export const industries: Industry[] = [
     products: [
       { name: 'CO Oxidation Catalyst', href: '/products/co-removal-catalyst/' },
       { name: 'Honeycomb SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/honeycomb-scr-catalyst/' },
+      { name: 'Honeycomb Activated Carbon', href: '/products/activated-carbon/honeycomb-activated-carbon/' },
     ],
   },
   {
@@ -75,12 +76,12 @@ export const industries: Industry[] = [
     seoTitle: 'SCR DeNOx Catalyst for Cement Plants | Xuanbao Environmental',
     metaDescription:
       'High-dust SCR DeNOx catalysts for cement kiln flue gas — plate-type designs for dusty, alkali-containing exhaust streams.',
-    problems: '<li>NOx from kiln combustion</li><li>Very high dust loading</li><li>Alkali metals in the dust</li>',
+    problems: '<li>NOx from kiln combustion</li><li>Very high dust loading</li><li>Alkali metals in the dust that deactivate acid sites</li><li>Placement-dependent temperature window</li>',
     pollutants: '<li>NOx</li><li>Dust</li><li>SO₂</li>',
     conditions:
       'Cement kiln exhaust carries heavy dust with alkali content that can poison catalysts. Large-pitch plate designs reduce plugging; formulation considers alkali resistance.',
     selection:
-      '<li>Plate-type SCR catalyst with large pitch for high-dust gas</li><li>Low cell density honeycomb where dust is controlled</li>',
+      '<li>Plate-type SCR catalyst with large pitch for high-dust gas</li><li>Low cell density honeycomb where dust is controlled</li><li>Low-dust or tail-end placement where the alkali load is heavy — with temperature boosting where needed</li>',
     products: [
       { name: 'Plate-Type SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/plate-type-scr-catalyst/' },
       { name: 'Honeycomb SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/honeycomb-scr-catalyst/' },
@@ -93,14 +94,15 @@ export const industries: Industry[] = [
     seoTitle: 'SCR Catalyst for Alumina Plants | Xuanbao Environmental',
     metaDescription:
       'Plate-type SCR DeNOx catalysts for alumina calcination flue gas with high dust loading and specific temperature windows.',
-    problems: '<li>NOx from calcination</li><li>High dust with alumina fines</li>',
-    pollutants: '<li>NOx</li><li>Dust</li>',
+    problems: '<li>NOx from calcination</li><li>High dust with alumina fines</li><li>CO from roasting off-gas on some lines</li>',
+    pollutants: '<li>NOx</li><li>Dust</li><li>CO</li>',
     conditions:
       'Alumina calcination exhaust is dusty with fine particulates. Plate-type SCR catalysts with high open area are commonly applied.',
     selection:
-      '<li>Plate-type SCR DeNOx catalyst for dusty flue gas</li>',
+      '<li>Plate-type SCR DeNOx catalyst for dusty flue gas</li><li>Combined CO oxidation + SCR sequence where roasting off-gas carries CO</li>',
     products: [
       { name: 'Plate-Type SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/plate-type-scr-catalyst/' },
+      { name: 'CO Oxidation Catalyst', href: '/products/co-removal-catalyst/' },
     ],
   },
   {
@@ -205,12 +207,12 @@ export const industries: Industry[] = [
     seoTitle: 'VOC Catalysts for Automotive Painting | Xuanbao Environmental',
     metaDescription:
       'Pt / Pt-Pd honeycomb VOC catalysts for automotive paint shop exhaust — high-flow VOC oxidation for spray booths and ovens.',
-    problems: '<li>VOC emissions from painting and drying</li><li>High-flow exhaust from large paint shops</li>',
+    problems: '<li>VOC emissions from painting and drying</li><li>High-flow exhaust from large paint shops</li><li>Overspray particulate that must be filtered upstream</li><li>Partial-load operation across shifts</li>',
     pollutants: '<li>Benzene, toluene, xylene</li><li>Esters</li><li>Ketones</li><li>Alcohols</li>',
     conditions:
       'Automotive paint shops generate high-flow VOC streams. Adsorption-concentration wheels or direct catalytic oxidation are applied according to concentration profile.',
     selection:
-      '<li>Pt-Pd VOC catalyst for oxidation units</li><li>ZSM-5 zeolite for adsorption concentration wheels</li>',
+      '<li>Pt-Pd VOC catalyst for oxidation units</li><li>ZSM-5 zeolite for adsorption concentration wheels</li><li>Combined concentration + oxidizer architecture for large dilute flows</li>',
     products: [
       { name: 'Platinum-Palladium Honeycomb VOC Catalyst', href: '/products/voc-catalysts/platinum-palladium-catalyst/' },
       { name: 'Platinum Honeycomb VOC Catalyst', href: '/products/voc-catalysts/platinum-catalyst/' },
@@ -224,15 +226,16 @@ export const industries: Industry[] = [
     seoTitle: 'CO Catalyst for Waste Incineration | Xuanbao Environmental',
     metaDescription:
       'CO oxidation catalysts for waste incinerators — documented field test reduced CO from 11,224.2 mg/Nm³ to 16.2 mg/Nm³ on a medical waste incinerator.',
-    problems: '<li>CO peaks from incomplete combustion</li><li>Temperature fluctuation</li><li>Complex composition including acid gases</li>',
+    problems: '<li>CO peaks from incomplete combustion</li><li>Temperature fluctuation</li><li>Complex composition including acid gases</li><li>Dioxin precursors requiring polishing stages</li>',
     pollutants: '<li>CO</li><li>VOCs</li><li>SO₂</li><li>NOx</li><li>Dust</li><li>Acid gases</li>',
     conditions:
       'Incinerator exhaust temperature and CO load fluctuate. Catalysts must tolerate thermal cycling and multi-pollutant conditions.',
     selection:
-      '<li>CO oxidation catalyst for CO control</li><li>SCR catalyst where NOx removal is required</li><li>VOC catalyst for organic pollutant polishing</li>',
+      '<li>CO oxidation catalyst for CO control</li><li>SCR catalyst where NOx removal is required</li><li>Activated carbon injection or fixed-bed polishing for dioxin control</li>',
     products: [
       { name: 'CO Oxidation Catalyst', href: '/products/co-removal-catalyst/' },
       { name: 'Honeycomb SCR DeNOx Catalyst', href: '/products/scr-denox-catalysts/honeycomb-scr-catalyst/' },
+      { name: 'Honeycomb Activated Carbon', href: '/products/activated-carbon/honeycomb-activated-carbon/' },
     ],
   },
 ];

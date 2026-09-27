@@ -3,7 +3,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
+import { SITE } from 'astrowind:config';
 import { categoryMeta, products } from '~/data/products';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -14,9 +16,34 @@ export function getStaticPaths() {
 const { slug } = Astro.props;
 const meta = categoryMeta[slug];
 const inCategory = products.filter((p) => p.slug[0] === slug);
+
+const baseUrl = String(SITE.site).replace(/\/$/, '');
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: meta.h1,
+  description: meta.metaDescription,
+  url: baseUrl + getPermalink('/products/' + slug),
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: inCategory.length,
+    itemListElement: inCategory.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Product',
+        name: p.name,
+        description: p.intro,
+        url: baseUrl + getPermalink('/products/' + p.slug.join('/')),
+      },
+    })),
+  },
+};
 ---
 
 <Layout metadata={{ title: meta.seoTitle, description: meta.metaDescription, ignoreTitleTemplate: true }}>
+  <StructuredData slot="head" schema={collectionSchema} />
+
   <Breadcrumbs bar items={[{ text: 'Home', href: '/' }, { text: 'Products', href: '/products/' }, { text: meta.name }]} />
 
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">

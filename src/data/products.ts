@@ -657,7 +657,7 @@ export const categoryMeta: Record<
   'scr-denox-catalysts': {
     name: 'SCR DeNOx Catalysts',
     h1: 'SCR DeNOx Catalysts',
-    seoTitle: 'SCR DeNOx Catalyst Manufacturer — Plate & Honeycomb | Xuanbao Environmental',
+    seoTitle: 'SCR DeNOx Catalyst Manufacturer | Xuanbao Environmental',
     metaDescription:
       'SCR denitrification catalysts for NOx removal in power, steel, cement and alumina flue gas — plate-type for high-dust gas, honeycomb with structures from 13×13 to 60×60.',
     intro:
@@ -690,7 +690,7 @@ export const categoryMeta: Record<
   'activated-carbon': {
     name: 'Activated Carbon',
     h1: 'Activated Carbon Products',
-    seoTitle: 'Activated Carbon Manufacturer — Honeycomb, Columnar, Coconut Shell, Fruit Shell, Fiber | Xuanbao',
+    seoTitle: 'Activated Carbon Manufacturer — Honeycomb & Columnar | Xuanbao',
     metaDescription:
       'Honeycomb, coal-based columnar, coconut-shell, fruit-shell and fiber activated carbon for VOC adsorption, gas purification, decolorization, solvent recovery and odor control.',
     intro:
