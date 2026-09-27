@@ -104,13 +104,13 @@ const breadcrumbItems = [
       <div class="grid gap-6 md:grid-cols-2 items-start">
         {product.image && (
           <figure class="rounded-xl border border-slate-800 bg-slate-900/40 p-2">
-            <Image src={product.image} alt={product.name + ' — product photo'} class="w-full h-auto rounded-lg" width={800} />
+            <Image src={product.image} alt={product.imageAlt || product.name + ' — product photo'} class="w-full h-auto rounded-lg" width={800} />
             <figcaption class="px-2 py-2 text-sm text-muted">Product photo — Xuanbao Environmental</figcaption>
           </figure>
         )}
         {product.specSheet && (
           <figure class="rounded-xl border border-slate-800 bg-white p-2">
-            <Image src={product.specSheet} alt={product.name + ' — specification sheet'} class="w-full h-auto rounded-lg" width={840} />
+            <Image src={product.specSheet} alt={product.specSheetAlt || product.name + ' — specification sheet'} class="w-full h-auto rounded-lg" width={840} />
           </figure>
         )}
       </div>

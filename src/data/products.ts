@@ -1,18 +1,18 @@
 import type { ImageMetadata } from 'astro';
-import ycxbAPhoto from '~/assets/images/products/ycxb-a-photo.jpg';
-import ycxbASpec from '~/assets/images/products/yc-xb-a-platinum-catalyst-spec.png';
-import ycxbBPhoto from '~/assets/images/products/ycxb-b-photo.jpg';
-import ycxbBSpec from '~/assets/images/products/yc-xb-b-pt-pd-catalyst-spec.png';
-import ycxbCPhoto from '~/assets/images/products/ycxb-c-photo.jpg';
-import ycxbCSpec from '~/assets/images/products/yc-xb-c-non-precious-catalyst-spec.png';
-import honeycombACPhoto from '~/assets/images/products/honeycomb-ac-photo.jpg';
-import honeycombACSpec from '~/assets/images/products/honeycomb-activated-carbon-spec.png';
-import columnarACPhoto from '~/assets/images/products/columnar-ac-photo.jpg';
-import columnarACSpec from '~/assets/images/products/columnar-activated-carbon-spec.png';
-import fruitShellACPhoto from '~/assets/images/products/fruit-shell-ac-photo.jpg';
-import fruitShellACSpec from '~/assets/images/products/fruit-shell-activated-carbon-spec.png';
-import acfPhoto from '~/assets/images/products/acf-photo.jpg';
-import acfSpec from '~/assets/images/products/activated-carbon-fiber-spec.png';
+import ycxbAPhoto from '~/assets/images/products/platinum-voc-catalyst.jpg';
+import ycxbASpec from '~/assets/images/products/yc-xb-a-platinum-catalyst-specification-sheet.png';
+import ycxbBPhoto from '~/assets/images/products/platinum-palladium-voc-catalyst.jpg';
+import ycxbBSpec from '~/assets/images/products/yc-xb-b-pt-pd-catalyst-specification-sheet.png';
+import ycxbCPhoto from '~/assets/images/products/non-precious-metal-voc-catalyst.jpg';
+import ycxbCSpec from '~/assets/images/products/yc-xb-c-non-precious-metal-catalyst-specification-sheet.png';
+import honeycombACPhoto from '~/assets/images/products/honeycomb-activated-carbon.jpg';
+import honeycombACSpec from '~/assets/images/products/honeycomb-activated-carbon-specification-sheet.png';
+import columnarACPhoto from '~/assets/images/products/columnar-activated-carbon.jpg';
+import columnarACSpec from '~/assets/images/products/columnar-activated-carbon-specification-sheet.png';
+import fruitShellACPhoto from '~/assets/images/products/fruit-shell-activated-carbon.jpg';
+import fruitShellACSpec from '~/assets/images/products/fruit-shell-activated-carbon-specification-sheet.png';
+import acfPhoto from '~/assets/images/products/activated-carbon-fiber.jpg';
+import acfSpec from '~/assets/images/products/activated-carbon-fiber-specification-sheet.png';
 
 export interface Product {
   slug: string[];        // route segments, e.g. ['scr-denox-catalysts','plate-type-scr-catalyst']
@@ -33,7 +33,9 @@ export interface Product {
   faqs?: { q: string; a: string }[];
   crumbs: { name: string; href?: string }[];
   image?: ImageMetadata;      // product photo
+  imageAlt?: string;          // SEO alt text for the product photo
   specSheet?: ImageMetadata;  // English specification sheet
+  specSheetAlt?: string;      // SEO alt text for the specification sheet
 }
 
 export const products: Product[] = [
@@ -178,7 +180,9 @@ export const products: Product[] = [
     model: 'YC-XB-A',
     category: 'VOC Catalysts',
     image: ycxbAPhoto,
+    imageAlt: 'YC-XB-A platinum honeycomb ceramic VOC oxidation catalyst product photo',
     specSheet: ycxbASpec,
+    specSheetAlt: 'YC-XB-A platinum VOC catalyst specification sheet — cordierite substrate, 200 cpsi, 220–600°C, design conversion ≥98%',
     seoTitle: 'Platinum Honeycomb VOC Catalyst YC-XB-A | Xuanbao Environmental',
     metaDescription:
       'Single-metal nano-platinum VOC oxidation catalyst YC-XB-A on 200 cpsi cordierite, 220–600°C, design conversion ≥98%, for coating, printing, chemical and automotive VOC exhaust.',
@@ -228,7 +232,9 @@ export const products: Product[] = [
     model: 'YC-XB-B',
     category: 'VOC Catalysts',
     image: ycxbBPhoto,
+    imageAlt: 'YC-XB-B platinum-palladium honeycomb ceramic VOC oxidation catalyst product photo',
     specSheet: ycxbBSpec,
+    specSheetAlt: 'YC-XB-B Pt-Pd VOC catalyst specification sheet — cordierite substrate, 240–400°C operating, 900°C maximum, design conversion ≥98%',
     seoTitle: 'Platinum-Palladium VOC Catalyst YC-XB-B | Xuanbao Environmental',
     metaDescription:
       'Dual precious-metal Pt-Pd honeycomb VOC catalyst YC-XB-B on 200 cpsi cordierite, 240–400°C, lower light-off temperature for mixed VOC streams in coating and printing exhaust.',
@@ -272,7 +278,9 @@ export const products: Product[] = [
     model: 'YC-XB-C',
     category: 'VOC Catalysts',
     image: ycxbCPhoto,
+    imageAlt: 'YC-XB-C non-precious-metal Ag-Cu-Mn VOC oxidation catalyst product photo',
     specSheet: ycxbCSpec,
+    specSheetAlt: 'YC-XB-C non-precious-metal VOC catalyst specification sheet — Ag-Cu-Mn active components, 260–450°C, design conversion ≥98%',
     seoTitle: 'Non-Precious-Metal VOC Catalyst YC-XB-C | Xuanbao Environmental',
     metaDescription:
       'Ag-Cu-Mn composite oxide VOC catalyst YC-XB-C on 200 cpsi cordierite, 260–450°C, a lower-cost alternative for non-hydrocarbon VOC catalytic oxidation.',
@@ -449,7 +457,9 @@ export const products: Product[] = [
     h1: 'Honeycomb Activated Carbon',
     category: 'Activated Carbon',
     image: honeycombACPhoto,
+    imageAlt: 'Honeycomb activated carbon block product photo — SFW series for low pressure drop gas treatment',
     specSheet: honeycombACSpec,
+    specSheetAlt: 'Honeycomb activated carbon SFW-10 SFW-5 specification sheet — iodine 600–900 mg/g, BET 700–1,000 m²/g, compressive strength 1.2 MPa',
     seoTitle: 'Honeycomb Activated Carbon Manufacturer | Xuanbao Environmental',
     metaDescription:
       'Honeycomb activated carbon SFW-10 / SFW-5 with 600–900 mg/g iodine value and 700–1,000 m²/g BET surface area, low pressure drop for gas-phase VOC adsorption.',
@@ -496,7 +506,9 @@ export const products: Product[] = [
     h1: 'Columnar Activated Carbon',
     category: 'Activated Carbon',
     image: columnarACPhoto,
+    imageAlt: 'Coal-based columnar activated carbon product photo — 1.5 to 8 mm diameters for gas purification',
     specSheet: columnarACSpec,
+    specSheetAlt: 'Columnar activated carbon specification sheet by diameter — BET 600–1,000 m²/g, CTC 40–65%, strength 93–96%',
     seoTitle: 'Coal-Based Columnar Activated Carbon Manufacturer | Xuanbao',
     metaDescription:
       'Coal-based columnar activated carbon in 1.5–8 mm diameters, BET 600–1,000 m²/g, iodine 600–1,000 mg/g, for gas purification and industrial adsorption.',
@@ -559,7 +571,9 @@ export const products: Product[] = [
     model: 'STK-B / STK-A / SXK-B / SXK-A',
     category: 'Activated Carbon',
     image: fruitShellACPhoto,
+    imageAlt: 'Fruit-shell granular activated carbon product photo — STK SXK series for decolorization and water purification',
     specSheet: fruitShellACSpec,
+    specSheetAlt: 'Fruit-shell activated carbon STK-B STK-A SXK-B SXK-A specification sheet — 4–20 mesh, iodine 500–1,000 mg/g, pH 7–9',
     seoTitle: 'Fruit-Shell Activated Carbon STK/SXK | Xuanbao Environmental',
     metaDescription:
       'Fruit-shell activated carbon STK-B / STK-A / SXK-B / SXK-A, 4–20 mesh granular, iodine 500–1,000 mg/g, for decolorization of sugar, wine, beverage and food liquids and water purification.',
@@ -600,7 +614,9 @@ export const products: Product[] = [
     h1: 'Activated Carbon Fiber',
     category: 'Activated Carbon',
     image: acfPhoto,
+    imageAlt: 'Activated carbon fiber filter material product photo for low-concentration VOC and odor control',
     specSheet: acfSpec,
+    specSheetAlt: 'Activated carbon fiber specification sheet — thickness 2–20 mm, width 500–1,500 mm, benzene adsorption ≥200 mg/g',
     seoTitle: 'Activated Carbon Fiber | Xuanbao Environmental',
     metaDescription:
       'Activated carbon fiber for low-concentration gas-phase pollutant and odor adsorption — benzene, xylene, formaldehyde, methanol and dust filtration.',
