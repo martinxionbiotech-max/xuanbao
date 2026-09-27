@@ -15,11 +15,24 @@ export const headerData = {
     },
     {
       text: 'Applications',
-      href: getPermalink('/applications'),
+      links: [
+        { text: 'All Applications', href: getPermalink('/applications') },
+        { text: 'Gas Purification', href: getPermalink('/applications/gas-purification') },
+        { text: 'VOC Adsorption', href: getPermalink('/applications/voc-adsorption') },
+        { text: 'Waste Gas Treatment', href: getPermalink('/applications/waste-gas-treatment') },
+        { text: 'Odor Control', href: getPermalink('/applications/odor-control') },
+        { text: 'Water Treatment', href: getPermalink('/applications/water-treatment') },
+        { text: 'Decolorization', href: getPermalink('/applications/decolorization') },
+        { text: 'Gold Recovery', href: getPermalink('/applications/gold-recovery') },
+      ],
     },
     {
       text: 'Materials',
-      href: getPermalink('/materials'),
+      links: [
+        { text: 'All Materials', href: getPermalink('/materials') },
+        { text: 'Coal-based Carbon', href: getPermalink('/materials/coal-based-carbon') },
+        { text: 'Coconut-shell Carbon', href: getPermalink('/materials/coconut-shell-carbon') },
+      ],
     },
     {
       text: 'Solutions',
@@ -38,8 +51,13 @@ export const headerData = {
         },
       ],
     },
-    { text: 'Industries', href: getPermalink('/industries') },
-    { text: 'Case Studies', href: getPermalink('/case-studies') },
+    {
+      text: 'Resources',
+      links: [
+        { text: 'Industries', href: getPermalink('/industries') },
+        { text: 'Case Studies', href: getPermalink('/case-studies') },
+      ],
+    },
     {
       text: 'Company',
       links: [

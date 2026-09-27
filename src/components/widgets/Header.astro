@@ -75,7 +75,7 @@ const persistKey = `header-${Array.from(
     <div class="absolute inset-0"></div>
     <div
       class:list={[
-        'relative text-default py-3 px-3 lg:px-6 mx-auto w-full',
+        'relative text-default py-2 px-3 lg:px-6 mx-auto w-full',
         {
           'lg:flex lg:justify-between': position !== 'center',
         },
@@ -96,11 +96,11 @@ const persistKey = `header-${Array.from(
         </div>
       </div>
       <nav
-        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-5 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
+        class="items-center w-full lg:w-auto hidden lg:flex lg:mx-3 text-default overflow-y-auto overflow-x-hidden lg:overflow-visible lg:justify-self-center"
         aria-label="Main navigation"
       >
         <ul
-          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-[0.9375rem] tracking-[0.01rem] font-medium lg:justify-center"
+          class="flex flex-col lg:flex-row lg:self-center w-full lg:w-auto text-lg lg:text-[0.75rem] tracking-[0.01rem] font-medium lg:justify-center"
         >
           {
             links.map(({ text, href, links }) => (
@@ -109,12 +109,12 @@ const persistKey = `header-${Array.from(
                   <>
                     <button
                       type="button"
-                      class="hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap"
+                      class="hover:text-link dark:hover:text-white px-3 lg:px-1.5 py-2 flex items-center whitespace-nowrap"
                     >
                       {text}{' '}
                       <Icon
                         name="tabler:chevron-down"
-                        class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline"
+                        class="w-3 h-3 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden lg:inline"
                       />
                     </button>
                     <ul class="dropdown-menu lg:backdrop-blur-md dark:lg:bg-slate-900 dark:lg:border dark:lg:border-slate-700/50 rounded lg:absolute pl-4 lg:pl-0 lg:hidden font-medium lg:bg-white/90 lg:min-w-[200px] drop-shadow-xl">
@@ -122,7 +122,7 @@ const persistKey = `header-${Array.from(
                         <li>
                           <a
                             class:list={[
-                              'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-2 px-5 block whitespace-nowrap',
+                              'first:rounded-t last:rounded-b lg:hover:bg-gray-100 hover:text-link dark:hover:text-white dark:hover:bg-gray-700 py-1.5 px-4 text-sm lg:text-[0.8125rem] block whitespace-nowrap',
                               { 'aw-link-active': isActive(href2) },
                             ]}
                             href={href2}
@@ -136,7 +136,7 @@ const persistKey = `header-${Array.from(
                 ) : (
                   <a
                     class:list={[
-                      'hover:text-link dark:hover:text-white px-4 py-3 flex items-center whitespace-nowrap',
+                      'hover:text-link dark:hover:text-white px-3 lg:px-1.5 py-2 flex items-center whitespace-nowrap',
                       { 'aw-link-active': isActive(href) },
                     ]}
                     href={href}
@@ -151,7 +151,6 @@ const persistKey = `header-${Array.from(
       </nav>
       <div
         class:list={[
-          { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
           'hidden lg:self-center lg:flex items-center lg:mb-0 fixed w-full lg:w-auto lg:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 lg:p-0 lg:justify-self-end',
         ]}
       >
@@ -174,7 +173,7 @@ const persistKey = `header-${Array.from(
             actions?.length ? (
               <span class="ml-4 rtl:ml-0 rtl:mr-4">
                 {actions.map((btnProps) => (
-                  <Button {...btnProps} class="ml-2 py-2.5 px-5.5 lg:px-6 font-semibold shadow-none text-sm w-auto" />
+                  <Button {...btnProps} class="ml-2 py-2 px-3 lg:px-3 font-semibold shadow-none text-sm w-auto" />
                 ))}
               </span>
             ) : (
@@ -238,6 +237,12 @@ const persistKey = `header-${Array.from(
 
       // Close the mobile menu when a nav link is clicked.
       nav?.addEventListener('click', closeMenu);
+
+      // Auto-collapse desktop dropdowns when the pointer leaves the nav.
+      nav?.addEventListener('mouseleave', () => {
+        const open = this.querySelectorAll<HTMLElement>('.dropdown button:focus');
+        open.forEach((b) => b.blur());
+      });
 
       // Desktop dropdowns open on hover/`:focus-within`. When a dropdown link is
       // clicked it keeps focus, and because the header uses `transition:persist`
