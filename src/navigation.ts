@@ -54,6 +54,7 @@ export const headerData = {
     {
       text: 'Resources',
       links: [
+        { text: 'Technical Resources', href: getPermalink('/resources') },
         { text: 'Industries', href: getPermalink('/industries') },
         { text: 'Case Studies', href: getPermalink('/case-studies') },
       ],
@@ -111,6 +112,7 @@ export const footerData = {
       title: 'Resources',
       links: [
         { text: 'Knowledge Center', href: 'https://data.xuanbaoenvironment.com' },
+        { text: 'Technical Resources', href: getPermalink('/resources') },
         { text: 'Applications', href: getPermalink('/applications') },
         { text: 'Materials', href: getPermalink('/materials') },
         { text: 'Case Studies', href: getPermalink('/case-studies') },
@@ -119,7 +121,10 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [],
+  secondaryLinks: [
+    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Terms of Use', href: getPermalink('/terms') },
+  ],
   socialLinks: [
     { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:625534887@qq.com' },
   ],
