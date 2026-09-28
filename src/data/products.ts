@@ -86,6 +86,21 @@ export const products: Product[] = [
         q: 'Can plate-type catalysts be supplied as complete modules?',
         a: 'Yes — catalysts are assembled into unit and module frames according to the reactor layout, and installation guidance is provided.',
       },
+      {
+        q: 'How is the required catalyst volume calculated?',
+        a: 'Catalyst volume is derived from flue gas flow, inlet and target NOx concentrations, operating temperature and space velocity. Our engineers support the sizing calculation and module layout for your reactor.',
+      },
+
+      {
+        q: 'What sulfur-related performance should be considered?',
+        a: 'The documented SO2/SO3 conversion is no more than 1 percent and sulfur resistance is a design feature. Values marked as reference in the specification table should be confirmed against the current product sheet before engineering design.',
+      },
+
+      {
+        q: 'What does maintenance involve in high-dust service?',
+        a: 'Maintenance mainly involves inspection of module integrity, monitoring of ash accumulation and the pressure-drop trend, and scheduled performance testing. Cleaning, regeneration or replacement planning follows the measured activity decline.',
+      },
+
     ],
     crumbs: [{ name: 'SCR DeNOx Catalysts', href: '/products/scr-denox-catalysts/' }],
   },
@@ -130,6 +145,21 @@ export const products: Product[] = [
         q: 'What is the typical operating temperature window?',
         a: 'Standard V-Mo-Ti systems operate around 150–420°C. For other windows, the formulation can be adjusted — please share your actual temperature profile.',
       },
+      {
+        q: 'How do I read the cell structure table?',
+        a: 'The table lists cell configurations from 13x13 up to 30x30 with pitch, wall thickness and geometric surface area. Larger pitch suits higher dust loading, while smaller pitch packs more surface area into the same volume; the choice balances pressure drop, dust tolerance and catalyst volume.',
+      },
+
+      {
+        q: 'Which dust positions suit the honeycomb catalyst?',
+        a: 'Honeycomb catalysts are generally applied in low-to-medium dust positions. For high-dust flue gas upstream of the dust collector, the plate-type catalyst is usually the better match.',
+      },
+
+      {
+        q: 'How is service life managed?',
+        a: 'Service life depends on fuel quality, dust, SO2 content and temperature excursions. Regular activity testing tracks performance decline so that regeneration or replacement can be planned before the emission limit is approached.',
+      },
+
     ],
     crumbs: [{ name: 'SCR DeNOx Catalysts', href: '/products/scr-denox-catalysts/' }],
   },
@@ -173,6 +203,16 @@ export const products: Product[] = [
         q: 'What substrates are available?',
         a: 'Cordierite honeycomb and activated alumina. The choice depends on temperature, thermal shock and mechanical requirements.',
       },
+      {
+        q: 'How is the reactor bed sized?',
+        a: 'Bed volume follows the gas flow and the documented design space velocity of 10,000 to 15,000 per hour, a value marked as reference in the specification. Final sizing also considers CO concentration, oxygen content and the target outlet.',
+      },
+
+      {
+        q: 'How should thermal shock be managed?',
+        a: 'The substrate is documented to tolerate up to 800 degrees C, but rapid temperature swings should be avoided. Start-up and load changes should follow a controlled ramp so the monolith is not stressed by steep gradients.',
+      },
+
     ],
     crumbs: [],
   },
@@ -229,6 +269,21 @@ export const products: Product[] = [
         q: 'What is the difference between YC-XB-A and YC-XB-B?',
         a: 'YC-XB-A is a single Pt system with a wide temperature window (220–600°C). YC-XB-B adds Pd for lower light-off and better performance on certain VOC mixtures (240–400°C).',
       },
+      {
+        q: 'What operating temperature range applies?',
+        a: 'The documented operating range is 220 to 600 degrees C with a maximum of 800 degrees C. The actual working point depends on the VOC species, inlet concentration and space velocity.',
+      },
+
+      {
+        q: 'What conversion is achievable?',
+        a: 'A design conversion of at least 98 percent is documented within the specified operating window. The concentration range is marked as reference in the specification table.',
+      },
+
+      {
+        q: 'Can it handle humid exhaust?',
+        a: 'The substrate has documented water absorption below 25 percent and the catalyst is applied in coating and printing exhaust where humidity is common. For very humid streams the operating point should be verified case by case.',
+      },
+
     ],
     crumbs: [{ name: 'VOC Catalysts', href: '/products/voc-catalysts/' }],
   },
@@ -277,6 +332,21 @@ export const products: Product[] = [
         q: 'Why choose Pt-Pd over a single Pt catalyst?',
         a: 'The Pd addition lowers the light-off temperature and improves conversion on certain VOC mixtures, which reduces preheating energy in catalytic oxidation systems.',
       },
+      {
+        q: 'How much lower is the light-off temperature?',
+        a: 'The Pt-Pd combination lowers light-off compared with a single Pt catalyst and widens the applicable VOC window. The exact difference depends on the VOC species, concentration and space velocity of your stream.',
+      },
+
+      {
+        q: 'What is the operating window?',
+        a: 'The documented operating range is 240 to 400 degrees C with a maximum of 900 degrees C and a typical space velocity of 15,000 to 20,000 per hour.',
+      },
+
+      {
+        q: 'Does it suit halogenated VOCs?',
+        a: 'Halogenated streams require special evaluation because halogens affect catalyst activity and cause downstream corrosion. Share the gas composition before applying catalytic oxidation to chlorinated solvents.',
+      },
+
     ],
     crumbs: [{ name: 'VOC Catalysts', href: '/products/voc-catalysts/' }],
   },
@@ -325,6 +395,21 @@ export const products: Product[] = [
         q: 'When should I consider the non-precious-metal catalyst?',
         a: 'When the VOC stream is suitable (non-hydrocarbon, within 260–450°C) and material cost is a major constraint. We test your gas composition before confirming applicability.',
       },
+      {
+        q: 'Which VOC streams suit the non-precious catalyst?',
+        a: 'The Ag-Cu-Mn oxide system is aimed at cost-sensitive abatement projects and streams where the operating window of 260 to 450 degrees C is compatible with the process. Suitability for a specific VOC is confirmed by testing.',
+      },
+
+      {
+        q: 'How should cost be compared with precious-metal catalysts?',
+        a: 'The material cost is lower than precious-metal systems. Total economics also depend on catalyst life and the temperature window, so both options should be compared on lifecycle cost for your stream.',
+      },
+
+      {
+        q: 'Can it be combined with precious-metal stages?',
+        a: 'Staged or layered configurations can be evaluated for streams with mixed VOC profiles, using each catalyst family where it performs best. The arrangement is proposed after reviewing your gas composition.',
+      },
+
     ],
     crumbs: [{ name: 'VOC Catalysts', href: '/products/voc-catalysts/' }],
   },
@@ -353,6 +438,16 @@ export const products: Product[] = [
         q: 'Which molecules does 5A selectively adsorb?',
         a: 'Typical adsorbates include water, methanol, ethanol, H₂S, SO₂, CO₂, ethylene and propylene. Selectivity is tuned by modification.',
       },
+      {
+        q: 'What regeneration conditions apply?',
+        a: '5A is typically regenerated thermally at elevated temperature with a purge or a pressure swing, depending on the service. The exact cycle is set according to the adsorbed medium and the required outlet dew point.',
+      },
+
+      {
+        q: 'What forms are available?',
+        a: 'The sieve is supplied in the form that best matches the adsorption bed, customized to the target medium and operating conditions. Share your gas composition and the bed configuration and we will propose a suitable shape and bead size.',
+      },
+
     ],
     crumbs: [{ name: 'Zeolite Molecular Sieves', href: '/products/zeolite-molecular-sieve/' }],
   },
@@ -379,6 +474,21 @@ export const products: Product[] = [
         q: 'What is the difference between 13X and 5A?',
         a: '13X has a larger pore structure (~10Å vs ~5Å), so it can adsorb larger molecules and generally offers higher capacity for CO₂ and water, while 5A gives sharper size selectivity.',
       },
+      {
+        q: 'Why is 13X applied to CO2 adsorption?',
+        a: 'The large pore structure and strong adsorption capacity of 13X make it suitable for CO2 removal from gas streams, which is one of its documented applications.',
+      },
+
+      {
+        q: 'How does moisture affect the sieve?',
+        a: 'Like all zeolites, 13X adsorbs water strongly, so moisture competes with the target adsorbate. Drying duties therefore include a regeneration stage, and the operating cycle accounts for inlet humidity.',
+      },
+
+      {
+        q: 'What does the modification system do?',
+        a: 'Different modification systems tailor the sieve to specific targets, such as improved selectivity or compatibility with particular gas compositions. The modification is selected once the service conditions are defined.',
+      },
+
     ],
     crumbs: [{ name: 'Zeolite Molecular Sieves', href: '/products/zeolite-molecular-sieve/' }],
   },
@@ -422,6 +532,21 @@ export const products: Product[] = [
         q: 'What VOCs can ZSM-5 adsorb?',
         a: 'Typical targets are benzene, toluene, xylene, alcohols, ketones, aldehydes, some esters and hydrocarbons. Polymerizable compounds, halogens and heavy-metal salts are not recommended without testing.',
       },
+      {
+        q: 'Why is ZSM-5 supplied as powder or honeycomb?',
+        a: 'Powder suits compounding into coatings, wheels and shaped adsorbents, while the honeycomb form serves direct adsorption beds with low flow resistance. The choice follows your system configuration.',
+      },
+
+      {
+        q: 'What does the high silica ratio mean?',
+        a: 'The SiO2 to Al2O3 ratio of about 300 gives strong hydrophobicity and high thermal and hydrothermal stability, which is why ZSM-5 keeps its adsorption performance in humid VOC exhaust.',
+      },
+
+      {
+        q: 'How is ZSM-5 regenerated in VOC systems?',
+        a: 'In adsorption-concentration systems the sieve is desorbed thermally, typically with a small heated purge stream that carries the concentrated VOC to the oxidation stage.',
+      },
+
     ],
     crumbs: [{ name: 'Zeolite Molecular Sieves', href: '/products/zeolite-molecular-sieve/' }],
   },
@@ -457,6 +582,16 @@ export const products: Product[] = [
         q: 'How does NaY compare with ZSM-5?',
         a: 'NaY has a larger pore system and higher surface area but is more hydrophilic and less acid-resistant than high-silica ZSM-5. Selection depends on humidity, VOC composition and regeneration conditions.',
       },
+      {
+        q: 'What surface area and pore volume does NaY offer?',
+        a: 'The documented BET surface area is at least 700 square meters per gram with a total pore volume of 0.5 milliliters per gram, which makes it suitable for VOC adsorption and catalyst support roles.',
+      },
+
+      {
+        q: 'How does NaY behave in humid streams?',
+        a: 'With a SiO2 to Al2O3 ratio of about 100, NaY is more polar than high-silica ZSM-5 and takes up moisture more readily. For humid exhaust, ZSM-5 is usually preferred; NaY is matched to streams where its high surface area is the priority.',
+      },
+
     ],
     crumbs: [{ name: 'Zeolite Molecular Sieves', href: '/products/zeolite-molecular-sieve/' }],
   },
@@ -508,6 +643,21 @@ export const products: Product[] = [
         q: 'How often is the carbon replaced?',
         a: 'Replacement depends on inlet concentration, humidity, temperature and duty cycle. We help size the bed and estimate replacement intervals from your conditions.',
       },
+      {
+        q: 'Which iodine value grade should I choose?',
+        a: 'The product range spans 600 to 900 milligrams per gram. Higher iodine values generally indicate stronger adsorption capacity for small-molecule pollutants; the grade is matched to the concentration and species in your gas stream.',
+      },
+
+      {
+        q: 'Can honeycomb carbon be regenerated?',
+        a: 'Regeneration depends on the adsorbed species and the system configuration. Thermal regeneration is possible in suitable installations; otherwise saturated blocks are replaced on a scheduled cycle.',
+      },
+
+      {
+        q: 'What temperature limit applies to adsorption?',
+        a: 'Adsorption favors low gas temperatures. High-temperature operation promotes desorption and can create a fire risk, so the inlet temperature should stay within the range advised for your application.',
+      },
+
     ],
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
@@ -546,6 +696,21 @@ export const products: Product[] = [
         q: 'Which diameter should I choose?',
         a: 'Smaller diameters give faster adsorption kinetics but higher pressure drop. We select the diameter from flow rate, bed geometry and pressure drop budget.',
       },
+      {
+        q: 'How do I choose between 1.5, 4, 6 and 8 mm diameters?',
+        a: 'Smaller diameters give faster adsorption kinetics and more contact area at the cost of higher pressure drop; larger diameters suit low-resistance beds and higher flows. The diameter follows the bed depth and the allowable pressure drop.',
+      },
+
+      {
+        q: 'How are the grades distinguished?',
+        a: 'Grades step up in BET surface area, CCl4 adsorption and iodine value from the entry grade to the highest specification. Higher grades suit more demanding purification duties.',
+      },
+
+      {
+        q: 'How does humidity affect performance?',
+        a: 'Water vapor competes for adsorption sites, so very humid gas reduces effective capacity. Pre-drying or a humidity-tolerant design is recommended for streams with high moisture.',
+      },
+
     ],
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
@@ -572,6 +737,21 @@ export const products: Product[] = [
         q: 'Why choose coconut-shell over coal-based carbon?',
         a: 'Coconut-shell carbon typically offers higher hardness, lower ash and a more microporous structure, which suits gas purification, catalyst support and food/pharma applications.',
       },
+      {
+        q: 'Why is coconut-shell carbon used as a catalyst support?',
+        a: 'High hardness, high purity and low ash content make coconut-shell carbon suitable as a support where mechanical stability and clean surface chemistry matter.',
+      },
+
+      {
+        q: 'What particle sizes are available?',
+        a: 'The carbon is produced by carbonization, crushing, screening and steam activation, so particle size can be matched to the bed design. Specify your application and we will propose the suitable mesh.',
+      },
+
+      {
+        q: 'Is it suitable for food and pharmaceutical use?',
+        a: 'The documented applications include food decolorization and pharmaceutical processes. The appropriate grade and any required documentation are confirmed for the specific use.',
+      },
+
     ],
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
@@ -616,6 +796,21 @@ export const products: Product[] = [
         q: 'Is fruit-shell carbon the same as coconut-shell carbon?',
         a: 'Coconut shell is one specific fruit-shell feedstock; the STK/SXK series covers fruit-shell feedstocks generally as irregular granular carbon for liquid-phase duty. For gas-phase or catalyst-support applications, see the coconut-shell product page.',
       },
+      {
+        q: 'What do the STK and SXK series mean?',
+        a: 'They are series designations with different performance grades within the fruit-shell product line, selected according to the decolorization duty and process requirements.',
+      },
+
+      {
+        q: 'What mesh size applies?',
+        a: 'The documented specification lists 4 to 20 mesh with iodine values from 500 to 1,000 milligrams per gram depending on the grade.',
+      },
+
+      {
+        q: 'What pH does the carbon deliver in solution?',
+        a: 'The documented pH range is 7 to 9, which suits typical decolorization duties in sugar, beverage and food processing.',
+      },
+
     ],
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
@@ -652,6 +847,21 @@ export const products: Product[] = [
         q: 'What concentrations suit activated carbon fiber?',
         a: 'Low-concentration streams — typical of indoor air handling, ventilation and light odor control. For concentrated industrial VOC streams, honeycomb or columnar carbon beds are usually more cost-effective.',
       },
+      {
+        q: 'What air resistance levels are available?',
+        a: 'The specification lists several grades with air resistance from 30 to 410 Pa per m/s, so the material can be matched to the allowable pressure drop of the filter unit.',
+      },
+
+      {
+        q: 'Which pollutants does the fiber target?',
+        a: 'Documented applications cover benzene, xylene, formaldehyde, methanol and general odor removal, including combined use with dust filtration.',
+      },
+
+      {
+        q: 'When is fiber form preferred over granular carbon?',
+        a: 'Fiber form suits low-concentration gas-phase pollutants and thin filter elements with combined dust filtration. Granular or honeycomb carbon is generally preferred for higher-concentration adsorption beds.',
+      },
+
     ],
     crumbs: [{ name: 'Activated Carbon', href: '/products/activated-carbon/' }],
   },
