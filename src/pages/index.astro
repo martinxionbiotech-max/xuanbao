@@ -10,6 +10,10 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import homeHeroImg from '~/assets/images/home-hero-gas-treatment.webp';
+import homeLabImg from '~/assets/images/home-lab-material-testing.webp';
+import homeFieldImg from '~/assets/images/home-field-sample-inspection.webp';
+
 const metadata = {
   title: 'Industrial Environmental & Purification Materials Manufacturer | Xuanbao Environmental',
   description:
@@ -26,8 +30,8 @@ const metadata = {
       { text: 'Tell Us Your Application', href: '/contact/' },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial gas treatment installation',
+      src: homeHeroImg,
+      alt: 'Industrial catalytic exhaust gas treatment system with reactor vessels and pipelines',
     }}
   >
     <Fragment slot="title">
@@ -204,8 +208,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Laboratory material testing',
+      src: homeLabImg,
+      alt: 'Engineer operating catalyst material testing equipment in a laboratory',
     }}
   />
 
@@ -299,8 +303,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Engineer reviewing material samples in a laboratory',
+      src: homeFieldImg,
+      alt: 'Engineer inspecting a catalyst material sample in a laboratory',
     }}
   >
     <Fragment slot="content">

@@ -16,6 +16,14 @@ import fruitShellACPhoto from '~/assets/images/products/fruit-shell-activated-ca
 import fruitShellACSpec from '~/assets/images/products/fruit-shell-activated-carbon-specification-sheet.png';
 import acfPhoto from '~/assets/images/products/activated-carbon-fiber.jpg';
 import acfSpec from '~/assets/images/products/activated-carbon-fiber-specification-sheet.png';
+import plateScrPhoto from '~/assets/images/products/plate-scr-catalyst.webp';
+import honeycombScrPhoto from '~/assets/images/products/honeycomb-scr-catalyst.webp';
+import coCatalystPhoto from '~/assets/images/products/co-catalyst-honeycomb.webp';
+import zeolite5aPhoto from '~/assets/images/products/zeolite-5a-molecular-sieve.webp';
+import zeolite13xPhoto from '~/assets/images/products/zeolite-13x-molecular-sieve.webp';
+import zsm5Photo from '~/assets/images/products/zsm-5-molecular-sieve.webp';
+import nayPhoto from '~/assets/images/products/nay-molecular-sieve.webp';
+import coconutACPhoto from '~/assets/images/products/coconut-shell-activated-carbon.webp';
 
 export interface Product {
   slug: string[];        // route segments, e.g. ['scr-denox-catalysts','plate-type-scr-catalyst']
@@ -48,6 +56,8 @@ export const products: Product[] = [
   {
     slug: ['scr-denox-catalysts', 'plate-type-scr-catalyst'],
     name: 'Plate-Type SCR DeNOx Catalyst',
+    image: plateScrPhoto,
+    imageAlt: 'Plate-type SCR denitrification catalyst module with stacked corrugated metal plates',
     h1: 'Plate-Type SCR DeNOx Catalyst',
     category: 'SCR DeNOx Catalysts',
     seoTitle: 'Plate-Type SCR DeNOx Catalyst Manufacturer | Xuanbao Environmental',
@@ -107,6 +117,8 @@ export const products: Product[] = [
   {
     slug: ['scr-denox-catalysts', 'honeycomb-scr-catalyst'],
     name: 'Honeycomb SCR DeNOx Catalyst',
+    image: honeycombScrPhoto,
+    imageAlt: 'Square-cell honeycomb SCR denitrification catalyst ceramic block',
     h1: 'Honeycomb SCR DeNOx Catalyst',
     category: 'SCR DeNOx Catalysts',
     seoTitle: 'Honeycomb SCR DeNOx Catalyst Manufacturer | Xuanbao Environmental',
@@ -168,6 +180,8 @@ export const products: Product[] = [
   {
     slug: ['co-removal-catalyst'],
     name: 'CO Oxidation Catalyst',
+    image: coCatalystPhoto,
+    imageAlt: 'Precious-metal-coated honeycomb ceramic CO oxidation catalyst block',
     h1: 'Carbon Monoxide Oxidation Catalyst',
     category: 'CO Oxidation Catalysts',
     seoTitle: 'CO Oxidation Catalyst Manufacturer — Carbon Monoxide Removal | Xuanbao Environmental',
@@ -418,6 +432,8 @@ export const products: Product[] = [
   {
     slug: ['zeolite-molecular-sieve', 'modified-5a'],
     name: 'Modified 5A Molecular Sieve',
+    image: zeolite5aPhoto,
+    imageAlt: 'Pile of white spherical 5A molecular sieve zeolite beads',
     h1: 'Modified 5A Molecular Sieve',
     category: 'Zeolite Molecular Sieves',
     seoTitle: 'Modified 5A Molecular Sieve Manufacturer | Xuanbao Environmental',
@@ -454,6 +470,8 @@ export const products: Product[] = [
   {
     slug: ['zeolite-molecular-sieve', 'modified-13x'],
     name: 'Modified 13X Molecular Sieve',
+    image: zeolite13xPhoto,
+    imageAlt: 'Pile of light beige 13X molecular sieve zeolite pellets',
     h1: 'Modified 13X Molecular Sieve',
     category: 'Zeolite Molecular Sieves',
     seoTitle: 'Modified 13X Molecular Sieve Manufacturer | Xuanbao Environmental',
@@ -495,6 +513,8 @@ export const products: Product[] = [
   {
     slug: ['zeolite-molecular-sieve', 'zsm-5'],
     name: 'ZSM-5 Molecular Sieve for VOC Adsorption',
+    image: zsm5Photo,
+    imageAlt: 'Mound of white ZSM-5 molecular sieve powder and granules',
     h1: 'ZSM-5 Molecular Sieve for VOC Adsorption',
     category: 'Zeolite Molecular Sieves',
     seoTitle: 'ZSM-5 Molecular Sieve for VOC Adsorption | Xuanbao Environmental',
@@ -553,6 +573,8 @@ export const products: Product[] = [
   {
     slug: ['zeolite-molecular-sieve', 'nay'],
     name: 'NaY Molecular Sieve',
+    image: nayPhoto,
+    imageAlt: 'Mound of white NaY molecular sieve powder',
     h1: 'NaY Molecular Sieve',
     category: 'Zeolite Molecular Sieves',
     seoTitle: 'NaY Molecular Sieve | Xuanbao Environmental',
@@ -717,6 +739,8 @@ export const products: Product[] = [
   {
     slug: ['activated-carbon', 'coconut-shell-carbon'],
     name: 'Coconut-Shell Activated Carbon',
+    image: coconutACPhoto,
+    imageAlt: 'Pile of black irregular coconut shell activated carbon granules',
     h1: 'Coconut-Shell Activated Carbon',
     category: 'Activated Carbon',
     seoTitle: 'Coconut-Shell Activated Carbon | Xuanbao Environmental',

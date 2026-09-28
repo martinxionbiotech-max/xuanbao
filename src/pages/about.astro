@@ -5,6 +5,9 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+import aboutHeroImg from '~/assets/images/about-hero-manufacturing-workshop.webp';
+import aboutEquipImg from '~/assets/images/about-equipment-extrusion-line.webp';
+
 const metadata = {
   title: 'About Xuanbao Environmental | Activated Carbon & Industrial Materials',
   description:
@@ -17,8 +20,8 @@ const metadata = {
   <Hero
     tagline="About us"
     image={{
-      src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial manufacturing facility',
+      src: aboutHeroImg,
+      alt: 'Modern catalyst and adsorbent manufacturing workshop with production machinery',
     }}
   >
     <Fragment slot="title">
@@ -54,8 +57,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80',
-      alt: 'Industrial material production equipment',
+      src: aboutEquipImg,
+      alt: 'Honeycomb ceramic extrusion and forming production equipment in a factory',
     }}
   >
     <Fragment slot="content">
