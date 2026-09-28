@@ -1,10 +1,13 @@
 import type { ImageMetadata } from 'astro';
 import ycxbAPhoto from '~/assets/images/products/platinum-voc-catalyst.jpg';
 import ycxbASpec from '~/assets/images/products/yc-xb-a-platinum-catalyst-specification-sheet.png';
+import ycxbAChart from '~/assets/images/products/yc-xb-a-performance-chart.png';
 import ycxbBPhoto from '~/assets/images/products/platinum-palladium-voc-catalyst.jpg';
 import ycxbBSpec from '~/assets/images/products/yc-xb-b-pt-pd-catalyst-specification-sheet.png';
+import ycxbBChart from '~/assets/images/products/yc-xb-b-performance-chart.png';
 import ycxbCPhoto from '~/assets/images/products/non-precious-metal-voc-catalyst.jpg';
 import ycxbCSpec from '~/assets/images/products/yc-xb-c-non-precious-metal-catalyst-specification-sheet.png';
+import ycxbCChart from '~/assets/images/products/yc-xb-c-performance-chart.png';
 import honeycombACPhoto from '~/assets/images/products/honeycomb-activated-carbon.jpg';
 import honeycombACSpec from '~/assets/images/products/honeycomb-activated-carbon-specification-sheet.png';
 import columnarACPhoto from '~/assets/images/products/columnar-activated-carbon.jpg';
@@ -36,6 +39,8 @@ export interface Product {
   imageAlt?: string;          // SEO alt text for the product photo
   specSheet?: ImageMetadata;  // English specification sheet
   specSheetAlt?: string;      // SEO alt text for the specification sheet
+  chart?: ImageMetadata;      // English performance chart redrawn from brochure
+  chartAlt?: string;          // SEO alt text for the performance chart
 }
 
 export const products: Product[] = [
@@ -183,6 +188,8 @@ export const products: Product[] = [
     imageAlt: 'YC-XB-A platinum honeycomb ceramic VOC oxidation catalyst product photo',
     specSheet: ycxbASpec,
     specSheetAlt: 'YC-XB-A platinum VOC catalyst specification sheet — cordierite substrate, 200 cpsi, 220–600°C, design conversion ≥98%',
+    chart: ycxbAChart,
+    chartAlt: 'YC-XB-A performance chart — light-off and T98 temperatures (°C) for benzene, xylene, ethyl acetate, n-butanol, cyclohexanone and cyclohexane, from the company brochure',
     seoTitle: 'Platinum Honeycomb VOC Catalyst YC-XB-A | Xuanbao Environmental',
     metaDescription:
       'Single-metal nano-platinum VOC oxidation catalyst YC-XB-A on 200 cpsi cordierite, 220–600°C, design conversion ≥98%, for coating, printing, chemical and automotive VOC exhaust.',
@@ -235,6 +242,8 @@ export const products: Product[] = [
     imageAlt: 'YC-XB-B platinum-palladium honeycomb ceramic VOC oxidation catalyst product photo',
     specSheet: ycxbBSpec,
     specSheetAlt: 'YC-XB-B Pt-Pd VOC catalyst specification sheet — cordierite substrate, 240–400°C operating, 900°C maximum, design conversion ≥98%',
+    chart: ycxbBChart,
+    chartAlt: 'YC-XB-B performance chart — light-off and T98 temperatures (°C) for benzene, xylene, ethyl acetate, n-butanol, cyclohexanone and cyclohexane, from the company brochure',
     seoTitle: 'Platinum-Palladium VOC Catalyst YC-XB-B | Xuanbao Environmental',
     metaDescription:
       'Dual precious-metal Pt-Pd honeycomb VOC catalyst YC-XB-B on 200 cpsi cordierite, 240–400°C, lower light-off temperature for mixed VOC streams in coating and printing exhaust.',
@@ -281,6 +290,8 @@ export const products: Product[] = [
     imageAlt: 'YC-XB-C non-precious-metal Ag-Cu-Mn VOC oxidation catalyst product photo',
     specSheet: ycxbCSpec,
     specSheetAlt: 'YC-XB-C non-precious-metal VOC catalyst specification sheet — Ag-Cu-Mn active components, 260–450°C, design conversion ≥98%',
+    chart: ycxbCChart,
+    chartAlt: 'YC-XB-C performance chart — light-off and T98 temperatures (°C) for benzene, xylene, ethyl acetate, n-butanol, cyclohexanone and cyclohexane, from the company brochure',
     seoTitle: 'Non-Precious-Metal VOC Catalyst YC-XB-C | Xuanbao Environmental',
     metaDescription:
       'Ag-Cu-Mn composite oxide VOC catalyst YC-XB-C on 200 cpsi cordierite, 260–450°C, a lower-cost alternative for non-hydrocarbon VOC catalytic oxidation.',
