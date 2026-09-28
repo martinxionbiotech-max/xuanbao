@@ -14,7 +14,7 @@ metadata:
     index: true
     follow: true
   openGraph:
-    site_name: Xuanbao Environmental Technology
+    site_name: Xuanbao Environmental
     images:
       - url: '~/assets/images/default.png'
         width: 1200

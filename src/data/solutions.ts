@@ -90,7 +90,7 @@ export const solutions: Solution[] = [
     slug: 'scr-denox',
     name: 'SCR DeNOx',
     h1: 'SCR DeNOx Catalyst Solutions',
-    seoTitle: 'SCR DeNOx Solution — Catalyst Selection & Engineering | Xuanbao',
+    seoTitle: 'SCR DeNOx Solution — Catalyst Selection & Engineering | Xuanbao Environmental',
     metaDescription:
       'SCR DeNOx solutions for power, cement, alumina and steel flue gas — catalyst selection by temperature, dust, SO₂ and NH₃/NOx ratio.',
     intro:

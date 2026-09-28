@@ -140,7 +140,7 @@ export const products: Product[] = [
     name: 'CO Oxidation Catalyst',
     h1: 'Carbon Monoxide Oxidation Catalyst',
     category: 'CO Oxidation Catalysts',
-    seoTitle: 'CO Oxidation Catalyst Manufacturer — Carbon Monoxide Removal | Xuanbao',
+    seoTitle: 'CO Oxidation Catalyst Manufacturer — Carbon Monoxide Removal | Xuanbao Environmental',
     metaDescription:
       'CO oxidation catalysts on cordierite honeycomb or activated alumina substrates, 150–600°C, up to ≥95% conversion, for sintering machines, waste incinerators and industrial furnaces.',
     intro:
@@ -520,7 +520,7 @@ export const products: Product[] = [
     imageAlt: 'Coal-based columnar activated carbon product photo — 1.5 to 8 mm diameters for gas purification',
     specSheet: columnarACSpec,
     specSheetAlt: 'Columnar activated carbon specification sheet by diameter — BET 600–1,000 m²/g, CTC 40–65%, strength 93–96%',
-    seoTitle: 'Coal-Based Columnar Activated Carbon Manufacturer | Xuanbao',
+    seoTitle: 'Coal-Based Columnar Activated Carbon Manufacturer | Xuanbao Environmental',
     metaDescription:
       'Coal-based columnar activated carbon in 1.5–8 mm diameters, BET 600–1,000 m²/g, iodine 600–1,000 mg/g, for gas purification and industrial adsorption.',
     intro:
@@ -679,7 +679,7 @@ export const categoryMeta: Record<
   'voc-catalysts': {
     name: 'VOC Catalysts',
     h1: 'VOC Oxidation Catalysts',
-    seoTitle: 'VOC Catalyst Manufacturer — Pt, Pt-Pd & Non-Precious Metal | Xuanbao',
+    seoTitle: 'VOC Catalyst Manufacturer — Pt, Pt-Pd & Non-Precious Metal | Xuanbao Environmental',
     metaDescription:
       'VOC catalytic oxidation catalysts: platinum YC-XB-A, platinum-palladium YC-XB-B and non-precious-metal YC-XB-C on 200 cpsi cordierite honeycomb.',
     intro:
@@ -690,7 +690,7 @@ export const categoryMeta: Record<
   'zeolite-molecular-sieve': {
     name: 'Zeolite Molecular Sieves',
     h1: 'Zeolite Molecular Sieves',
-    seoTitle: 'Zeolite Molecular Sieve Manufacturer — 5A, 13X, ZSM-5, NaY | Xuanbao',
+    seoTitle: 'Zeolite Molecular Sieve Manufacturer — 5A, 13X, ZSM-5, NaY | Xuanbao Environmental',
     metaDescription:
       'Modified 5A, 13X, ZSM-5 and NaY zeolite molecular sieves for VOC adsorption concentration, gas drying, CO₂ adsorption and catalyst support applications.',
     intro:
@@ -701,7 +701,7 @@ export const categoryMeta: Record<
   'activated-carbon': {
     name: 'Activated Carbon',
     h1: 'Activated Carbon Products',
-    seoTitle: 'Activated Carbon Manufacturer — Honeycomb & Columnar | Xuanbao',
+    seoTitle: 'Activated Carbon Manufacturer — Honeycomb & Columnar | Xuanbao Environmental',
     metaDescription:
       'Honeycomb, coal-based columnar, coconut-shell, fruit-shell and fiber activated carbon for VOC adsorption, gas purification, decolorization, solvent recovery and odor control.',
     intro:

@@ -50,7 +50,7 @@ export const caseStudies: CaseStudy[] = [
     slug: 'medical-waste-incinerator-co-removal',
     name: 'Medical Waste Incinerator CO Removal',
     h1: 'Medical Waste Incinerator CO Removal — Field Test',
-    seoTitle: 'Medical Waste Incinerator CO Removal Case Study | Xuanbao',
+    seoTitle: 'Medical Waste Incinerator CO Removal Case Study | Xuanbao Environmental',
     metaDescription:
       'CO oxidation catalyst field test on a medical waste incinerator: CO reduced from 11,224.2 mg/Nm³ to 16.2 mg/Nm³, tested 2023-03-20.',
     testDate: '2023-03-20',
