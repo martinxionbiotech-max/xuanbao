@@ -3,26 +3,98 @@
 > Yancheng Xuanbao Environmental Technology Co., Ltd. — manufacturer of industrial
 > emission control materials: SCR DeNOx catalysts, CO oxidation catalysts, VOC
 > oxidation catalysts, zeolite molecular sieves and activated carbon. This file
-> lists the primary pages of xuanbaoenvironment.com; deep technical documentation
-> lives in the companion knowledge center at data.xuanbaoenvironment.com.
+> lists the pages of xuanbaoenvironment.com; deep technical documentation lives
+> in the companion knowledge center at data.xuanbaoenvironment.com.
 
 ## Core pages
 
-- [Home](https://xuanbaoenvironment.com/): company overview, product categories, industries and R&D/quality workflow.
-- [Products](https://xuanbaoenvironment.com/products/): 14 products across 5 categories — SCR DeNOx, CO removal, VOC catalysts, molecular sieves, activated carbon.
-- [SCR DeNOx Catalysts](https://xuanbaoenvironment.com/products/scr-denox-catalysts/): plate-type and honeycomb V-Mo-Ti catalysts.
-- [VOC Catalysts](https://xuanbaoenvironment.com/products/voc-catalysts/): Pt, Pt-Pd and non-precious-metal honeycomb catalysts.
-- [Zeolite Molecular Sieves](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/): modified 5A, 13X, ZSM-5 and NaY.
-- [Activated Carbon](https://xuanbaoenvironment.com/products/activated-carbon/): honeycomb, coal-based columnar, coconut shell and fiber.
-- [CO Removal Catalyst](https://xuanbaoenvironment.com/products/co-removal-catalyst/): CO oxidation for sintering, incineration and furnace exhaust.
-- [Solutions](https://xuanbaoenvironment.com/solutions/): SCR DeNOx, VOC catalytic oxidation, adsorption + catalytic combustion, molecular sieve concentration, CO removal.
-- [Industries](https://xuanbaoenvironment.com/industries/): thermal power, steel, sintering, cement, alumina, petrochemical, chemical, coating, printing, pharmaceutical, automotive, waste incineration.
-- [Case Studies](https://xuanbaoenvironment.com/case-studies/): field test records — sintering machine CO removal, medical waste incinerator CO removal.
-- [About](https://xuanbaoenvironment.com/about/), [R&D](https://xuanbaoenvironment.com/r-and-d/), [Manufacturing](https://xuanbaoenvironment.com/manufacturing/), [Quality](https://xuanbaoenvironment.com/quality/), [Service](https://xuanbaoenvironment.com/service/)
+- [Home](https://xuanbaoenvironment.com/): company overview, core products, industries and R&D/quality workflow.
+- [About](https://xuanbaoenvironment.com/about/): company profile, product lines, company-stated honors.
+- [R&D](https://xuanbaoenvironment.com/r-and-d/): catalyst development, formula design, testing and cooperation.
+- [Manufacturing](https://xuanbaoenvironment.com/manufacturing/): production process and process control.
+- [Quality](https://xuanbaoenvironment.com/quality/): testing items, quality control and data classification.
+- [Testing](https://xuanbaoenvironment.com/testing/): laboratory and field testing capabilities.
+- [Service](https://xuanbaoenvironment.com/service/): engineering support, installation guidance and after-sales.
 - [Contact](https://xuanbaoenvironment.com/contact/): inquiry form for gas conditions and quotations.
 - [Resources](https://xuanbaoenvironment.com/resources/): link to the knowledge center.
+- [Privacy Policy](https://xuanbaoenvironment.com/privacy/)
+- [Terms of Use](https://xuanbaoenvironment.com/terms/)
+
+## Products
+
+- [Products](https://xuanbaoenvironment.com/products/): overview across 5 product lines.
+- [SCR DeNOx Catalysts](https://xuanbaoenvironment.com/products/scr-denox-catalysts/): plate-type and honeycomb V-Mo-Ti catalysts.
+  - [Honeycomb SCR Catalyst](https://xuanbaoenvironment.com/products/scr-denox-catalysts/honeycomb-scr-catalyst/)
+  - [Plate-type SCR Catalyst](https://xuanbaoenvironment.com/products/scr-denox-catalysts/plate-type-scr-catalyst/)
+- [VOC Catalysts](https://xuanbaoenvironment.com/products/voc-catalysts/): precious-metal honeycomb catalysts.
+  - [Platinum Catalyst](https://xuanbaoenvironment.com/products/voc-catalysts/platinum-catalyst/)
+  - [Platinum-Palladium Catalyst](https://xuanbaoenvironment.com/products/voc-catalysts/platinum-palladium-catalyst/)
+  - [Non-precious-metal Catalyst](https://xuanbaoenvironment.com/products/voc-catalysts/non-precious-metal-catalyst/)
+- [CO Removal Catalyst](https://xuanbaoenvironment.com/products/co-removal-catalyst/): CO oxidation for sintering, incineration and furnace exhaust.
+- [Zeolite Molecular Sieves](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/): modified 5A, 13X, ZSM-5 and NaY.
+  - [Modified 5A](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/modified-5a/)
+  - [Modified 13X](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/modified-13x/)
+  - [ZSM-5](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/zsm-5/)
+  - [NaY](https://xuanbaoenvironment.com/products/zeolite-molecular-sieve/nay/)
+- [Activated Carbon](https://xuanbaoenvironment.com/products/activated-carbon/): honeycomb, coal-based columnar, coconut shell, fruit shell and fiber.
+  - [Honeycomb Activated Carbon](https://xuanbaoenvironment.com/products/activated-carbon/honeycomb-activated-carbon/)
+  - [Coal-based Columnar Carbon](https://xuanbaoenvironment.com/products/activated-carbon/coal-based-columnar-carbon/)
+  - [Coconut Shell Carbon](https://xuanbaoenvironment.com/products/activated-carbon/coconut-shell-carbon/)
+  - [Fruit Shell Carbon](https://xuanbaoenvironment.com/products/activated-carbon/fruit-shell-carbon/)
+  - [Activated Carbon Fiber](https://xuanbaoenvironment.com/products/activated-carbon/activated-carbon-fiber/)
+- [Heating Tubes](https://xuanbaoenvironment.com/products/heating-tubes/): auxiliary equipment, 5000 h service life.
+
+## Solutions
+
+- [Solutions](https://xuanbaoenvironment.com/solutions/): overview of engineering solutions.
+- [SCR DeNOx](https://xuanbaoenvironment.com/solutions/scr-denox/)
+- [VOC Catalytic Oxidation](https://xuanbaoenvironment.com/solutions/voc-catalytic-oxidation/)
+- [Adsorption + Catalytic Combustion](https://xuanbaoenvironment.com/solutions/adsorption-catalytic-combustion/)
+- [Molecular Sieve Adsorption Concentration](https://xuanbaoenvironment.com/solutions/molecular-sieve-adsorption-concentration/)
+- [CO Removal](https://xuanbaoenvironment.com/solutions/co-removal/)
+
+## Applications
+
+- [Applications](https://xuanbaoenvironment.com/applications/): gas-phase and liquid-phase application guide.
+- [NOx Reduction](https://xuanbaoenvironment.com/applications/nox-reduction/)
+- [CO Removal](https://xuanbaoenvironment.com/applications/co-removal/)
+- [VOC Adsorption](https://xuanbaoenvironment.com/applications/voc-adsorption/)
+- [Waste Gas Treatment](https://xuanbaoenvironment.com/applications/waste-gas-treatment/)
+- [Odor Control](https://xuanbaoenvironment.com/applications/odor-control/)
+- [Gas Purification](https://xuanbaoenvironment.com/applications/gas-purification/)
+- [Water Treatment](https://xuanbaoenvironment.com/applications/water-treatment/)
+- [Decolorization](https://xuanbaoenvironment.com/applications/decolorization/)
+- [Gold Recovery](https://xuanbaoenvironment.com/applications/gold-recovery/)
+
+## Materials
+
+- [Materials](https://xuanbaoenvironment.com/materials/): raw materials and material selection.
+- [Coal-based Carbon](https://xuanbaoenvironment.com/materials/coal-based-carbon/)
+- [Coconut Shell Carbon](https://xuanbaoenvironment.com/materials/coconut-shell-carbon/)
+
+## Industries
+
+- [Industries](https://xuanbaoenvironment.com/industries/): served industries overview.
+- [Thermal Power](https://xuanbaoenvironment.com/industries/thermal-power/)
+- [Steel](https://xuanbaoenvironment.com/industries/steel/)
+- [Sintering](https://xuanbaoenvironment.com/industries/sintering/)
+- [Cement](https://xuanbaoenvironment.com/industries/cement/)
+- [Alumina](https://xuanbaoenvironment.com/industries/alumina/)
+- [Petrochemical](https://xuanbaoenvironment.com/industries/petrochemical/)
+- [Chemical](https://xuanbaoenvironment.com/industries/chemical/)
+- [Coating](https://xuanbaoenvironment.com/industries/coating/)
+- [Printing](https://xuanbaoenvironment.com/industries/printing/)
+- [Pharmaceutical](https://xuanbaoenvironment.com/industries/pharmaceutical/)
+- [Automotive](https://xuanbaoenvironment.com/industries/automotive/)
+- [Waste Incineration](https://xuanbaoenvironment.com/industries/waste-incineration/)
+
+## Case Studies
+
+- [Case Studies](https://xuanbaoenvironment.com/case-studies/): field test records.
+- [Sintering Machine CO Removal](https://xuanbaoenvironment.com/case-studies/sintering-machine-co-removal/)
+- [Medical Waste Incinerator CO Removal](https://xuanbaoenvironment.com/case-studies/medical-waste-incinerator-co-removal/)
 
 ## Technical documentation
 
-- [Knowledge Center](https://data.xuanbaoenvironment.com/): six pillar guides (SCR DeNOx, CO oxidation, VOC catalysts, molecular sieves, activated carbon, VOC engineering) with 25+ cluster articles.
+- [Knowledge Center](https://data.xuanbaoenvironment.com/): technical documentation with pillar guides and cluster articles on SCR DeNOx, CO oxidation, VOC catalysts, molecular sieves, activated carbon and VOC engineering.
 - [Knowledge Center llms.txt](https://data.xuanbaoenvironment.com/llms.txt): full index of technical articles.
