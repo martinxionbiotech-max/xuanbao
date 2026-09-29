@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
       {
         h2: 'Data completeness note',
         body:
-          'For full engineering evaluation, the following data should be attached to the original record:',
+          'For full engineering evaluation, the following data should be attached to the original record. A complete field-list and blank template are published in the Knowledge Center <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/testing/test-report-template/">Field Test Report Template</a>.',
         list:
           '<li>Gas flow rate</li><li>Operating temperature</li><li>O₂ concentration</li><li>CO inlet / outlet concentration</li><li>Catalyst volume</li><li>Space velocity</li><li>Reactor dimensions</li><li>Continuous operating time</li><li>Test instrument and testing organization</li>',
       },
@@ -76,7 +76,7 @@ export const caseStudies: CaseStudy[] = [
       {
         h2: 'Data completeness note',
         body:
-          'For full engineering evaluation, the following data should be attached to the original record:',
+          'For full engineering evaluation, the following data should be attached to the original record. A complete field-list and blank template are published in the Knowledge Center <a class="text-primary hover:underline" href="https://data.xuanbaoenvironment.com/testing/test-report-template/">Field Test Report Template</a>.',
         list:
           '<li>Gas flow rate</li><li>Operating temperature</li><li>Oxygen content</li><li>Continuous operating time</li><li>Detection method and instrument</li>',
       },
