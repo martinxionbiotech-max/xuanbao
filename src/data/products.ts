@@ -24,6 +24,9 @@ import zeolite13xPhoto from '~/assets/images/products/zeolite-13x-molecular-siev
 import zsm5Photo from '~/assets/images/products/zsm-5-molecular-sieve.webp';
 import nayPhoto from '~/assets/images/products/nay-molecular-sieve.webp';
 import coconutACPhoto from '~/assets/images/products/coconut-shell-activated-carbon.webp';
+import facility1Photo from '~/assets/images/products/xuanbao-production-equipment-1.jpg';
+import facility2Photo from '~/assets/images/products/xuanbao-production-equipment-2.jpg';
+import facility3Photo from '~/assets/images/products/xuanbao-production-equipment-3.jpg';
 
 export interface Product {
   slug: string[];        // route segments, e.g. ['scr-denox-catalysts','plate-type-scr-catalyst']
@@ -49,6 +52,8 @@ export interface Product {
   specSheetAlt?: string;      // SEO alt text for the specification sheet
   chart?: ImageMetadata;      // English performance chart redrawn from brochure
   chartAlt?: string;          // SEO alt text for the performance chart
+  facilityImage?: ImageMetadata;   // real on-site production photo
+  facilityImageAlt?: string;       // honest SEO alt text for the facility photo
 }
 
 export const products: Product[] = [
@@ -58,6 +63,8 @@ export const products: Product[] = [
     name: 'Plate-Type SCR DeNOx Catalyst',
     image: plateScrPhoto,
     imageAlt: 'Plate-type SCR denitrification catalyst module with stacked corrugated metal plates',
+    facilityImage: facility1Photo,
+    facilityImageAlt: 'Production equipment photographed on site at Xuanbao Environmental, Yancheng, Jiangsu',
     h1: 'Plate-Type SCR DeNOx Catalyst',
     category: 'SCR DeNOx Catalysts',
     seoTitle: 'Plate-Type SCR DeNOx Catalyst Manufacturer | Xuanbao Environmental',
@@ -119,6 +126,8 @@ export const products: Product[] = [
     name: 'Honeycomb SCR DeNOx Catalyst',
     image: honeycombScrPhoto,
     imageAlt: 'Square-cell honeycomb SCR denitrification catalyst ceramic block',
+    facilityImage: facility2Photo,
+    facilityImageAlt: 'Production equipment photographed on site at Xuanbao Environmental, Yancheng, Jiangsu',
     h1: 'Honeycomb SCR DeNOx Catalyst',
     category: 'SCR DeNOx Catalysts',
     seoTitle: 'Honeycomb SCR DeNOx Catalyst Manufacturer | Xuanbao Environmental',
@@ -182,6 +191,8 @@ export const products: Product[] = [
     name: 'CO Oxidation Catalyst',
     image: coCatalystPhoto,
     imageAlt: 'Precious-metal-coated honeycomb ceramic CO oxidation catalyst block',
+    facilityImage: facility3Photo,
+    facilityImageAlt: 'Production equipment photographed on site at Xuanbao Environmental, Yancheng, Jiangsu',
     h1: 'Carbon Monoxide Oxidation Catalyst',
     category: 'CO Oxidation Catalysts',
     seoTitle: 'CO Oxidation Catalyst Manufacturer — Carbon Monoxide Removal | Xuanbao Environmental',
