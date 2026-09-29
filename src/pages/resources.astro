@@ -1,15 +1,114 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
-import Features from '~/components/widgets/Features.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Resources & Knowledge Center',
+  title: 'Technical Resources Hub | Xuanbao Environmental',
   description:
-    'Technical resources for industrial emission control — visit our Knowledge Center for SCR, CO oxidation, VOC catalyst, molecular sieve and activated carbon technical guides.',
+    'Technical resources for industrial emission control: product datasheets, field test records, case studies, selection guides, engineering calculations, standards and the Knowledge Center.',
   ignoreTitleTemplate: true,
 };
+
+const kb = 'https://data.xuanbaoenvironment.com';
+
+const sections = [
+  {
+    title: 'Technical Guides',
+    icon: 'tabler:book',
+    items: [
+      { title: 'SCR DeNOx — complete guide', href: `${kb}/scr-denox/` },
+      { title: 'CO oxidation — complete guide', href: `${kb}/co-oxidation/` },
+      { title: 'VOC catalysts — complete guide', href: `${kb}/voc-catalysts/` },
+      { title: 'Activated carbon — complete guide', href: `${kb}/activated-carbon/` },
+      { title: 'Molecular sieves — complete guide', href: `${kb}/molecular-sieves/` },
+      { title: 'Gas treatment engineering', href: `${kb}/voc-engineering/` },
+    ],
+  },
+  {
+    title: 'Product Datasheets',
+    icon: 'tabler:file-description',
+    items: [
+      { title: 'SCR DeNOx catalysts', href: '/products/scr-denox-catalysts/' },
+      { title: 'CO oxidation catalyst', href: '/products/co-removal-catalyst/' },
+      { title: 'VOC catalysts (YC-XB-A/B/C)', href: '/products/voc-catalysts/' },
+      { title: 'Activated carbon', href: '/products/activated-carbon/' },
+      { title: 'Zeolite molecular sieves', href: '/products/zeolite-molecular-sieve/' },
+    ],
+  },
+  {
+    title: 'Test Reports & Field Records',
+    icon: 'tabler:file-check',
+    items: [
+      { title: 'Sintering machine CO — field test', href: '/case-studies/sintering-machine-co-removal/' },
+      { title: 'Medical waste incinerator CO — field test', href: '/case-studies/medical-waste-incinerator-co-removal/' },
+      { title: 'Evidence registry', href: `${kb}/methodology/evidence-registry/` },
+      { title: 'Field test report template', href: `${kb}/testing/test-report-template/` },
+    ],
+  },
+  {
+    title: 'Case Studies',
+    icon: 'tabler:flask',
+    items: [
+      { title: 'All case studies', href: '/case-studies/' },
+      { title: 'Sintering machine CO removal', href: '/case-studies/sintering-machine-co-removal/' },
+      { title: 'Medical waste incinerator CO removal', href: '/case-studies/medical-waste-incinerator-co-removal/' },
+    ],
+  },
+  {
+    title: 'Selection Guides',
+    icon: 'tabler:selector',
+    items: [
+      { title: 'Select an SCR catalyst', href: `${kb}/scr-denox/scr-catalyst-selection/` },
+      { title: 'Select a VOC catalyst', href: `${kb}/voc-catalysts/voc-catalyst-selection/` },
+      { title: 'Select activated carbon', href: `${kb}/activated-carbon/activated-carbon-selection/` },
+      { title: 'Molecular sieve type selection', href: `${kb}/molecular-sieves/molecular-sieve-type-selection/` },
+      { title: 'Gas purification material selection', href: `${kb}/voc-engineering/gas-purification-material-selection/` },
+    ],
+  },
+  {
+    title: 'Engineering Calculations',
+    icon: 'tabler:calculator',
+    items: [
+      { title: 'SCR catalyst volume calculation', href: `${kb}/scr-denox/scr-catalyst-volume-calculation/` },
+      { title: 'Activated carbon capacity calculation', href: `${kb}/activated-carbon/activated-carbon-capacity-calculation/` },
+      { title: 'Zeolite wheel sizing', href: `${kb}/molecular-sieves/zeolite-wheel-sizing/` },
+      { title: 'VOC space velocity design', href: `${kb}/voc-catalysts/voc-space-velocity-design/` },
+      { title: 'Adsorption bed design', href: `${kb}/voc-engineering/voc-adsorption-bed-design/` },
+    ],
+  },
+  {
+    title: 'Standards & Methods',
+    icon: 'tabler:scale',
+    items: [
+      { title: 'China ultra-low-emission standards', href: `${kb}/compliance/china-ultra-low-emission-standards/` },
+      { title: 'EU IED & BREF standards', href: `${kb}/compliance/eu-ied-bref-standards/` },
+      { title: 'Laboratory characterization methods', href: `${kb}/testing/lab-characterization-methods/` },
+      { title: 'Flue gas sampling', href: `${kb}/testing/flue-gas-sampling/` },
+    ],
+  },
+  {
+    title: 'Application Notes',
+    icon: 'tabler:notes',
+    items: [
+      { title: 'VOC coating & paint shops', href: `${kb}/voc-catalysts/voc-coating-industry/` },
+      { title: 'VOC printing industry', href: `${kb}/voc-catalysts/voc-printing-industry/` },
+      { title: 'Sintering machine CO', href: `${kb}/co-oxidation/co-sintering-machine/` },
+      { title: 'Waste incineration CO', href: `${kb}/co-oxidation/co-waste-incineration/` },
+      { title: 'Activated carbon flue gas treatment', href: `${kb}/activated-carbon/activated-carbon-flue-gas-treatment/` },
+    ],
+  },
+  {
+    title: 'Knowledge Center',
+    icon: 'tabler:books',
+    items: [
+      { title: 'Knowledge Center home', href: `${kb}/` },
+      { title: 'Data classification', href: `${kb}/methodology/data-classification/` },
+      { title: 'Engineering views', href: `${kb}/methodology/engineering-views/` },
+      { title: 'Pollutant profiles', href: `${kb}/pollutants/` },
+    ],
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -18,46 +117,38 @@ const metadata = {
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 pt-8 md:pt-12 pb-4">
     <p class="text-base font-bold tracking-wide uppercase text-secondary mb-2 text-center">Resources</p>
     <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading text-heading text-center">
-      Resources
+      Technical Resources Hub
     </h1>
     <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">
-      Technical documentation, guides and the Industrial Emission Control Knowledge Center.
+      Technical guides, product datasheets, field test records, case studies, selection guides, engineering
+      calculations, standards and application notes for industrial emission control.
     </p>
   </section>
 
-  <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10 space-y-10">
-    <section class="rounded-xl border border-primary/30 bg-primary/10 p-5 md:p-6">
-      <strong class="text-heading">📚 Industrial Emission Control Knowledge Center</strong>
-      <p class="mt-2 text-muted leading-relaxed">
-        Deep technical content — SCR fundamentals, CO oxidation, VOC catalysis, molecular sieve and activated carbon
-        data, adsorption engineering and catalyst selection guides — is published in our knowledge center at{' '}
-        <a class="font-semibold text-primary hover:underline" href="https://data.xuanbaoenvironment.com">
-          data.xuanbaoenvironment.com
-        </a>.
-      </p>
-    </section>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 pb-6 md:pb-10">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {sections.map((section) => (
+        <section class="rounded-xl border border-slate-700/60 bg-slate-900/40 p-5">
+          <h2 class="text-lg font-bold font-heading text-heading mb-3 flex items-center gap-2">
+            {section.title}
+          </h2>
+          <ul class="space-y-1.5 text-sm text-muted">
+            {section.items.map((item) => (
+              <li>
+                <a class="hover:text-primary hover:underline" href={item.href}>
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
 
-    <Features
-      columns={3}
-      title="What you will find there"
-      items={[
-        { title: 'SCR DeNOx', description: 'What is SCR, plate vs honeycomb, poisoning, regeneration, replacement.', icon: 'tabler:wind' },
-        { title: 'CO Oxidation', description: 'Fundamentals, light-off temperature, SO₂ and water effects, service life.', icon: 'tabler:flame' },
-        { title: 'VOC Catalysts', description: 'Catalytic oxidation, T50/T90, space velocity, Pt / Pd / non-precious-metal systems.', icon: 'tabler:atom' },
-        { title: 'Molecular Sieves', description: '5A / 13X / NaY / ZSM-5, pore structure, selectivity, regeneration.', icon: 'tabler:hexagons' },
-        { title: 'Activated Carbon', description: 'Iodine value, CCl₄ adsorption, fire safety, regeneration, replacement.', icon: 'tabler:layers-linked' },
-        { title: 'VOC Engineering', description: 'Concentration, LEL, humidity, pressure drop, heat recovery.', icon: 'tabler:settings' },
-      ]}
-    />
-
-    <section>
-      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Data you can request</h2>
-      <ul class="grid gap-2 sm:grid-cols-3 text-muted">
-        <li>Product data sheets and specifications</li>
-        <li>Testing documentation</li>
-        <li>Case study operating data</li>
-      </ul>
-    </section>
+    <p class="mt-8 text-sm text-muted text-center max-w-3xl mx-auto">
+      Data sheets, testing documentation and case-study operating data are available on request. We do not publish
+      documents that do not exist — every resource above links to published content.
+    </p>
   </div>
 
   <CallToAction actions={[{ variant: 'primary', text: 'Request Documentation', href: '/contact/', icon: 'tabler:arrow-right' }, { variant: 'whatsapp', text: 'Chat on WhatsApp', href: 'https://wa.me/8615153588090', icon: 'tabler:brand-whatsapp', target: '_blank' }]}>

@@ -38,12 +38,57 @@ const breadcrumbSchema = {
   ],
 };
 
-const kbByCategory: Record<string, string> = {
-  'SCR DeNOx Catalysts': 'https://data.xuanbaoenvironment.com/scr-denox/',
-  'VOC Catalysts': 'https://data.xuanbaoenvironment.com/voc-catalysts/',
-  'CO Oxidation Catalysts': 'https://data.xuanbaoenvironment.com/co-oxidation/',
-  'Activated Carbon': 'https://data.xuanbaoenvironment.com/activated-carbon/',
-  'Zeolite Molecular Sieves': 'https://data.xuanbaoenvironment.com/molecular-sieves/',
+const kbBase = 'https://data.xuanbaoenvironment.com';
+const kbGuides: Record<
+  string,
+  { label: string; href: string; articles: { title: string; href: string }[] }
+> = {
+  'SCR DeNOx Catalysts': {
+    label: 'SCR DeNOx technical guide',
+    href: `${kbBase}/scr-denox/`,
+    articles: [
+      { title: 'How to select an SCR catalyst', href: `${kbBase}/scr-denox/scr-catalyst-selection/` },
+      { title: 'Plate vs honeycomb SCR', href: `${kbBase}/scr-denox/plate-vs-honeycomb-scr/` },
+      { title: 'SCR catalyst activity testing', href: `${kbBase}/scr-denox/scr-activity-testing/` },
+    ],
+  },
+  'VOC Catalysts': {
+    label: 'VOC catalysts technical guide',
+    href: `${kbBase}/voc-catalysts/`,
+    articles: [
+      { title: 'How to select a VOC catalyst', href: `${kbBase}/voc-catalysts/voc-catalyst-selection/` },
+      { title: 'Precious vs non-precious metal', href: `${kbBase}/voc-catalysts/voc-precious-vs-non-precious/` },
+      { title: 'Space velocity design', href: `${kbBase}/voc-catalysts/voc-space-velocity-design/` },
+    ],
+  },
+  'CO Oxidation Catalysts': {
+    label: 'CO oxidation technical guide',
+    href: `${kbBase}/co-oxidation/`,
+    articles: [
+      { title: 'How to select a CO catalyst', href: `${kbBase}/co-oxidation/co-catalyst-selection/` },
+      { title: 'Light-off temperature', href: `${kbBase}/co-oxidation/co-light-off-temperature/` },
+      { title: 'Sintering machine CO', href: `${kbBase}/co-oxidation/co-sintering-machine/` },
+      { title: 'Waste incineration CO', href: `${kbBase}/co-oxidation/co-waste-incineration/` },
+    ],
+  },
+  'Activated Carbon': {
+    label: 'Activated carbon technical guide',
+    href: `${kbBase}/activated-carbon/`,
+    articles: [
+      { title: 'How to select activated carbon', href: `${kbBase}/activated-carbon/activated-carbon-selection/` },
+      { title: 'Honeycomb vs columnar', href: `${kbBase}/activated-carbon/honeycomb-vs-columnar/` },
+      { title: 'Humidity & temperature effects', href: `${kbBase}/activated-carbon/activated-carbon-humidity-temperature/` },
+    ],
+  },
+  'Zeolite Molecular Sieves': {
+    label: 'Molecular sieves technical guide',
+    href: `${kbBase}/molecular-sieves/`,
+    articles: [
+      { title: 'Molecular sieve type selection', href: `${kbBase}/molecular-sieves/molecular-sieve-type-selection/` },
+      { title: 'Zeolite concentration wheels', href: `${kbBase}/molecular-sieves/zeolite-concentration-wheel/` },
+      { title: 'Zeolite vs activated carbon', href: `${kbBase}/voc-engineering/zeolite-vs-activated-carbon/` },
+    ],
+  },
 };
 
 const productSchema = {
@@ -220,14 +265,58 @@ const breadcrumbItems = [
         <li class="flex gap-2"><Icon name="tabler:arrow-right" class="h-5 w-5 shrink-0 text-primary" />Required service life and any special requirements</li>
       </ul>
     </section>
+    {product.relatedCases && product.relatedCases.length > 0 && (
+      <section>
+        <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Field Evidence — Case Studies</h2>
+        <p class="text-muted mb-4 max-w-3xl mx-auto text-center">
+          Documented field tests using this catalyst. Results are specific to the tested operating conditions and are
+          not a universal performance guarantee.
+        </p>
+        <ul class="grid gap-3 sm:grid-cols-2 max-w-3xl mx-auto">
+          {product.relatedCases.map((c) => (
+            <li>
+              <a
+                class="flex h-full items-center gap-2 rounded-lg border border-slate-700/60 bg-slate-900/40 p-4 font-semibold text-heading transition hover:border-primary hover:text-primary"
+                href={getPermalink(c.href.replace(/\/+$/, ''))}
+              >
+                <Icon name="tabler:file-check" class="h-5 w-5 shrink-0 text-primary" />
+                {c.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
     <section>
       <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Related technical documentation</h2>
-      <p class="text-muted mb-4 max-w-3xl mx-auto text-center">
-        Selection guides, engineering parameters and testing methodology for this material family — in the Xuanbao Knowledge Center:
-        <br /><a class="text-primary hover:underline" href={kbByCategory[product.category] ?? 'https://data.xuanbaoenvironment.com/'}>
-          {product.category} technical guide →
-        </a>
-      </p>
+      <div class="max-w-3xl mx-auto text-muted space-y-3">
+        {kbGuides[product.category] && (
+          <p class="text-center">
+            <a class="font-semibold text-primary hover:underline" href={kbGuides[product.category].href}>
+              {kbGuides[product.category].label} →
+            </a>
+          </p>
+        )}
+        {kbGuides[product.category] && (
+          <ul class="grid gap-2 sm:grid-cols-2">
+            {kbGuides[product.category].articles.map((a) => (
+              <li>
+                <a class="hover:text-primary hover:underline" href={a.href}>
+                  {a.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+        <p class="text-center text-sm pt-2">
+          Testing methodology:{" "}
+          <a class="hover:text-primary hover:underline" href={`${kbBase}/testing/`}>catalyst &amp; adsorbent testing</a>
+          {' · '}
+          Evidence traceability:{" "}
+          <a class="hover:text-primary hover:underline" href={`${kbBase}/methodology/evidence-registry/`}>evidence registry</a>
+        </p>
+      </div>
     </section>
   </div>
 

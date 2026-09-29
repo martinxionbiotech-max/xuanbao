@@ -72,7 +72,7 @@ export const caseStudies: CaseStudy[] = [
         h2: 'Derived removal efficiency',
         body:
           'On the reported inlet/outlet pair, single-pass CO removal was <strong>99.86%</strong> ((11,224.2 − 16.2) / 11,224.2). This is arithmetic on the recorded values — it is not a design guarantee, because the operating conditions behind the measurement are not published.',
-      },,
+      },
       {
         h2: 'Data completeness note',
         body:

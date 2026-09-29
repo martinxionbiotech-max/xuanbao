@@ -54,6 +54,7 @@ export interface Product {
   chartAlt?: string;          // SEO alt text for the performance chart
   facilityImage?: ImageMetadata;   // real on-site production photo
   facilityImageAlt?: string;       // honest SEO alt text for the facility photo
+  relatedCases?: { name: string; href: string }[];  // field-test case studies that evidence this product
 }
 
 export const products: Product[] = [
@@ -215,6 +216,10 @@ export const products: Product[] = [
       '<li>Sintering machines</li><li>Coke ovens and pellet plants</li><li>Industrial furnaces</li><li>Medical waste incinerators</li><li>Industrial boilers</li><li>Internal combustion exhaust (where applicable)</li>',
     limitations:
       'Conversion marked (*) is a reported value from original documentation; it must be confirmed against the current test report. Performance depends on CO concentration, oxygen content, temperature, SO₂ and water vapor.',
+    relatedCases: [
+      { name: 'Sintering Machine CO Removal — Field Test', href: '/case-studies/sintering-machine-co-removal/' },
+      { name: 'Medical Waste Incinerator CO Removal — Field Test', href: '/case-studies/medical-waste-incinerator-co-removal/' },
+    ],
     faqs: [
       {
         q: 'What CO conversion has been achieved in field tests?',
