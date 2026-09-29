@@ -30,6 +30,11 @@ export const caseStudies: CaseStudy[] = [
           'The original field test record reports CO concentration reduced from <strong>1,499 ppm to 18 ppm</strong> on 2022-08-23.',
       },
       {
+        h2: 'Derived removal efficiency',
+        body:
+          'On the reported inlet/outlet pair, single-pass CO removal was <strong>98.8%</strong> ((1,499 − 18) / 1,499). This is arithmetic on the recorded values — it is not a design guarantee, because the operating conditions behind the measurement are not published.',
+      },
+      {
         h2: 'Data completeness note',
         body:
           'For full engineering evaluation, the following data should be attached to the original record:',
@@ -63,6 +68,11 @@ export const caseStudies: CaseStudy[] = [
         body:
           'The original field test record reports CO concentration reduced from <strong>11,224.2 mg/Nm³ to 16.2 mg/Nm³</strong> on 2023-03-20.',
       },
+      {
+        h2: 'Derived removal efficiency',
+        body:
+          'On the reported inlet/outlet pair, single-pass CO removal was <strong>99.86%</strong> ((11,224.2 − 16.2) / 11,224.2). This is arithmetic on the recorded values — it is not a design guarantee, because the operating conditions behind the measurement are not published.',
+      },,
       {
         h2: 'Data completeness note',
         body:

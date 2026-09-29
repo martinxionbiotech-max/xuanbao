@@ -38,6 +38,14 @@ const breadcrumbSchema = {
   ],
 };
 
+const kbByCategory: Record<string, string> = {
+  'SCR DeNOx Catalysts': 'https://data.xuanbaoenvironment.com/scr-denox/',
+  'VOC Catalysts': 'https://data.xuanbaoenvironment.com/voc-catalysts/',
+  'CO Oxidation Catalysts': 'https://data.xuanbaoenvironment.com/co-oxidation/',
+  'Activated Carbon': 'https://data.xuanbaoenvironment.com/activated-carbon/',
+  'Zeolite Molecular Sieves': 'https://data.xuanbaoenvironment.com/molecular-sieves/',
+};
+
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -200,6 +208,15 @@ const breadcrumbItems = [
         <li class="flex gap-2"><Icon name="tabler:arrow-right" class="h-5 w-5 shrink-0 text-primary" />Existing reactor dimensions and current catalyst / adsorbent type</li>
         <li class="flex gap-2"><Icon name="tabler:arrow-right" class="h-5 w-5 shrink-0 text-primary" />Required service life and any special requirements</li>
       </ul>
+    </section>
+    <section>
+      <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Related technical documentation</h2>
+      <p class="text-muted mb-4 max-w-3xl mx-auto text-center">
+        Selection guides, engineering parameters and testing methodology for this material family — in the Xuanbao Knowledge Center:
+        <br /><a class="text-primary hover:underline" href={kbByCategory[product.category] ?? 'https://data.xuanbaoenvironment.com/'}>
+          {product.category} technical guide →
+        </a>
+      </p>
     </section>
   </div>
 
