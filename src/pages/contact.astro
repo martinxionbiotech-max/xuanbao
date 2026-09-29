@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import Features from '~/components/widgets/Features.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Contact Xuanbao Environmental | Request Material Support',
@@ -30,30 +31,42 @@ const metadata = {
       columns={3}
       items={[
         {
-          title: 'Contact',
-          description: 'International Sales & Technical Support',
+          title: 'Sales Director',
+          description: 'Joanna D.',
           icon: 'tabler:user',
         },
         {
           title: 'Phone / WhatsApp',
-          description: '+86 151 6936 1313',
+          description: '+86 15153588090',
           icon: 'tabler:phone',
         },
         {
           title: 'Email',
-          description: '625534887@qq.com',
+          description: 'joanna@dinweys.com',
           icon: 'tabler:mail',
         },
       ]}
     />
 
+    <div class="mt-8 text-center">
+      <a
+        href="https://wa.me/8615153588090"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-3.5 font-semibold text-white transition hover:bg-[#1ebe5b]"
+      >
+        <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+        Chat on WhatsApp
+      </a>
+    </div>
+
     <div class="mt-10 grid gap-10 md:grid-cols-5">
       <div class="md:col-span-3">
         <h2 class="text-2xl md:text-3xl font-bold font-heading text-heading mb-4 text-center">Inquiry Form</h2>
         <p class="text-muted mb-6 text-sm max-w-3xl mx-auto text-center">
-          This form opens your email client with the details pre-filled and sends them to 625534887@qq.com.
+          This form opens your email client with the details pre-filled and sends them to joanna@dinweys.com.
         </p>
-        <form action="mailto:625534887@qq.com" method="get" enctype="text/plain" class="grid gap-4 sm:grid-cols-2">
+        <form action="mailto:joanna@dinweys.com" method="get" enctype="text/plain" class="grid gap-4 sm:grid-cols-2">
           <div>
             <label class="mb-1 block text-sm font-medium text-heading" for="name">Name *</label>
             <input class="w-full rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-2 text-default placeholder:text-muted focus:border-primary focus:outline-none" type="text" id="name" name="Name" required />

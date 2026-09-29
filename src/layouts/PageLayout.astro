@@ -37,6 +37,14 @@ const baseSchema = [
     alternateName: SITE?.name,
     url: SITE?.site,
     logo: new URL(favIconSvg.src, SITE?.site).toString(),
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      name: 'Joanna D.',
+      telephone: '+86-15153588090',
+      email: 'joanna@dinweys.com',
+      availableLanguage: ['en', 'zh'],
+    },
   },
 ];
 ---

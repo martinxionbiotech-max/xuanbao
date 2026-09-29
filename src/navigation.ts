@@ -128,7 +128,8 @@ export const footerData = {
     { text: 'Terms of Use', href: getPermalink('/terms') },
   ],
   socialLinks: [
-    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:625534887@qq.com' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/8615153588090' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:joanna@dinweys.com' },
   ],
   footNote: `
     © 2026 Yancheng Xuanbao Environmental Technology Co., Ltd. All rights reserved.
