@@ -40,6 +40,7 @@ export interface Product {
   intro: string;
   overview?: string;
   specs?: string;        // HTML table markup
+  industryRefs?: string; // HTML table: industry-typical values from Chinese peer manufacturers (reference only)
   features?: string;     // HTML <li> items
   applications?: string; // HTML <li> items
   limitations?: string;
@@ -216,6 +217,12 @@ export const products: Product[] = [
       '<li>Sintering machines</li><li>Coke ovens and pellet plants</li><li>Industrial furnaces</li><li>Medical waste incinerators</li><li>Industrial boilers</li><li>Internal combustion exhaust (where applicable)</li>',
     limitations:
       'Conversion marked (*) is a reported value from original documentation; it must be confirmed against the current test report. Performance depends on CO concentration, oxygen content, temperature, SO₂ and water vapor.',
+    industryRefs: `<thead><tr><th>Parameter (industry-typical)</th><th>Value</th></tr></thead><tbody>
+      <tr><td>Typical operating temperature</td><td>200–350°C</td></tr>
+      <tr><td>Typical space velocity</td><td>5,000–15,000 h⁻¹</td></tr>
+      <tr><td>Achievable outlet CO</td><td>&lt;5 ppm (catalytic oxidation of unburned combustibles)</td></tr>
+      <tr><td>Oxygen uptake capacity</td><td>up to 50 ml/g</td></tr>
+    </tbody>`,
     relatedCases: [
       { name: 'Sintering Machine CO Removal — Field Test', href: '/case-studies/sintering-machine-co-removal/' },
       { name: 'Medical Waste Incinerator CO Removal — Field Test', href: '/case-studies/medical-waste-incinerator-co-removal/' },
@@ -465,6 +472,15 @@ export const products: Product[] = [
       '<li>Natural gas drying</li><li>Chemical gas drying</li><li>Refrigerants</li><li>Pharmaceutical gases</li><li>Electronic materials</li><li>Argon purification</li><li>Gas separation</li>',
     custom:
       'Modification is adjusted according to the target medium, concentration, humidity and adsorption/regeneration cycle.',
+    industryRefs: `<thead><tr><th>Parameter (industry-typical)</th><th>Value</th></tr></thead><tbody>
+      <tr><td>Static water adsorption</td><td>≥21.5 %wt</td></tr>
+      <tr><td>Bulk density</td><td>≥700 kg/m³ (≥0.70 g/ml)</td></tr>
+      <tr><td>Crush strength</td><td>≥35 N/piece (spherical)</td></tr>
+      <tr><td>Attrition</td><td>≤0.30 %wt</td></tr>
+      <tr><td>Particle size conformity</td><td>≥98 %wt</td></tr>
+      <tr><td>Loss on ignition (575°C)</td><td>≤1.50 %wt</td></tr>
+      <tr><td>Typical bead diameter</td><td>1.5–2.5 mm / 3–5 mm</td></tr>
+    </tbody>`,
     faqs: [
       {
         q: 'Which molecules does 5A selectively adsorb?',
@@ -503,6 +519,16 @@ export const products: Product[] = [
       '<li>Medical gas drying</li><li>Compressed air drying</li><li>CO₂ adsorption</li><li>H₂O / H₂S adsorption</li><li>Catalyst support applications</li>',
     custom:
       'Different modification systems are applied according to the application; regeneration temperature and cycles are confirmed per project.',
+    industryRefs: `<thead><tr><th>Parameter (industry-typical)</th><th>Value</th></tr></thead><tbody>
+      <tr><td>Static water adsorption</td><td>≥25 %wt (≥26 %wt pellet)</td></tr>
+      <tr><td>CO₂ adsorption</td><td>≥17–18 %wt</td></tr>
+      <tr><td>Bulk density</td><td>≥0.62–0.68 g/ml (pellet) / ≥0.54 g/ml (bead)</td></tr>
+      <tr><td>Crush strength</td><td>≥30 N (1.6 mm) / ≥60 N (3.2 mm)</td></tr>
+      <tr><td>Attrition</td><td>≤0.20–0.30 %wt</td></tr>
+      <tr><td>Packaged moisture</td><td>≤1.5 %wt</td></tr>
+      <tr><td>Loss on ignition (575°C)</td><td>≤1.5 %wt</td></tr>
+      <tr><td>Typical sizes</td><td>1.6–2.5 mm, 3–5 mm bead; 1.6 / 3.2 mm pellet</td></tr>
+    </tbody>`,
     faqs: [
       {
         q: 'What is the difference between 13X and 5A?',
@@ -772,6 +798,14 @@ export const products: Product[] = [
       '<li>Gas purification</li><li>Catalyst support</li><li>Food decolorization</li><li>Pharmaceutical applications</li><li>Water purification</li>',
     limitations:
       'For each application the correct grade (particle size, iodine value, hardness) must be specified; contact us with your target medium.',
+    industryRefs: `<thead><tr><th>Parameter (industry-typical)</th><th>Value</th></tr></thead><tbody>
+      <tr><td>Iodine number</td><td>800–1,100 mg/g (grade-dependent)</td></tr>
+      <tr><td>Methylene blue adsorption</td><td>135–160 mg/g</td></tr>
+      <tr><td>Hardness</td><td>≥94%</td></tr>
+      <tr><td>Moisture</td><td>≤10%</td></tr>
+      <tr><td>Ash content</td><td>≤3%</td></tr>
+      <tr><td>Typical mesh sizes</td><td>4–8, 8–16, 8–30, 20–40 (application-specific)</td></tr>
+    </tbody>`,
     faqs: [
       {
         q: 'Why choose coconut-shell over coal-based carbon?',

@@ -8,7 +8,7 @@ import StructuredData from '~/components/common/StructuredData.astro';
 import { headerData, footerData } from '~/navigation';
 
 import { SITE, I18N } from 'astrowind:config';
-import favIconSvg from '~/assets/favicons/favicon.svg';
+import logoMark from '~/assets/images/logo-mark.png';
 
 import type { MetaData } from '~/types';
 
@@ -36,7 +36,7 @@ const baseSchema = [
     name: 'Yancheng Xuanbao Environmental Technology Co., Ltd.',
     alternateName: SITE?.name,
     url: SITE?.site,
-    logo: new URL(favIconSvg.src, SITE?.site).toString(),
+    logo: new URL(logoMark.src, SITE?.site).toString(),
     foundingDate: '2020-05-12',
     address: {
       '@type': 'PostalAddress',
