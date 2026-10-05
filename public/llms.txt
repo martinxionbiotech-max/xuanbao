@@ -6,6 +6,14 @@
 > lists the pages of xuanbaoenvironment.com; deep technical documentation lives
 > in the companion knowledge center at data.xuanbaoenvironment.com.
 
+## Markdown mirrors (for AI crawlers)
+
+Every page is also available as clean Markdown, generated at build time:
+
+- Full corpus (all pages): [llms-full.txt](https://xuanbaoenvironment.com/llms-full.txt)
+- Mirror index: [markdown/index.md](https://xuanbaoenvironment.com/markdown/index.md)
+- Pattern: `https://xuanbaoenvironment.com/markdown/{path}.md`
+
 ## Core pages
 
 - [Home](https://xuanbaoenvironment.com/): company overview, core products, industries and R&D/quality workflow.
