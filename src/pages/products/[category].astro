@@ -35,6 +35,10 @@ const collectionSchema = {
         name: p.name,
         description: p.intro,
         url: baseUrl + getPermalink('/products/' + p.slug.join('/')),
+        offers: {
+          '@type': 'Offer',
+          url: baseUrl + getPermalink('/products/' + p.slug.join('/')),
+        },
       },
     })),
   },

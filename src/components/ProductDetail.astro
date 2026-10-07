@@ -102,14 +102,9 @@ const productSchema = {
   url,
   category: product.category,
   offers: {
-    '@type': 'AggregateOffer',
+    '@type': 'Offer',
     url,
     priceCurrency: 'USD',
-    lowPrice: '120',
-    highPrice: '280',
-    offerCount: '1',
-    availability: 'https://schema.org/InStock',
-    itemCondition: 'https://schema.org/NewCondition',
   },
 };
 
