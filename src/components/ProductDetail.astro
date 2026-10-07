@@ -102,9 +102,13 @@ const productSchema = {
   url,
   category: product.category,
   offers: {
-    '@type': 'Offer',
+    '@type': 'AggregateOffer',
     url,
     priceCurrency: 'USD',
+    lowPrice: '120',
+    highPrice: '280',
+    offerCount: '1',
+    itemCondition: 'https://schema.org/NewCondition',
   },
 };
 
@@ -148,6 +152,10 @@ const breadcrumbItems = [
       </p>
     )}
     <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">{product.intro}</p>
+    <p class="mt-3 max-w-3xl mx-auto text-center">
+      Indicative price: <strong class="text-heading">From US$120</strong> (up to US$280 depending on grade, bead
+      size and order quantity), FOB in USD. Confirm the exact figure on quotation.
+    </p>
   </section>
 
   {(product.image || product.specSheet) && (

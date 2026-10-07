@@ -36,8 +36,13 @@ const collectionSchema = {
         description: p.intro,
         url: baseUrl + getPermalink('/products/' + p.slug.join('/')),
         offers: {
-          '@type': 'Offer',
+          '@type': 'AggregateOffer',
           url: baseUrl + getPermalink('/products/' + p.slug.join('/')),
+          priceCurrency: 'USD',
+          lowPrice: '120',
+          highPrice: '280',
+          offerCount: '1',
+          itemCondition: 'https://schema.org/NewCondition',
         },
       },
     })),
@@ -57,6 +62,10 @@ const collectionSchema = {
     </h1>
     <p class="mt-4 max-w-3xl mx-auto text-lg text-muted text-center">{meta.intro}</p>
     <p class="mt-3 max-w-3xl mx-auto text-muted text-center">{meta.overview}</p>
+    <p class="mt-4 mx-auto max-w-3xl text-center text-heading">
+      Indicative price band: <strong>From US$120</strong> (up to US$280 depending on grade, bead size and order
+      quantity), FOB in USD. Confirm the exact figure on quotation.
+    </p>
   </section>
 
   <div class="mx-auto max-w-5xl px-4 sm:px-6 pb-6 md:pb-10">
