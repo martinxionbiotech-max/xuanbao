@@ -19,7 +19,7 @@ interface Props {
 
 const { product } = Astro.props;
 
-const productPath = '/' + product.slug.join('/') + '/';
+const productPath = getPermalink('/products/' + product.slug.join('/'));
 const url = String(SITE.site).replace(/\/$/, '') + productPath;
 
 const breadcrumbSchema = {

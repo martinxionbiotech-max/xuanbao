@@ -15,7 +15,7 @@ export function getStaticPaths() {
 
 const { product } = Astro.props;
 const p = product as Product;
-p.path = '/' + p.slug.join('/') + '/';
+p.path = '/products/' + p.slug.join('/') + '/';
 ---
 
 <ProductDetail product={p} />
